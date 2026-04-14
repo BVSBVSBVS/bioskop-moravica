@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Nama | Bioskop Moravica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-text"><h2>MORAVICA</h2><p>BIOSKOP SOKOBANJA</p></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">NASLOVNA</a></li>
+            <li><a href="repertoar.html">REPERTOAR</a></li>
+            <li><a href="uskoro.html">USKORO</a></li>
+            <li><a href="o-nama.html" style="color: var(--accent);">O NAMA</a></li>
+        </ul>
+        <a href="ostalo.html" class="btn-outline">OSTALO</a>
+    </nav>
+
+    <section style="padding: 100px 10%; display: flex; flex-wrap: wrap; gap: 60px; align-items: start;">
+        <div style="flex: 1; min-width: 300px;">
+            <h1 style="font-family: 'Poppins'; font-size: 3.5rem; margin-bottom: 30px; line-height: 1;">O Nama</h1>
+            
+            <h3 style="color: var(--accent); margin-bottom: 10px; font-family: 'Poppins';">Tradicija i Kultura</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem;">Bioskop Moravica u Sokobanji predstavlja kulturni stub ovog banjskog grada još od sredine dvadesetog veka. Smešten u samom srcu grada, bioskop nosi ime po reci Moravici koja protiče kroz grad, simbolizujući neprekidan tok umetnosti i kulture. Već decenijama predstavljamo mesto okupljanja ljubitelja filma svih generacija.</p>
+            
+            <h3 style="color: var(--accent); margin-bottom: 10px; font-family: 'Poppins';">Naša Vizija i Oprema</h3>
+            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem;">Verujemo da bioskop nije samo prostor za gledanje filmova — to je mesto gde se emocije dele. Kombinujemo zlatno doba bioskopa sa vrhunskom tehnologijom 21. veka, digitalnim 4K projektorima i naprednim surround zvučnim sistemom koji vas smešta u centar radnje.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">KAPACITET</h4>
+                    <p style="font-weight: 700; font-size: 1.2rem;">200 Mesta</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">PROJEKCIJA</h4>
+                    <p style="font-weight: 700; font-size: 1.2rem;">Digitalna 4K</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">ZVUK</h4>
+                    <p style="font-weight: 700; font-size: 1.2rem;">Surround 7.1</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">PRISTUP</h4>
+                    <p style="font-weight: 700; font-size: 1.2rem;">Rampa za inv.</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+            <img src="assets/bmsspolja.jpeg" alt="Bioskop spolja" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+        </div>
+    </section>
+<script>
+        // Otvaranje i zatvaranje menija na telefonu
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+    </body>
+</html>

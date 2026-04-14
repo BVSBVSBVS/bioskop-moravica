@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostalo | Bioskop Moravica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-text"><h2>MORAVICA</h2><p>BIOSKOP SOKOBANJA</p></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">NASLOVNA</a></li>
+            <li><a href="repertoar.html">REPERTOAR</a></li>
+            <li><a href="uskoro.html">USKORO</a></li>
+            <li><a href="o-nama.html">O NAMA</a></li>
+        </ul>
+        <a href="ostalo.html" class="btn-outline" style="background: var(--accent); color: var(--bg-dark);">OSTALO</a>
+    </nav>
+
+    <section style="padding: 100px 10%;">
+        <div style="margin-bottom: 50px;">
+            <h1 style="font-family: 'Poppins'; font-size: 3rem; margin-bottom: 10px;">Dodatne Usluge</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">Više od obične projekcije. Pogledajte šta sve Bioskop Moravica ima da ponudi.</p>
+        </div>
+
+        <div class="movie-grid">
+            <div class="service-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🥂</div>
+                <h3 style="font-family: 'Poppins'; font-size: 1.3rem; margin-bottom: 10px;">Privatne Projekcije</h3>
+                <span class="genre">ZAKUP SALE</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Želite bioskop samo za sebe? Zakupite salu za rođendane, korporativne događaje ili gaming turnire. Uživajte u komforu.</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🎒</div>
+                <h3 style="font-family: 'Poppins'; font-size: 1.3rem; margin-bottom: 10px;">Školske Posete</h3>
+                <span class="genre">EDUKACIJA</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Organizujemo projekcije za škole. Edukativni filmovi i lektire na platnu, uz posebne grupne popuste za učenike.</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🍿</div>
+                <h3 style="font-family: 'Poppins'; font-size: 1.3rem; margin-bottom: 10px;">Bar & Snack</h3>
+                <span class="genre">HRANA I PIĆE</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Naš bioskopski bar nudi uvek sveže tople kokice, naćose, izbor hladnih pića i slatkiša za potpuni ugođaj tokom filma.</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🎟️</div>
+                <h3 style="font-family: 'Poppins'; font-size: 1.3rem; margin-bottom: 10px;">Poklon Vaučeri</h3>
+                <span class="genre">SAVRŠEN POKLON</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Bioskopski vaučer je uvek pun pogodak. Iznenadite voljenu osobu kartama za premijeru ili paketom (film, kokice, piće).</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🎭</div>
+                <h3 style="font-family: 'Poppins'; font-size: 1.3rem; margin-bottom: 10px;">Tematske Večeri</h3>
+                <span class="genre">DOGAĐAJI</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Organizujemo horor maratone za Noć veštica, romantične projekcije i retro večeri gde puštamo neprolazne filmske klasike.</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">♿</div>
+                <h3 style="font-family: 'Poppins'; font-size: 1.3rem; margin-bottom: 10px;">Pristupačnost</h3>
+                <span class="genre">ZA SVE</span>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Bioskop je u potpunosti prilagođen osobama sa invaliditetom. Posedujemo prilaznu rampu, mesta za kolica i prilagođen toalet.</p>
+            </div>
+        </div>
+    </section>
+<script>
+        // Otvaranje i zatvaranje menija na telefonu
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+    </body>
+</html>

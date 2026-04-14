@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repertoar | Bioskop Moravica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <a href="index.html" class="logo">
+                <div class="logo-text"><h2>MORAVICA</h2><p>BIOSKOP SOKOBANJA</p></div>
+            </a>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">NASLOVNA</a></li>
+            <li><a href="repertoar.html">REPERTOAR</a></li>
+            <li><a href="uskoro.html">USKORO</a></li>
+            <li><a href="o-nama.html">O NAMA</a></li>
+            <li class="hamburger-only" style="margin-top: 20px;"><a href="ostalo.html" style="color: var(--accent);">OSTALO</a></li>
+        </ul>
+        
+        <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
+    </nav>
+
+    <section style="padding: 80px 10%;">
+        <div class="section-header">
+            <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 16.04. do Srede 22.04.2026. (Ponedeljak i Petak neradni dani).</p>
+            <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
+        </div>
+
+        <div class="filters-container" id="filterBox">
+            <div class="filter-group">
+                <label>Izaberi Dan</label>
+                <select id="filter-dan" onchange="primeniFiltere()">
+                    <option value="sve">Svi dani</option>
+                    <option value="cetvrtak">Četvrtak</option>
+                    <option value="subota">Subota</option>
+                    <option value="nedelja">Nedelja</option>
+                    <option value="utorak">Utorak</option>
+                    <option value="sreda">Sreda</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Izaberi Film</label>
+                <select id="filter-film" onchange="primeniFiltere()">
+                    <option value="sve">Svi filmovi</option>
+                    <option value="mario">Super Mario Galaktički film</option>
+                    <option value="drvo">Magično daleko drvo</option>
+                    <option value="srce">Sportsko srce</option>
+                    <option value="finik">Finikove avanture 2</option>
+                    <option value="mumija">Mumija - Film Lija Kronina</option>
+                    <option value="svadba">Svadba</option>
+                    <option value="gospodar">Gospodar oluje</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Izaberi Vreme</label>
+                <select id="filter-vreme" onchange="primeniFiltere()">
+                    <option value="sve">Sva vremena</option>
+                    <option value="16:30">16:30</option>
+                    <option value="18:30">18:30</option>
+                    <option value="20:30">20:30</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="repertoire-list" style="margin-top: 40px;">
+            
+            <div class="day-group" id="grupa-cetvrtak">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 16.04.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="mario" data-vreme="16:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content"><span class="genre">2D • SINH</span><h3>Super Mario Galaktički film</h3><div class="times"><span>16:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="cetvrtak" data-film="drvo" data-vreme="18:30">
+                        <img src="assets/drvo.jpg" alt="Magično drvo">
+                        <div class="card-content"><span class="genre">SINH • PREMIJERA</span><h3>Magično daleko drvo</h3><div class="times"><span>18:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="cetvrtak" data-film="srce" data-vreme="20:30">
+                        <img src="assets/srce.jpg" alt="Sportsko srce">
+                        <div class="card-content"><span class="genre">DOMAĆI FILM</span><h3>Sportsko srce</h3><div class="times"><span>20:30</span></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-group" id="grupa-subota">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 18.04.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="subota" data-film="finik" data-vreme="16:30">
+                        <img src="assets/finik.jpg" alt="Finikove avanture">
+                        <div class="card-content"><span class="genre">SINH • PREMIJERA</span><h3>Finikove avanture 2</h3><div class="times"><span>16:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="subota" data-film="mario" data-vreme="18:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content"><span class="genre">3D • SINH</span><h3>Super Mario Galaktički film</h3><div class="times"><span>18:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="subota" data-film="mumija" data-vreme="20:30">
+                        <img src="assets/mumija.jpg" alt="Mumija">
+                        <div class="card-content"><span class="genre">PREMIJERA</span><h3>Mumija - Film Lija Kronina</h3><div class="times"><span>20:30</span></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-group" id="grupa-nedelja">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 19.04.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="nedelja" data-film="mario" data-vreme="16:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content"><span class="genre">2D • SINH</span><h3>Super Mario Galaktički film</h3><div class="times"><span>16:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="nedelja" data-film="svadba" data-vreme="18:30">
+                        <img src="assets/svadba.jpg" alt="Svadba">
+                        <div class="card-content"><span class="genre">KOMEDIJA</span><h3>Svadba</h3><div class="times"><span>18:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="nedelja" data-film="gospodar" data-vreme="20:30">
+                        <img src="assets/gospodar.jpg" alt="Gospodar oluje">
+                        <div class="card-content"><span class="genre">AKCIJA</span><h3>Gospodar oluje</h3><div class="times"><span>20:30</span></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-group" id="grupa-utorak">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 21.04.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="16:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content"><span class="genre">3D • SINH</span><h3>Super Mario Galaktički film</h3><div class="times"><span>16:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="utorak" data-film="drvo" data-vreme="18:30">
+                        <img src="assets/drvo.jpg" alt="Magično drvo">
+                        <div class="card-content"><span class="genre">SINH</span><h3>Magično daleko drvo</h3><div class="times"><span>18:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="utorak" data-film="mumija" data-vreme="20:30">
+                        <img src="assets/mumija.jpg" alt="Mumija">
+                        <div class="card-content"><span class="genre">HOROR</span><h3>Mumija - Film Lija Kronina</h3><div class="times"><span>20:30</span></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-group" id="grupa-sreda">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 22.04.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="sreda" data-film="finik" data-vreme="16:30">
+                        <img src="assets/finik.jpg" alt="Finikove avanture">
+                        <div class="card-content"><span class="genre">SINH</span><h3>Finikove avanture 2</h3><div class="times"><span>16:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="sreda" data-film="mario" data-vreme="18:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content"><span class="genre">2D • SINH</span><h3>Super Mario Galaktički film</h3><div class="times"><span>18:30</span></div></div>
+                    </div>
+                    <div class="movie-card" data-dan="sreda" data-film="srce" data-vreme="20:30">
+                        <img src="assets/srce.jpg" alt="Sportsko srce">
+                        <div class="card-content"><span class="genre">DOMAĆI FILM</span><h3>Sportsko srce</h3><div class="times"><span>20:30</span></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col brand"><div class="logo-text"><h2>MORAVICA</h2></div><p>Vaš bioskop u srcu Sokobanje.</p></div>
+            <div class="footer-col links"><h4>NAVIGACIJA</h4><a href="index.html">Naslovna</a><a href="repertoar.html">Repertoar</a><a href="uskoro.html">Uskoro</a></div>
+            <div class="footer-col contact"><h4>KONTAKT</h4><p>📍 Alekse Markišića 40</p><p>📞 064 8279 721</p><p>✉️ mmm.cinema.2023@gmail.com</p></div>
+            <div class="footer-col hours"><h4>RADNO VREME</h4><p>Uto - Ned: 16:00 - 21:00</p><p>Pon i Pet: Zatvoreno</p></div>
+        </div>
+    </footer>
+
+   <script>
+        // 1. Skripta za otvaranje i zatvaranje boxa sa filterima
+        function toggleFilteri() {
+            var box = document.getElementById("filterBox");
+            if (box.style.display === "none" || box.style.display === "") {
+                box.style.display = "flex";
+                document.getElementById("filterBtn").innerHTML = "❌ Zatvori Filtere";
+            } else {
+                box.style.display = "none";
+                document.getElementById("filterBtn").innerHTML = "⚙️ Prikaži Filtere";
+            }
+        }
+
+        // 2. Skripta za filtriranje (Ono što si ti poslao)
+        function primeniFiltere() {
+            const izabranDan = document.getElementById('filter-dan').value;
+            const izabranFilm = document.getElementById('filter-film').value;
+            const izabranoVreme = document.getElementById('filter-vreme').value;
+            const kartice = document.querySelectorAll('.movie-card');
+
+            kartice.forEach(kartica => {
+                const danKartice = kartica.getAttribute('data-dan');
+                const filmKartice = kartica.getAttribute('data-film');
+                const vremeKartice = kartica.getAttribute('data-vreme');
+                let prikazi = true;
+                
+                if (izabranDan !== 'sve' && danKartice !== izabranDan) prikazi = false;
+                if (izabranFilm !== 'sve' && filmKartice !== izabranFilm) prikazi = false;
+                if (izabranoVreme !== 'sve' && vremeKartice !== izabranoVreme) prikazi = false;
+                
+                if (prikazi) kartica.style.display = 'block';
+                else kartica.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.day-group').forEach(grupa => {
+                const vidljiveKartice = grupa.querySelectorAll('.movie-card[style="display: block;"], .movie-card:not([style="display: none;"])');
+                if (vidljiveKartice.length > 0) grupa.style.display = 'block';
+                else grupa.style.display = 'none';
+            });
+        }
+
+        // 3. NOVA SKRIPTA: Za otvaranje hamburger menija na telefonu
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
