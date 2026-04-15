@@ -12,24 +12,27 @@
         <a href="index.html" class="logo">
             <div class="logo-text"><h2>MORAVICA</h2><p>BIOSKOP SOKOBANJA</p></div>
         </a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">NASLOVNA</a></li>
             <li><a href="repertoar.html">REPERTOAR</a></li>
             <li><a href="uskoro.html">USKORO</a></li>
             <li><a href="o-nama.html" style="color: var(--accent);">O NAMA</a></li>
+            <li class="hamburger-only" style="margin-top: 20px;"><a href="ostalo.html" style="color: var(--accent);">OSTALO</a></li>
         </ul>
-        <a href="ostalo.html" class="btn-outline">OSTALO</a>
+        <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
     </nav>
 
     <section style="padding: 100px 10%; display: flex; flex-wrap: wrap; gap: 60px; align-items: start;">
         <div style="flex: 1; min-width: 300px;">
-            <h1 style="font-family: 'Poppins'; font-size: 3.5rem; margin-bottom: 30px; line-height: 1;">O Nama</h1>
+            <h1 style="font-family: 'Poppins'; font-size: 3.5rem; margin-bottom: 30px; line-height: 1;">O Bioskopu</h1>
             
-            <h3 style="color: var(--accent); margin-bottom: 10px; font-family: 'Poppins';">Tradicija i Kultura</h3>
-            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem;">Bioskop Moravica u Sokobanji predstavlja kulturni stub ovog banjskog grada još od sredine dvadesetog veka. Smešten u samom srcu grada, bioskop nosi ime po reci Moravici koja protiče kroz grad, simbolizujući neprekidan tok umetnosti i kulture. Već decenijama predstavljamo mesto okupljanja ljubitelja filma svih generacija.</p>
+            <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem;">Rekonstrukcija i adaptacija nekadašnjeg bioskopa "Moravica" koji danas predstavlja objekat multifunkcionalnog tipa u kome su pored video projekcija predviđeni i scenski nastupi, realizovana je zahvaljujući sredstvima koja je Ministarstvo kulture dodelilo opštini Sokobanja putem konkursa "Gradovi u fokusu".</p>
             
-            <h3 style="color: var(--accent); margin-bottom: 10px; font-family: 'Poppins';">Naša Vizija i Oprema</h3>
-            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem;">Verujemo da bioskop nije samo prostor za gledanje filmova — to je mesto gde se emocije dele. Kombinujemo zlatno doba bioskopa sa vrhunskom tehnologijom 21. veka, digitalnim 4K projektorima i naprednim surround zvučnim sistemom koji vas smešta u centar radnje.</p>
+            <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem;">Rekonstrukcija bioskopa je u današnje vreme bila preka potreba i to je urađeno na način koji je omogućio da sadašnji bioskop podržava, najmodernijom opremom, sve zahteve savremene publike. Obnovljeni su bina, stolice, ventilacija, ozvučenje, grejanje, rasveta te su danas projekcije češće u ovoj adaptiranoj zgradi starog bioskopa.</p>
+
+            <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem;">Adaptacija nekadašnjeg bioskopa omogućila je da se sada u njemu osim filmskih projekcija mogu održavati i kulturno – umetničke priredbe, nastupi raznovrsnih grupa, pozorišne predstave, seminari i stručni skupovi, kojima može prisustvovati oko 200 posetilaca.</p>
+            
+            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem;">Bioskop koristi najmoderniju lasersku opremu i ima mogućnost prikazivanja filmova u 2D i 3D formatu.</p>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
@@ -38,15 +41,7 @@
                 </div>
                 <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
                     <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">PROJEKCIJA</h4>
-                    <p style="font-weight: 700; font-size: 1.2rem;">Digitalna 4K</p>
-                </div>
-                <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">ZVUK</h4>
-                    <p style="font-weight: 700; font-size: 1.2rem;">Surround 7.1</p>
-                </div>
-                <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <h4 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 5px;">PRISTUP</h4>
-                    <p style="font-weight: 700; font-size: 1.2rem;">Rampa za inv.</p>
+                    <p style="font-weight: 700; font-size: 1.2rem;">2D i 3D</p>
                 </div>
             </div>
         </div>
@@ -54,11 +49,21 @@
             <img src="assets/bmsspolja.jpeg" alt="Bioskop spolja" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
         </div>
     </section>
-<script>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col brand"><div class="logo-text"><h2>MORAVICA</h2></div><p>Vaš bioskop u srcu Sokobanje.</p></div>
+            <div class="footer-col links"><h4>NAVIGACIJA</h4><a href="index.html">Naslovna</a><a href="repertoar.html">Repertoar</a><a href="uskoro.html">Uskoro</a></div>
+            <div class="footer-col contact"><h4>KONTAKT</h4><p>📍 Alekse Markišića 40</p><p>📞 064 8279 721</p><p>✉️ mmm.cinema.2023@gmail.com</p></div>
+            <div class="footer-col hours"><h4>RADNO VREME</h4><p>Uto - Ned: 16:00 - 21:00</p><p>Pon i Pet: Zatvoreno</p></div>
+        </div>
+    </footer>
+
+    <script>
         // Otvaranje i zatvaranje menija na telefonu
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("active");
         }
     </script>
-    </body>
+</body>
 </html>

@@ -55,14 +55,22 @@ a { text-decoration: none; color: inherit; }
 
 /* === KARTICE I OSTALO === */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-.movie-card { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.movie-card img { width: 100%; height: 380px; object-fit: cover; }
-.card-content { padding: 30px; }
-.card-content h3 { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 10px; }
-.genre { font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 15px; font-weight: 700; text-transform: uppercase;}
+.movie-card { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease; }
+.movie-card:hover { transform: scale(1.02); }
+
+/* SLIKE SE VISE NE SEKU - Prikazuju se cele */
+.movie-card img { width: 100%; height: auto; display: block; }
+
+/* MANJE PRAZNOG PROSTORA OKO TEKSTA */
+.card-content { padding: 15px 20px 20px 20px; }
+.card-content h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 5px; }
+
+/* NOVI TEKST ISPOD FILMOVA */
+.card-content p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.4; }
+
+.genre { font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;}
 .times span { background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); margin-right: 5px;}
 .service-card { background-color: var(--bg-card); border-radius: 12px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: 100%; }
-
 /* === FILTERI === */
 .filters-container { display: none; gap: 15px; margin-top: 20px; margin-bottom: 40px; background: var(--bg-card); padding: 20px; border-radius: 8px; flex-wrap: wrap; }
 .filter-group { display: flex; flex-direction: column; flex: 1; min-width: 150px; }
