@@ -118,3 +118,33 @@ a { text-decoration: none; color: inherit; }
     .filters-container { flex-direction: column; }
     .filter-group { width: 100%; }
 }
+/* =========================================
+   FIX ZA MAPU (Da ivice budu savršeno oble)
+   ========================================= */
+.map-container {
+    width: 100%;
+    height: 400px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important; /* Seče mapu tačno po oblim ivicama boksa */
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    display: flex !important; /* Ubija onaj prazan prostor ispod mape */
+}
+
+.map-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+}
+
+/* =========================================
+   FIX ZA SLIKE (Full rezolucija, bez sečenja)
+   ========================================= */
+.movie-card img {
+    width: 100% !important;
+    height: auto !important; /* Gasi onih starih 380px */
+    aspect-ratio: auto !important; /* Zadržava originalni oblik tvoje slike */
+    object-fit: contain !important; /* ZABRANJUJE ZUMIRANJE I SEČENJE */
+    display: block !important;
+    background-color: #101214; /* Crna pozadina ako slika nije standardna */
+}
