@@ -157,13 +157,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================================
-   FIX ZA SLIKE (Full rezolucija, bez sečenja)
+   FIX ZA SLIKE (Sve u milimetar iste visine)
    ========================================= */
 .movie-card img {
     width: 100% !important;
-    height: auto !important; /* Gasi onih starih 380px */
-    aspect-ratio: auto !important; /* Zadržava originalni oblik tvoje slike */
-    object-fit: contain !important; /* ZABRANJUJE ZUMIRANJE I SEČENJE */
+    aspect-ratio: 2 / 3 !important; /* Forsira standardni oblik filmskog postera za sve */
+    object-fit: cover !important; /* Popunjava ceo boks bez rastezanja i crnih ivica */
     display: block !important;
-    background-color: #101214; /* Crna pozadina ako slika nije standardna */
+    height: auto !important;
 }
