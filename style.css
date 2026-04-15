@@ -129,6 +129,25 @@ a { text-decoration: none; color: inherit; }
     border: 1px solid rgba(255,255,255,0.1) !important;
     display: flex !important; /* Ubija onaj prazan prostor ispod mape */
 }
+/* =========================================
+   FIX ZA ISTE KARTICE (Svi boksovi ista visina)
+   ========================================= */
+.movie-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.card-content {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important; /* Tera sadržaj da popuni prazan prostor */
+}
+
+/* Gura vreme/žanr na samo dno kartice da bi sve bile u ravni */
+.card-content .times {
+    margin-top: auto !important; 
+}
 
 .map-container iframe {
     width: 100% !important;
