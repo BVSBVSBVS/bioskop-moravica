@@ -29,15 +29,6 @@
         #poruka-uspeha { display: none; text-align: center; padding: 30px; }
         #poruka-uspeha h3 { color: #34A853; margin-bottom: 10px; font-family: 'Poppins'; }
     </style>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init({
-            publicKey: "v7wK0oxykhrFsJ0Ss",
-          });
-       })();
-    </script>
 </head>
 <body>
     
@@ -113,14 +104,13 @@
         </div>
     </footer>
 
-   <script>
+    <script>
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
 
         let cenaPoKarti = 0;
 
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
-            
             const film = urlParams.get('film');
             const dan = urlParams.get('dan');
             const vreme = urlParams.get('vreme');
@@ -146,6 +136,7 @@
             document.getElementById('prikaz-ukupno-dugme').innerText = ukupnaCena + " RSD";
         }
 
+        // NAJSIGURNIJI METOD: Direktni API poziv bez tuđih skripti
         document.getElementById('rezervacija-forma').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -153,36 +144,39 @@
             dugme.innerText = "SLANJE...";
             dugme.disabled = true;
 
-            const templateParams = {
-                film: document.getElementById('prikaz-film').innerText,
-                dan: document.getElementById('prikaz-dan').innerText,
-                vreme: document.getElementById('prikaz-vreme').innerText,
-                broj_karata: document.getElementById('unos-karata').value,
-                ime_prezime: document.getElementById('unos-ime').value,
-                email_korisnika: document.getElementById('unos-email').value,
-                ukupna_cena: document.getElementById('prikaz-ukupno-dugme').innerText
+            const podaciZaSlanje = {
+                service_id: 'service_fdgv2gl',
+                template_id: 'template_28hsk69',
+                user_id: 'v7wK0oxykhrFsJ0Ss',
+                template_params: {
+                    film: document.getElementById('prikaz-film').innerText,
+                    dan: document.getElementById('prikaz-dan').innerText,
+                    vreme: document.getElementById('prikaz-vreme').innerText,
+                    broj_karata: document.getElementById('unos-karata').value,
+                    ime_prezime: document.getElementById('unos-ime').value,
+                    email_korisnika: document.getElementById('unos-email').value,
+                    ukupna_cena: document.getElementById('prikaz-ukupno-dugme').innerText
+                }
             };
 
-            // TRY-CATCH Blok - Ako pukne, izbaciće nam tačan razlog na ekran!
-            try {
-                // Ubacujemo Public Key direktno ovde, to zaobilazi sve bagove!
-                emailjs.send('service_fdgv2gl', 'template_28hsk69', templateParams, {
-                    publicKey: 'v7wK0oxykhrFsJ0Ss',
-                })
-                .then(function(response) {
+            fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(podaciZaSlanje)
+            })
+            .then(function(odgovor) {
+                if (odgovor.ok) {
                     document.getElementById('forma-kontejner').style.display = 'none';
                     document.getElementById('poruka-uspeha').style.display = 'block';
-                })
-                .catch(function(error) {
-                    alert("EmailJS je odbio slanje. Razlog: " + (error.text || error.message || JSON.stringify(error)));
-                    dugme.innerText = "POKUŠAJ PONOVO";
-                    dugme.disabled = false;
-                });
-            } catch(err) {
-                alert("Kod je pukao pre slanja: " + err.message);
+                } else {
+                    return odgovor.text().then(tekst => { throw new Error(tekst) });
+                }
+            })
+            .catch(function(greska) {
+                alert("Greška: Nismo uspeli da pošaljemo rezervaciju. " + greska.message);
                 dugme.innerText = "POKUŠAJ PONOVO";
                 dugme.disabled = false;
-            }
+            });
         });
     </script>
 </body>
