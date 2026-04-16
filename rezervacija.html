@@ -33,7 +33,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
-          emailjs.init("v7wK0oxykhrFsJ0Ss"); 
+          emailjs.init({
+            publicKey: "v7wK0oxykhrFsJ0Ss",
+          });
        })();
     </script>
 </head>
@@ -112,7 +114,6 @@
     </footer>
 
     <script>
-        // Hamburger meni
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
 
         let cenaPoKarti = 0;
@@ -145,7 +146,6 @@
             document.getElementById('prikaz-ukupno-dugme').innerText = ukupnaCena + " RSD";
         }
 
-        // SLANJE PREKO EMAILJS
         document.getElementById('rezervacija-forma').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -164,11 +164,13 @@
             };
 
             emailjs.send('service_fdgv2gl', 'template_28hsk69', templateParams)
-                .then(function() {
+                .then(function(response) {
+                    console.log('USPEH!', response.status, response.text);
                     document.getElementById('forma-kontejner').style.display = 'none';
                     document.getElementById('poruka-uspeha').style.display = 'block';
                 }, function(error) {
-                    alert("Greška pri slanju: " + JSON.stringify(error));
+                    console.log('GREŠKA...', error);
+                    alert("Greška pri slanju. Pokušajte ponovo.");
                     dugme.innerText = "POKUŠAJ PONOVO";
                     dugme.disabled = false;
                 });
