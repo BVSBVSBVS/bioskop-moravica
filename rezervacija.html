@@ -29,6 +29,13 @@
         #poruka-uspeha { display: none; text-align: center; padding: 30px; }
         #poruka-uspeha h3 { color: #34A853; margin-bottom: 10px; font-family: 'Poppins'; }
     </style>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("v7wK0oxykhrFsJ0Ss"); 
+       })();
+    </script>
 </head>
 <body>
     
@@ -108,12 +115,9 @@
         // Hamburger meni
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
 
-        // Varijable za čuvanje podataka
         let cenaPoKarti = 0;
 
-        // Funkcija koja se pali čim se stranica učita
         window.onload = function() {
-            // "Čitamo" onaj URL gore da vidimo šta je korisnik kliknuo
             const urlParams = new URLSearchParams(window.location.search);
             
             const film = urlParams.get('film');
@@ -121,42 +125,53 @@
             const vreme = urlParams.get('vreme');
             const cenaURL = urlParams.get('cena');
 
-            // Ako neko slučajno uđe na stranicu bez kliktanja na dugme sa repertoara, vraćamo ga nazad
             if (!film || !dan || !vreme || !cenaURL) {
                 window.location.href = "repertoar.html";
                 return;
             }
 
-            // Ubacujemo podatke u onaj narandžasti box na ekranu
             document.getElementById('prikaz-film').innerText = film;
             document.getElementById('prikaz-dan').innerText = dan;
             document.getElementById('prikaz-vreme').innerText = vreme;
             document.getElementById('prikaz-cena').innerText = cenaURL + " RSD";
 
-            // Čuvamo cenu u memoriji kao broj da bi mogli da množimo
             cenaPoKarti = parseInt(cenaURL);
-            
-            // Odmah računamo za 1 kartu
             izracunajUkupno();
         };
 
-        // Funkcija koja množi broj karata sa cenom
         function izracunajUkupno() {
             const brojKarata = parseInt(document.getElementById('unos-karata').value);
             const ukupnaCena = brojKarata * cenaPoKarti;
-            
             document.getElementById('prikaz-ukupno-dugme').innerText = ukupnaCena + " RSD";
         }
 
-        // Šta se dešava kad se klikne "POTVRDI REZERVACIJU"
+        // SLANJE PREKO EMAILJS
         document.getElementById('rezervacija-forma').addEventListener('submit', function(e) {
-            e.preventDefault(); // Sprečava da se stranica osveži
+            e.preventDefault();
             
-            // Ovde ćemo kasnije ubaciti EmailJS da zaista pošalje mail
-            // Za sada samo simuliramo uspeh i menjamo ekran!
-            
-            document.getElementById('forma-kontejner').style.display = 'none';
-            document.getElementById('poruka-uspeha').style.display = 'block';
+            const dugme = document.getElementById('dugme-potvrdi');
+            dugme.innerText = "SLANJE...";
+            dugme.disabled = true;
+
+            const templateParams = {
+                film: document.getElementById('prikaz-film').innerText,
+                dan: document.getElementById('prikaz-dan').innerText,
+                vreme: document.getElementById('prikaz-vreme').innerText,
+                broj_karata: document.getElementById('unos-karata').value,
+                ime_prezime: document.getElementById('unos-ime').value,
+                email_korisnika: document.getElementById('unos-email').value,
+                ukupna_cena: document.getElementById('prikaz-ukupno-dugme').innerText
+            };
+
+            emailjs.send('service_fdgv2gl', 'template_28hsk69', templateParams)
+                .then(function() {
+                    document.getElementById('forma-kontejner').style.display = 'none';
+                    document.getElementById('poruka-uspeha').style.display = 'block';
+                }, function(error) {
+                    alert("Greška pri slanju: " + JSON.stringify(error));
+                    dugme.innerText = "POKUŠAJ PONOVO";
+                    dugme.disabled = false;
+                });
         });
     </script>
 </body>
