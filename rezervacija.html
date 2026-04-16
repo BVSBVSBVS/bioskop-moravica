@@ -113,7 +113,7 @@
         </div>
     </footer>
 
-    <script>
+   <script>
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
 
         let cenaPoKarti = 0;
@@ -163,17 +163,26 @@
                 ukupna_cena: document.getElementById('prikaz-ukupno-dugme').innerText
             };
 
-            emailjs.send('service_fdgv2gl', 'template_28hsk69', templateParams)
+            // TRY-CATCH Blok - Ako pukne, izbaciće nam tačan razlog na ekran!
+            try {
+                // Ubacujemo Public Key direktno ovde, to zaobilazi sve bagove!
+                emailjs.send('service_fdgv2gl', 'template_28hsk69', templateParams, {
+                    publicKey: 'v7wK0oxykhrFsJ0Ss',
+                })
                 .then(function(response) {
-                    console.log('USPEH!', response.status, response.text);
                     document.getElementById('forma-kontejner').style.display = 'none';
                     document.getElementById('poruka-uspeha').style.display = 'block';
-                }, function(error) {
-                    console.log('GREŠKA...', error);
-                    alert("Greška pri slanju. Pokušajte ponovo.");
+                })
+                .catch(function(error) {
+                    alert("EmailJS je odbio slanje. Razlog: " + (error.text || error.message || JSON.stringify(error)));
                     dugme.innerText = "POKUŠAJ PONOVO";
                     dugme.disabled = false;
                 });
+            } catch(err) {
+                alert("Kod je pukao pre slanja: " + err.message);
+                dugme.innerText = "POKUŠAJ PONOVO";
+                dugme.disabled = false;
+            }
         });
     </script>
 </body>
