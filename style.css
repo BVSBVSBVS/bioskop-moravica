@@ -204,3 +204,39 @@ a { text-decoration: none; color: inherit; }
     background-color: #e08517; /* Malo tamnija narandžasta kad se pređe mišem */
     transform: scale(1.02);
 }
+/* DRUŠTVENE MREŽE - DUGMIĆI U FUTERU */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.social-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+    transform: translateX(5px); /* Mali efekat pomeranja udesno */
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
