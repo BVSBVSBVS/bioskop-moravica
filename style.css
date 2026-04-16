@@ -1,6 +1,6 @@
 :root {
     --bg-dark: #101214;
-    --bg-card: #171A1D;
+    --bg-card: #171A1D; /* Glavna siva pozadina */
     --accent: #F7931A;
     --text-main: #FFFFFF;
     --text-muted: #8A939B;
@@ -9,13 +9,14 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-text); line-height: 1.6; overflow-x: hidden; }
+/* STOPLJENA POZADINA U JEDNU SIVU BOJU */
+body { background-color: var(--bg-card); color: var(--text-main); font-family: var(--font-text); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
 /* === NAVIGACIJA I HAMBURGER === */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 5%; background-color: var(--bg-dark);
+    padding: 20px 5%; background-color: var(--bg-card);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 1000;
 }
 .nav-left { display: flex; align-items: center; gap: 15px; }
@@ -53,7 +54,7 @@ a { text-decoration: none; color: inherit; }
 
 /* === KARTICE I OSTALO === */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-.movie-card { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease; display: flex !important; flex-direction: column !important; height: 100% !important; }
+.movie-card { background-color: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease; display: flex !important; flex-direction: column !important; height: 100% !important; }
 .movie-card:hover { transform: scale(1.02); }
 .movie-card img { width: 100% !important; aspect-ratio: 2 / 3 !important; object-fit: cover !important; display: block !important; height: auto !important; }
 
@@ -66,7 +67,7 @@ a { text-decoration: none; color: inherit; }
 .service-card { background-color: var(--bg-card); border-radius: 12px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: 100%; }
 
 /* === FILTERI === */
-.filters-container { display: none; gap: 15px; margin-top: 20px; margin-bottom: 40px; background: var(--bg-card); padding: 20px; border-radius: 8px; flex-wrap: wrap; }
+.filters-container { display: none; gap: 15px; margin-top: 20px; margin-bottom: 40px; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; flex-wrap: wrap; }
 .filter-group { display: flex; flex-direction: column; flex: 1; min-width: 150px; }
 .filter-group label { font-size: 0.75rem; color: var(--accent); margin-bottom: 8px; font-weight: 700; text-transform: uppercase; }
 .filter-group select { appearance: none; -webkit-appearance: none; background-color: #1A1D21; color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 6px; font-family: var(--font-text); font-size: 0.95rem; outline: none; cursor: pointer; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F7931A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
@@ -82,7 +83,11 @@ a { text-decoration: none; color: inherit; }
 .btn-rezervisi { background-color: var(--accent); color: var(--bg-dark); padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 800; display: block; width: 100%; transition: transform 0.2s ease, background-color 0.3s ease; }
 .btn-rezervisi:hover { background-color: #e08517; transform: scale(1.02); }
 
-/* === FUTER - ČISTA SIVA KOCKA SA SENKOM === */
+/* =========================================
+   NOVI LEBDEĆI FUTER I GOOGLE KARTICA
+   ========================================= */
+
+/* FUTER - ČISTA SIVA KOCKA SA SENKOM */
 .footer {
     background-color: var(--bg-card); /* Čisto siva */
     margin: 40px 5% 40px 5%; /* Odvaja ga od ivica ekrana */
@@ -102,9 +107,8 @@ a { text-decoration: none; color: inherit; }
 .footer-col h4 { color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 1px; }
 .footer-col a, .footer-col p { display: block; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
 .footer-col a:hover { color: var(--text-main); }
-.footer-col.brand h2 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 20px; color: var(--text-main); }
 
-/* DRUŠTVENE MREŽE - SAVRŠENO CENTRIRANE */
+/* DRUŠTVENE MREŽE - SAVRŠENO IDENITIČNE */
 .social-buttons {
     display: flex;
     flex-direction: column;
@@ -117,7 +121,7 @@ a { text-decoration: none; color: inherit; }
     align-items: center; /* Savršeno poravnanje po Y osi unutar dugmeta */
     gap: 12px;
     background: rgba(255, 255, 255, 0.03); /* Vraćen "stari look" */
-    padding: 10px 16px; /* Identičan razmak gore i dole */
+    padding: 10px 16px; /* Identičan padding gore i dole */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     color: var(--text-muted);
@@ -132,7 +136,7 @@ a { text-decoration: none; color: inherit; }
     background-color: var(--accent);
     color: var(--bg-dark);
     border-color: var(--accent);
-    transform: translateY(-3px); /* Podiže se gore, umesto u stranu, lepše za centar */
+    transform: translateY(-3px); /* Podiže se gore, umesto u stranu */
 }
 
 /* Ikonice fiksirane da ne iskaču */
@@ -141,6 +145,57 @@ a { text-decoration: none; color: inherit; }
     height: 20px;
     fill: currentColor;
     flex-shrink: 0;
+}
+
+/* === GOOGLE RECENZIJE - IDENTIČAN LEBDEĆI LOOK === */
+.reviews-section {
+    padding: 80px 10%;
+}
+
+.reviews-container {
+    background-color: var(--bg-card); /* Čisto siva */
+    padding: 50px 40px;
+    border-radius: 16px; /* Blago oblo */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Tanak okvir */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Brutalna senka ispod */
+    text-align: center;
+}
+
+.reviews-container h2 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main); }
+.stars { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+.reviews-container p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto; font-size: 1rem; }
+
+/* SIVO GOOGLE DUGME SA NARANDŽASTIM TEKSTOM I SENKOM */
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03); /* Vraćen "stari look" */
+    color: var(--accent); /* Narandžasti tekst */
+    padding: 12px 24px;
+    border-radius: 8px; /* Oblo */
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Okvir */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Senka na dugmetu */
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn-google:hover {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+    transform: scale(1.02);
+}
+
+.btn-google svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
 
 /* === JEDNA ZAJEDNIČKA MOBILNA OPTIMIZACIJA === */
@@ -193,4 +248,13 @@ a { text-decoration: none; color: inherit; }
     .social-btn {
         justify-content: center; /* Gura tekst i ikonicu u sredinu samog dugmeta */
     }
+
+    /* GOOGLE KARTICA NA TELEFONU */
+    .reviews-section {
+        padding: 50px 5%;
+    }
+    .reviews-container {
+        padding: 40px 20px;
+    }
+    .reviews-container h2 { font-size: 1.8rem; }
 }
