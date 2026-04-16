@@ -137,13 +137,13 @@
         }
 
         // NAJSIGURNIJI METOD: Direktni API poziv bez tuđih skripti
+        // NAJSIGURNIJI METOD: Direktni API poziv (POPRAVLJEN BAG)
         document.getElementById('rezervacija-forma').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const dugme = document.getElementById('dugme-potvrdi');
-            dugme.innerText = "SLANJE...";
-            dugme.disabled = true;
 
+            // 1. PRVO POKUPIMO PODATKE DOK JE CENA JOŠ UVEK NA DUGMETU!
             const podaciZaSlanje = {
                 service_id: 'service_fdgv2gl',
                 template_id: 'template_28hsk69',
@@ -159,6 +159,11 @@
                 }
             };
 
+            // 2. TEK SADA MENJAMO TEKST U "SLANJE..."
+            dugme.innerText = "SLANJE...";
+            dugme.disabled = true;
+
+            // 3. ŠALJEMO MEJL
             fetch('https://api.emailjs.com/api/v1.0/email/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -178,6 +183,3 @@
                 dugme.disabled = false;
             });
         });
-    </script>
-</body>
-</html>
