@@ -204,39 +204,51 @@ a { text-decoration: none; color: inherit; }
     background-color: #e08517; /* Malo tamnija narandžasta kad se pređe mišem */
     transform: scale(1.02);
 }
-/* DRUŠTVENE MREŽE - DUGMIĆI U FUTERU */
+/* DRUŠTVENE MREŽE - DUGMIĆI U FUTERU (ČIST I PREMIUM IZGLED) */
 .social-buttons {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .social-btn {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px 16px;
-    border-radius: 8px;
-    color: var(--text-main);
+    background: transparent; /* Uklonjena kutija/pozadina */
+    padding: 0; /* Uklonjene debljine */
+    border: none; /* Uklonjene ivice */
+    color: var(--text-muted); /* Suptilnija boja da se uklopi sa tekstom iznad */
     text-decoration: none;
     transition: 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 500;
     width: fit-content;
 }
 
 .social-btn:hover {
-    background: var(--accent);
-    color: var(--bg-dark);
-    border-color: var(--accent);
-    transform: translateX(5px); /* Mali efekat pomeranja udesno */
+    color: var(--accent); /* Svetli narandžasto kad se pređe mišem */
+    transform: translateX(5px);
 }
 
 .social-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
+}
+
+/* CENTRIRANJE ZA TELEFONE */
+@media (max-width: 768px) {
+    .social-buttons {
+        align-items: center; /* Gura dugmiće tačno na sredinu */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .footer-col.brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
