@@ -166,15 +166,18 @@ a { text-decoration: none; color: inherit; }
     display: block !important;
     height: auto !important;
 }
-/* =========================================
-   DUGME ZA REZERVACIJU I CENA
-   ========================================= */
+/* Gasi staro pravilo za vreme */
+.card-content .times {
+    margin-top: 0 !important; 
+}
+
+/* OVO GURA CENU I DUGME U SAVRŠENU LINIJU NA DNO KARTICE */
 .rezervacija-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: auto !important; /* Glavni trik: Gura sve na dno! */
+    margin-bottom: 15px;
     padding-top: 15px;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
