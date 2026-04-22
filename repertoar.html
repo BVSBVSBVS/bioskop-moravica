@@ -21,7 +21,6 @@
         .trailer-link:hover {
             color: var(--accent);
         }
-        /* Prilagođavanje info boksa da prihvati 3 elementa (vreme, trejler, cena) */
         .rezervacija-info {
             display: flex;
             justify-content: space-between;
@@ -38,10 +37,12 @@
                 <span></span><span></span><span></span>
             </div>
             <a href="index.html" class="logo">
-                <div class="logo-text"><h2>MORAVICA</h2><p>BIOSKOP SOKOBANJA</p></div>
+                <img src="assets/tvoj-logo-beli.png" alt="Bioskop Moravica" style="height: 40px; width: auto; display: block;">
             </a>
         </div>
         
+        <img src="assets/levi-baner.jpg" class="nav-banner" alt="Reklama">
+
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">NASLOVNA</a></li>
             <li><a href="repertoar.html" style="color: var(--accent);">REPERTOAR</a></li>
@@ -50,13 +51,15 @@
             <li class="hamburger-only" style="margin-top: 20px;"><a href="ostalo.html" style="color: var(--accent);">OSTALO</a></li>
         </ul>
         
+        <img src="assets/desni-baner.jpg" class="nav-banner" alt="Reklama">
+
         <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
     </nav>
 
     <section style="padding: 80px 10%;">
         <div class="section-header">
             <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 16.04. do Srede 22.04.2026. Kliknite na '▶ Trejler' da pogledate najavu filma.</p>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 23.04. do Srede 29.04.2026. Kliknite na '▶ Trejler' da pogledate najavu filma.</p>
             <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
         </div>
 
@@ -66,8 +69,10 @@
                 <select id="filter-dan" onchange="primeniFiltere()">
                     <option value="sve">Svi dani</option>
                     <option value="cetvrtak">Četvrtak</option>
+                    <option value="petak">Petak</option>
                     <option value="subota">Subota</option>
                     <option value="nedelja">Nedelja</option>
+                    <option value="ponedeljak">Ponedeljak</option>
                     <option value="utorak">Utorak</option>
                     <option value="sreda">Sreda</option>
                 </select>
@@ -83,6 +88,8 @@
                     <option value="mumija">Mumija - Film Lija Kronina</option>
                     <option value="svadba">Svadba</option>
                     <option value="gospodar">Gospodar oluje</option>
+                    <option value="david">David</option>
+                    <option value="majkl">Majkl</option>
                 </select>
             </div>
             <div class="filter-group">
@@ -96,254 +103,274 @@
             </div>
         </div>
 
-        <div id="repertoire-list" style="margin-top: 40px;">
+        <div class="layout-sa-reklamom" style="margin-top: 40px;">
             
-            <div class="day-group" id="grupa-cetvrtak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 16.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="cetvrtak" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">2D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom i predstavlja nastavak bioskopskog spektakla.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
+            <div id="repertoire-list">
+                
+                <div class="day-group" id="grupa-cetvrtak">
+                    <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 23.04.2026</h3>
+                    <div class="movie-grid">
+                        <div class="movie-card" data-dan="cetvrtak" data-film="mario" data-vreme="16:30">
+                            <img src="assets/mario.jpg" alt="Super Mario">
+                            <div class="card-content">
+                                <span class="genre">2D • SINH</span>
+                                <h3>Super Mario Galaktički film</h3>
+                                <p>Animirana avantura inspirisana Super Mario Bros. svetom i predstavlja nastavak bioskopskog spektakla.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>16:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
                             </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
                         </div>
-                    </div>
-                    <div class="movie-card" data-dan="cetvrtak" data-film="drvo" data-vreme="18:30">
-                        <img src="assets/drvo.jpg" alt="Magično drvo">
-                        <div class="card-content">
-                            <span class="genre">SINH • PREMIJERA</span>
-                            <h3>Magično daleko drvo</h3>
-                            <p>Prati modernu porodicu koja se seli u englesko selo gde deca otkrivaju magično drvo.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=mg1xopCAzg8" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
+                        <div class="movie-card" data-dan="cetvrtak" data-film="drvo" data-vreme="18:30">
+                            <img src="assets/drvo.jpg" alt="Magično drvo">
+                            <div class="card-content">
+                                <span class="genre">SINH</span>
+                                <h3>Magično daleko drvo</h3>
+                                <p>Prati modernu porodicu koja se seli u englesko selo gde deca otkrivaju magično drvo.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>18:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=mg1xopCAzg8" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
                             </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
                         </div>
-                    </div>
-                    <div class="movie-card" data-dan="cetvrtak" data-film="srce" data-vreme="20:30">
-                        <img src="assets/srce.jpg" alt="Sportsko srce">
-                        <div class="card-content">
-                            <span class="genre">DOMAĆI FILM</span>
-                            <h3>Sportsko srce</h3>
-                            <p>Topla komedija o sudaru dva nespojiva sveta kada mlada Maja odluči da spoji svog verenika Beograđanina, sa ocem.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=tgV6t0fypM8" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
+                        <div class="movie-card" data-dan="cetvrtak" data-film="mumija" data-vreme="20:30">
+                            <img src="assets/mumija.jpg" alt="Mumija">
+                            <div class="card-content">
+                                <span class="genre">HOROR</span>
+                                <h3>Mumija - Lija Kronina</h3>
+                                <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>20:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=3iRcrBAOywo" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
                             </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="day-group" id="grupa-petak">
+                    <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 24.04.2026</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
+                </div>
+
+                <div class="day-group" id="grupa-subota">
+                    <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 25.04.2026</h3>
+                    <div class="movie-grid">
+                        <div class="movie-card" data-dan="subota" data-film="david" data-vreme="16:30">
+                            <img src="assets/david.jpg" alt="David">
+                            <div class="card-content">
+                                <span class="genre">SINH • PREMIJERA</span>
+                                <h3>David</h3>
+                                <p>Od pesama majčinog srca do Božje milosti, Davidova priča počinje u skromnosti. Kada se div Golijat uzdigne, mladi pastir naoružan samo praćkom staje u obranu svog naroda.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>16:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=C01EzG_IQCk" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">390 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="subota" data-film="mario" data-vreme="18:30">
+                            <img src="assets/mario.jpg" alt="Super Mario">
+                            <div class="card-content">
+                                <span class="genre">3D • SINH</span>
+                                <h3>Super Mario Galaktički film</h3>
+                                <p>Animirana avantura inspirisana Super Mario Bros. svetom i predstavlja nastavak bioskopskog spektakla.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>18:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">490 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="subota" data-film="majkl" data-vreme="20:30">
+                            <img src="assets/majkl.jpg" alt="Majkl">
+                            <div class="card-content">
+                                <span class="genre">PREMIJERA</span>
+                                <h3>Majkl</h3>
+                                <p>Film prikazuje život Majkla Džeksona izvan muzike, prateći njegov put od otkrivanja talenta kao vođe grupe Džekson 5, do vizionarskog umetnika i najvećeg izvođača na svetu.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>20:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=DjWRBjDL6HA" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">390 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-group" id="grupa-nedelja">
+                    <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 26.04.2026</h3>
+                    <div class="movie-grid">
+                        <div class="movie-card" data-dan="nedelja" data-film="finik" data-vreme="16:30">
+                            <img src="assets/finik.jpg" alt="Finikove avanture 2">
+                            <div class="card-content">
+                                <span class="genre">SINH</span>
+                                <h3>Finikove avanture 2</h3>
+                                <p>Kada Finik postane vidljiv zbog drevne magije, lovac na čudovišta kreće da ga uhvati.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>16:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=81udkygQHpI" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">390 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="nedelja" data-film="mario" data-vreme="18:30">
+                            <img src="assets/mario.jpg" alt="Super Mario">
+                            <div class="card-content">
+                                <span class="genre">2D • SINH</span>
+                                <h3>Super Mario Galaktički film</h3>
+                                <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>18:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">390 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="nedelja" data-film="svadba" data-vreme="20:30">
+                            <img src="assets/svadba.jpg" alt="Svadba">
+                            <div class="card-content">
+                                <span class="genre">KOMEDIJA</span>
+                                <h3>Svadba</h3>
+                                <p>Hrvatski privrednik pred bankrotom saznaje da mu je ćerka trudna sa sinom srpskog ministra.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>20:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=Ofs6Ow-3Hwg" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">390 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-group" id="grupa-ponedeljak">
+                    <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 27.04.2026</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
+                </div>
+
+                <div class="day-group" id="grupa-utorak">
+                    <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 28.04.2026</h3>
+                    <div class="movie-grid">
+                        <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="16:30">
+                            <img src="assets/mario.jpg" alt="Super Mario">
+                            <div class="card-content">
+                                <span class="genre">3D • SINH</span>
+                                <h3>Super Mario Galaktički film</h3>
+                                <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>16:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">470 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="utorak" data-film="drvo" data-vreme="18:30">
+                            <img src="assets/drvo.jpg" alt="Magično drvo">
+                            <div class="card-content">
+                                <span class="genre">SINH</span>
+                                <h3>Magično daleko drvo</h3>
+                                <p>Zasnovan na omiljenom serijalu za decu. Prati modernu porodicu.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>18:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=mg1xopCAzg8" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="utorak" data-film="majkl" data-vreme="20:30">
+                            <img src="assets/majkl.jpg" alt="Majkl">
+                            <div class="card-content">
+                                <span class="genre">BIOGRAFSKI</span>
+                                <h3>Majkl</h3>
+                                <p>Film prikazuje život Majkla Džeksona izvan muzike, prateći njegov put od otkrivanja talenta kao vođe grupe Džekson 5, do vizionarskog umetnika i najvećeg izvođača na svetu.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>20:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=DjWRBjDL6HA" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-group" id="grupa-sreda">
+                    <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 29.04.2026</h3>
+                    <div class="movie-grid">
+                        <div class="movie-card" data-dan="sreda" data-film="finik" data-vreme="16:30">
+                            <img src="assets/finik.jpg" alt="Finikove avanture 2">
+                            <div class="card-content">
+                                <span class="genre">SINH</span>
+                                <h3>Finikove avanture 2</h3>
+                                <p>Kada Finik postane vidljiv zbog drevne magije, lovac na čudovišta kreće da ga uhvati.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>16:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=81udkygQHpI" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="sreda" data-film="david" data-vreme="18:30">
+                            <img src="assets/david.jpg" alt="David">
+                            <div class="card-content">
+                                <span class="genre">SINH</span>
+                                <h3>David</h3>
+                                <p>Od pesama majčinog srca do Božje milosti, Davidova priča počinje u skromnosti. Kada se div Golijat uzdigne, mladi pastir naoružan samo praćkom staje u obranu svog naroda.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>18:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=C01EzG_IQCk" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                        <div class="movie-card" data-dan="sreda" data-film="mumija" data-vreme="20:30">
+                            <img src="assets/mumija.jpg" alt="Mumija">
+                            <div class="card-content">
+                                <span class="genre">HOROR</span>
+                                <h3>Mumija - Lija Kronina</h3>
+                                <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
+                                <div class="rezervacija-info">
+                                    <div class="times"><span>20:30</span></div>
+                                    <a href="https://www.youtube.com/watch?v=3iRcrBAOywo" target="_blank" class="trailer-link">▶ Trejler</a>
+                                    <div class="cena">370 RSD</div>
+                                </div>
+                                <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="day-group" id="grupa-subota">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 18.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="subota" data-film="finik" data-vreme="16:30">
-                        <img src="assets/finik.jpg" alt="Finikove avanture">
-                        <div class="card-content">
-                            <span class="genre">SINH • PREMIJERA</span>
-                            <h3>Finikove avanture 2</h3>
-                            <p>Kada Finik postane vidljiv zbog drevne magije, lovac na čudovišta kreće da ga uhvati.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=81udkygQHpI" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="subota" data-film="mario" data-vreme="18:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">3D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom i predstavlja nastavak bioskopskog spektakla.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">500 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="subota" data-film="mumija" data-vreme="20:30">
-                        <img src="assets/mumija.jpg" alt="Mumija">
-                        <div class="card-content">
-                            <span class="genre">PREMIJERA</span>
-                            <h3>Mumija - Lija Kronina</h3>
-                            <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=3iRcrBAOywo" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-nedelja">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 19.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="nedelja" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">2D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="svadba" data-vreme="18:30">
-                        <img src="assets/svadba.jpg" alt="Svadba">
-                        <div class="card-content">
-                            <span class="genre">KOMEDIJA</span>
-                            <h3>Svadba</h3>
-                            <p>Hrvatski privrednik pred bankrotom saznaje da mu je ćerka trudna sa sinom srpskog ministra.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=Ofs6Ow-3Hwg" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="gospodar" data-vreme="20:30">
-                        <img src="assets/gospodar.jpg" alt="Gospodar oluje">
-                        <div class="card-content">
-                            <span class="genre">AKCIJA</span>
-                            <h3>Gospodar oluje</h3>
-                            <p>Tri veka nakon Velikog potopa, jedina nada za bezbednost nalazi se u utvrđenoj gradskoj državi Argos.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=lNuvXtYOfh0" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-utorak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 21.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">3D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">500 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="utorak" data-film="drvo" data-vreme="18:30">
-                        <img src="assets/drvo.jpg" alt="Magično drvo">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>Magično daleko drvo</h3>
-                            <p>Zasnovan na omiljenom serijalu za decu. Prati modernu porodicu.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=mg1xopCAzg8" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="utorak" data-film="mumija" data-vreme="20:30">
-                        <img src="assets/mumija.jpg" alt="Mumija">
-                        <div class="card-content">
-                            <span class="genre">HOROR</span>
-                            <h3>Mumija - Lija Kronina</h3>
-                            <p>Mlada ćerka jednog novinara nestaje u pustinji.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=3iRcrBAOywo" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-sreda">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 22.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="sreda" data-film="finik" data-vreme="16:30">
-                        <img src="assets/finik.jpg" alt="Finikove avanture">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>Finikove avanture 2</h3>
-                            <p>Kada Finik postane vidljiv zbog drevne magije, lovac na čudovišta kreće da ga uhvati.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=81udkygQHpI" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda" data-film="mario" data-vreme="18:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">2D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda" data-film="srce" data-vreme="20:30">
-                        <img src="assets/srce.jpg" alt="Sportsko srce">
-                        <div class="card-content">
-                            <span class="genre">DOMAĆI FILM</span>
-                            <h3>Sportsko srce</h3>
-                            <p>Topla komedija o sudaru dva nespojiva sveta kada mlada Maja.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <a href="https://www.youtube.com/watch?v=tgV6t0fypM8" target="_blank" class="trailer-link">▶ Trejler</a>
-                                <div class="cena">400 RSD</div>
-                            </div>
-                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <aside class="sidebar-reklama">
+                <h4 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 10px;">USKORO</h4>
+                <a href="uskoro.html"><img src="assets/majkl.jpg" alt="Majkl Poster" class="poster-reklama"></a>
+                <a href="uskoro.html"><img src="assets/david.jpg" alt="David Poster" class="poster-reklama"></a>
+            </aside>
 
         </div>
     </section>
 
-  <footer class="footer">
+    <footer class="footer">
         <div class="footer-grid">
-        <div class="footer-col brand">
+            <div class="footer-col brand">
                 <div class="social-buttons">
                     <a href="https://www.instagram.com/bioskop_moravica/" target="_blank" class="social-btn">
                         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -355,31 +382,13 @@
                     </a>
                 </div>
             </div>
-            
-            <div class="footer-col links">
-                <h4>NAVIGACIJA</h4>
-                <a href="index.html">Naslovna</a>
-                <a href="repertoar.html">Repertoar</a>
-                <a href="uskoro.html">Uskoro</a>
-            </div>
-            
-            <div class="footer-col contact">
-                <h4>KONTAKT</h4>
-                <p>📍 Alekse Markišića 40</p>
-                <p>📞 064 8279 721</p>
-                <p>✉️ mmm.cinema.2023@gmail.com</p>
-            </div>
-            
-            <div class="footer-col hours">
-                <h4>RADNO VREME</h4>
-                <p>Uto - Ned: 16:00 - 21:00</p>
-                <p>Pon i Pet: Zatvoreno</p>
-            </div>
+            <div class="footer-col links"><h4>NAVIGACIJA</h4><a href="index.html">Naslovna</a><a href="repertoar.html">Repertoar</a><a href="uskoro.html">Uskoro</a></div>
+            <div class="footer-col contact"><h4>KONTAKT</h4><p>📍 Alekse Markišića 40</p><p>📞 064 8279 721</p><p>✉️ mmm.cinema.2023@gmail.com</p></div>
+            <div class="footer-col hours"><h4>RADNO VREME</h4><p>Uto - Ned: 16:00 - 21:00</p><p>Pon i Pet: Zatvoreno</p></div>
         </div>
     </footer>
 
-   <script>
-        // 1. Skripta za otvaranje i zatvaranje boxa sa filterima
+    <script>
         function toggleFilteri() {
             var box = document.getElementById("filterBox");
             if (box.style.display === "none" || box.style.display === "") {
@@ -391,7 +400,6 @@
             }
         }
 
-        // 2. Skripta za filtriranje
         function primeniFiltere() {
             const izabranDan = document.getElementById('filter-dan').value;
             const izabranFilm = document.getElementById('filter-film').value;
@@ -419,12 +427,10 @@
             });
         }
 
-        // 3. Za otvaranje hamburger menija na telefonu
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("active");
         }
 
-        // 4. Skripta koja zaključava dugmiće i sprečava Error 404
         document.querySelectorAll('.btn-rezervisi').forEach(dugme => {
             dugme.addEventListener('click', function(e) {
                 e.preventDefault(); 
