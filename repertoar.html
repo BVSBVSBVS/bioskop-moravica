@@ -18,7 +18,7 @@
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </div>
-            <a href="index.html" class="logo" style="display: flex; align-items: center;">
+            <a href="index.html" class="logo">
                 <img src="assets/tvoj-logo-beli.png" alt="Bioskop Moravica" style="height: 45px; width: auto; display: block;">
             </a>
         </div>
@@ -72,6 +72,15 @@
                     <option value="majkl">Majkl</option>
                     <option value="finik">Finikove avanture 2</option>
                     <option value="svadba">Svadba</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Izaberi Vreme</label>
+                <select id="filter-vreme" onchange="primeniFiltere()">
+                    <option value="sve">Sva vremena</option>
+                    <option value="16:30">16:30</option>
+                    <option value="18:30">18:30</option>
+                    <option value="20:30">20:30</option>
                 </select>
             </div>
         </div>
@@ -352,10 +361,62 @@
     </footer>
 
     <script>
-        function toggleFilteri() { var box = document.getElementById("filterBox"); if (box.style.display === "none" || box.style.display === "") { box.style.display = "flex"; document.getElementById("filterBtn").innerHTML = "❌ Zatvori Filtere"; } else { box.style.display = "none"; document.getElementById("filterBtn").innerHTML = "⚙️ Prikaži Filtere"; } }
-        function primeniFiltere() { const izabranDan = document.getElementById('filter-dan').value; const izabranFilm = document.getElementById('filter-film').value; const izabranoVreme = document.getElementById('filter-vreme').value; const kartice = document.querySelectorAll('.movie-card'); kartice.forEach(kartica => { const danKartice = kartica.getAttribute('data-dan'); const filmKartice = kartica.getAttribute('data-film'); const vremeKartice = kartica.getAttribute('data-vreme'); let prikazi = true; if (izabranDan !== 'sve' && danKartice !== izabranDan) prikazi = false; if (izabranFilm !== 'sve' && filmKartice !== izabranFilm) prikazi = false; if (izabranoVreme !== 'sve' && vremeKartice !== izabranoVreme) prikazi = false; if (prikazi) kartica.style.display = 'block'; else kartica.style.display = 'none'; }); document.querySelectorAll('.day-group').forEach(grupa => { const vidljiveKartice = grupa.querySelectorAll('.movie-card[style="display: block;"], .movie-card:not([style="display: none;"])'); if (vidljiveKartice.length > 0) grupa.style.display = 'block'; else grupa.style.display = 'none'; }); }
-        function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
-        document.querySelectorAll('.btn-rezervisi').forEach(dugme => { dugme.addEventListener('click', function(e) { e.preventDefault(); alert("Sistem za online rezervacije je u pripremi i biće uskoro dostupan! Za sada, molimo vas da karte rezervišete pozivom na broj blagajne: 064 8279 721."); }); });
+        function toggleFilteri() { 
+            var box = document.getElementById("filterBox"); 
+            if (box.style.display === "none" || box.style.display === "") { 
+                box.style.display = "flex"; 
+                document.getElementById("filterBtn").innerHTML = "❌ Zatvori Filtere"; 
+            } else { 
+                box.style.display = "none"; 
+                document.getElementById("filterBtn").innerHTML = "⚙️ Prikaži Filtere"; 
+            } 
+        }
+
+        // NOVI, POPRAVLJENI FILTER (PALI I GASI KARTICE NA SILU)
+        function primeniFiltere() { 
+            const izabranDan = document.getElementById('filter-dan').value; 
+            const izabranFilm = document.getElementById('filter-film').value; 
+            const izabranoVreme = document.getElementById('filter-vreme').value; 
+            const kartice = document.querySelectorAll('.movie-card'); 
+
+            kartice.forEach(kartica => { 
+                const danKartice = kartica.getAttribute('data-dan'); 
+                const filmKartice = kartica.getAttribute('data-film'); 
+                const vremeKartice = kartica.getAttribute('data-vreme'); 
+                let prikazi = true; 
+                
+                if (izabranDan !== 'sve' && danKartice !== izabranDan) prikazi = false; 
+                if (izabranFilm !== 'sve' && filmKartice !== izabranFilm) prikazi = false; 
+                if (izabranoVreme !== 'sve' && vremeKartice !== izabranoVreme) prikazi = false; 
+                
+                if (prikazi) {
+                    kartica.style.setProperty('display', 'flex', 'important');
+                } else {
+                    kartica.style.setProperty('display', 'none', 'important');
+                }
+            }); 
+
+            // Skrivanje celih dana ako nemaju filmova u sebi
+            document.querySelectorAll('.day-group').forEach(grupa => { 
+                const vidljiveKartice = grupa.querySelectorAll('.movie-card[style*="display: flex"]'); 
+                if (vidljiveKartice.length > 0) {
+                    grupa.style.setProperty('display', 'block', 'important');
+                } else {
+                    grupa.style.setProperty('display', 'none', 'important');
+                }
+            }); 
+        }
+
+        function toggleMenu() { 
+            document.getElementById("navLinks").classList.toggle("active"); 
+        }
+        
+        document.querySelectorAll('.btn-rezervisi').forEach(dugme => { 
+            dugme.addEventListener('click', function(e) { 
+                e.preventDefault(); 
+                alert("Sistem za online rezervacije je u pripremi i biće uskoro dostupan! Za sada, molimo vas da karte rezervišete pozivom na broj blagajne: 064 8279 721."); 
+            }); 
+        });
     </script>
 </body>
 </html>
