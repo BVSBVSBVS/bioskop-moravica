@@ -350,3 +350,35 @@ a { text-decoration: none; color: inherit; }
         text-align: center;
     }
 }
+/* === PRADA BANER (Desktop vs Mobile) === */
+.desktop-prada-banner {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+.desktop-prada-banner:hover {
+    transform: scale(1.02);
+}
+.desktop-prada-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (min-width: 801px) {
+    .spotlight-box { display: none !important; } /* Na kompu gasi mali boks */
+}
+@media (max-width: 800px) {
+    .desktop-prada-banner { display: none !important; } /* Na telefonu gasi veliki baner */
+    .spotlight-box { display: flex !important; flex-direction: column; text-align: center; }
+}
+
+/* Fix za slomljene slike u navigaciji */
+img.nav-banner {
+    display: none; /* Sakriveno dok ne ubaciš prave slike sa tačnim imenom */
+}
