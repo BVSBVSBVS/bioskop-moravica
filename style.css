@@ -16,7 +16,8 @@ a { text-decoration: none; color: inherit; }
 /* === NAVIGACIJA I HAMBURGER === */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; background-color: var(--bg-card);
+    padding: 10px 5%; /* Malo smanjen padding da napravi mesto za veći logo */
+    background-color: var(--bg-card);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 1000;
 }
 .nav-left { display: flex; align-items: center; gap: 15px; }
@@ -26,13 +27,14 @@ a { text-decoration: none; color: inherit; }
 .logo { display: block; cursor: pointer; z-index: 2000; text-decoration: none; }
 .logo-text { display: none !important; }
 
-/* === OGROMAN LOGO NA KOMPJUTERU === */
+/* === EKSTREMNO VELIK LOGO NA KOMPJUTERU === */
 .logo img { 
-    height: 110px !important; /* Povećano sa 80px na masivnih 110px */
+    height: 160px !important; /* Ekstremno povećano */
     width: auto; 
     display: block; 
     object-fit: contain;
     transition: 0.3s ease;
+    margin: -20px 0; /* Gura logo malo van granica navbar-a da izgleda bolje */
 }
 
 /* === LINKOVI CENTRIRANI U SREDINI === */
@@ -175,14 +177,17 @@ a { text-decoration: none; color: inherit; }
 .footer-col h4 { color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 1px; }
 .footer-col a, .footer-col p { display: block; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
 .footer-col a:hover { color: var(--text-main); }
+
+/* FUTER LOGO */
 .footer-col.brand h2 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 20px; color: var(--text-main); }
-.footer-col.brand img { height: 60px !important; width: auto; margin-bottom: 15px; }
+.footer-col.brand img { height: 80px !important; width: auto; margin-bottom: 15px; }
 
 .social-buttons { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
 .social-btn { display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.03); padding: 10px 16px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 0.9rem; font-weight: 500; width: 200px; }
 .social-btn:hover { background-color: var(--accent); color: var(--bg-dark); border-color: var(--accent); transform: translateY(-3px); }
 .social-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
+/* GOOGLE RECENZIJE */
 .reviews-section { padding: 80px 10%; }
 .reviews-container { background-color: var(--bg-card); padding: 50px 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); text-align: center; }
 .reviews-container h2 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main); }
@@ -212,21 +217,25 @@ a { text-decoration: none; color: inherit; }
     .nav-banner { 
         display: block !important; 
         height: auto; 
-        max-height: 45px; /* Smanjeno da komotno stane */
+        max-height: 45px; 
         width: auto; 
-        max-width: 40vw; /* Da ne gura previše */
+        max-width: 40vw; 
         margin: 0; 
     }
     
-    /* Manji logo na telefonu da oboje komotno stane */
+    /* Logo masivan i na telefonu */
     .logo img {
-        height: 50px !important; 
+        height: 90px !important; /* Povećano na fonu */
+        margin: -10px 0; /* Centriranje logoa */
     }
 
     .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
     .nav-links.active { left: 0; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
+    
+    /* Na mobilnom vraćamo grupu na staro ponašanje da ne lomi meni */
+    .nav-right-group { gap: 10px; }
     
     .hero { padding: 80px 5%; text-align: center; align-items: center; background-position: center; }
     .hero h1 { font-size: 2.8rem; }
