@@ -27,8 +27,8 @@ a { text-decoration: none; color: inherit; }
 .logo-text h2 { font-family: var(--font-heading); font-size: 1.2rem; }
 .logo-text p { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 2px; }
 
-/* Ako se koristi slika kao logo */
-.logo img { height: 45px; width: auto; display: block; }
+/* Logo slika kompjuter */
+.logo img { height: 45px; width: auto; display: block; transition: 0.3s ease; }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); transition: 0.3s; }
@@ -37,7 +37,7 @@ a { text-decoration: none; color: inherit; }
 
 /* === BANERI U NAVIGACIJI === */
 .nav-banner {
-    height: 60px; 
+    height: 55px; /* Baner ide u širinu */
     width: auto;
     max-width: 30vw; 
     object-fit: contain;
@@ -47,9 +47,6 @@ a { text-decoration: none; color: inherit; }
 }
 .nav-banner:hover {
     transform: scale(1.05);
-}
-@media (max-width: 1050px) {
-    .nav-banner { display: none !important; }
 }
 
 /* === DUGMAD === */
@@ -120,7 +117,6 @@ a { text-decoration: none; color: inherit; }
 .card-content h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 5px; }
 .card-content p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.4; }
 .genre { font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;}
-
 .card-content .times { margin-top: auto !important; }
 .times span { background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); margin-right: 5px;}
 .service-card { background-color: var(--bg-card); border-radius: 12px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: 100%; }
@@ -132,11 +128,11 @@ a { text-decoration: none; color: inherit; }
 .filter-group select { appearance: none; -webkit-appearance: none; background-color: #1A1D21; color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 6px; font-family: var(--font-text); font-size: 0.95rem; outline: none; cursor: pointer; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F7931A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
 .filter-group select option { background-color: #1A1D21; color: #fff; }
 
-/* === MAPE (FIX ZA MAPU - Da ivice budu savršeno oble) === */
+/* === MAPE === */
 .map-container { width: 100%; height: 400px !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.1) !important; display: flex !important; }
 .map-container iframe { width: 100% !important; height: 100% !important; border: none !important; display: block !important; }
 
-/* === REZERVACIJA DUGME (OVO GURA CENU I DUGME U SAVRŠENU LINIJU NA DNO KARTICE) === */
+/* === REZERVACIJA DUGME === */
 .rezervacija-info { display: flex; justify-content: space-between; align-items: center; margin-top: auto !important; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
 .cena { font-weight: 800; color: var(--accent); font-size: 1.1rem; }
 .btn-rezervisi { background-color: var(--accent); color: var(--bg-dark); padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 800; display: block; width: 100%; transition: transform 0.2s ease, background-color 0.3s ease; }
@@ -162,7 +158,6 @@ a { text-decoration: none; color: inherit; }
 .social-btn:hover { background-color: var(--accent); color: var(--bg-dark); border-color: var(--accent); transform: translateY(-3px); }
 .social-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
-/* GOOGLE RECENZIJE */
 .reviews-section { padding: 80px 10%; }
 .reviews-container { background-color: var(--bg-card); padding: 50px 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); text-align: center; }
 .reviews-container h2 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main); }
@@ -179,19 +174,31 @@ a { text-decoration: none; color: inherit; }
 .cena-tabela th { background: rgba(247, 147, 26, 0.1); color: var(--accent); text-transform: uppercase; font-size: 0.8rem; }
 .cena-tabela tr:last-child td { border-bottom: none; }
 
-/* === KLJUČNO ZA POPRAVKU JS FILTERA === */
+/* KLJUČNO ZA POPRAVKU JS FILTERA */
 .skriveno { display: none !important; }
 
 /* === ZAJEDNIČKA MOBILNA OPTIMIZACIJA === */
 @media (max-width: 800px) {
     .hamburger { display: flex; }
-    .navbar { padding: 15px 5%; }
     
-    .nav-links {
-        position: fixed; top: 0; left: -100%; width: 250px; height: 100vh;
-        background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
-        transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+    /* Dodato gap: 15px da se logo ne zalepi za ivicu */
+    .navbar { padding: 15px 5%; gap: 15px; }
+    
+    /* Gura baner da stane i da se ne preklapa sa logoom */
+    .nav-banner { 
+        display: block !important; 
+        height: auto; 
+        max-height: 40px; /* Smanjeno da komotno stane */
+        width: auto; 
+        max-width: 40vw; /* Da ne gura previše */
+        margin: 0 5px; 
     }
+    
+    .logo img {
+        height: 30px; /* Malo smanjen logo na fonu da oboje stane */
+    }
+
+    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
     .nav-links.active { left: 0; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
