@@ -9,6 +9,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 /* STOPLJENA POZADINA U JEDNU SIVU BOJU */
 body { background-color: var(--bg-card); color: var(--text-main); font-family: var(--font-text); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
@@ -23,14 +24,34 @@ a { text-decoration: none; color: inherit; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2000; }
 .hamburger span { width: 25px; height: 3px; background-color: var(--text-main); border-radius: 2px; transition: 0.3s; }
 
+/* TVOJ ORIGINALNI KOD ZA LOGO KADA JE BIO TEKST */
 .logo { display: block; cursor: pointer; z-index: 2000; }
 .logo-text h2 { font-family: var(--font-heading); font-size: 1.2rem; }
 .logo-text p { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 2px; }
+
+/* AKO KORISTIŠ SLIKU ZA LOGO, OVAJ KOD JE ZA NJU (Ako si ubacio sliku u nav-left) */
+.logo img { height: 45px; width: auto; display: block; }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); transition: 0.3s; }
 .nav-links a:hover { color: var(--text-main); }
 .hamburger-only { display: none; }
+
+/* === BANERI U NAVIGACIJI === */
+.nav-banner {
+    height: 35px;
+    width: auto;
+    border-radius: 4px;
+    margin: 0 20px;
+    transition: transform 0.2s ease;
+}
+.nav-banner:hover {
+    transform: scale(1.05);
+}
+/* Na mobilnom sakrivamo banere da ne guše meni */
+@media (max-width: 1050px) {
+    .nav-banner { display: none !important; }
+}
 
 /* === DUGMAD === */
 .btn-outline { border: 1px solid var(--accent); padding: 12px 24px; border-radius: 6px; color: var(--accent); font-weight: 700; font-size: 0.85rem; transition: 0.3s; cursor: pointer; display: inline-block;}
@@ -54,11 +75,36 @@ a { text-decoration: none; color: inherit; }
 
 /* === KARTICE I OSTALO === */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-.movie-card { background-color: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease; display: flex !important; flex-direction: column !important; height: 100% !important; }
-.movie-card:hover { transform: scale(1.02); }
-.movie-card img { width: 100% !important; aspect-ratio: 2 / 3 !important; object-fit: cover !important; display: block !important; height: auto !important; }
 
-.card-content { padding: 15px 20px 20px 20px; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+/* FIX ZA ISTE KARTICE (Svi boksovi ista visina) */
+.movie-card { 
+    background-color: rgba(255,255,255,0.03); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    transition: transform 0.3s ease; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    height: 100% !important; 
+}
+.movie-card:hover { transform: scale(1.02); }
+
+/* FIX ZA SLIKE (Sve u milimetar iste visine) */
+.movie-card img { 
+    width: 100% !important; 
+    aspect-ratio: 2 / 3 !important; 
+    object-fit: cover !important; 
+    display: block !important; 
+    height: auto !important; 
+}
+
+/* Gura vreme/žanr na samo dno kartice da bi sve bile u ravni */
+.card-content { 
+    padding: 15px 20px 20px 20px; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    flex-grow: 1 !important; 
+}
 .card-content h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 5px; }
 .card-content p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.4; }
 .genre { font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;}
@@ -73,19 +119,17 @@ a { text-decoration: none; color: inherit; }
 .filter-group select { appearance: none; -webkit-appearance: none; background-color: #1A1D21; color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 6px; font-family: var(--font-text); font-size: 0.95rem; outline: none; cursor: pointer; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F7931A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
 .filter-group select option { background-color: #1A1D21; color: #fff; }
 
-/* === MAPE === */
+/* === MAPE (FIX ZA MAPU - Da ivice budu savršeno oble) === */
 .map-container { width: 100%; height: 400px !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.1) !important; display: flex !important; }
 .map-container iframe { width: 100% !important; height: 100% !important; border: none !important; display: block !important; }
 
-/* === REZERVACIJA DUGME === */
+/* === REZERVACIJA DUGME (OVO GURA CENU I DUGME U SAVRŠENU LINIJU NA DNO KARTICE) === */
 .rezervacija-info { display: flex; justify-content: space-between; align-items: center; margin-top: auto !important; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
 .cena { font-weight: 800; color: var(--accent); font-size: 1.1rem; }
 .btn-rezervisi { background-color: var(--accent); color: var(--bg-dark); padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 800; display: block; width: 100%; transition: transform 0.2s ease, background-color 0.3s ease; }
 .btn-rezervisi:hover { background-color: #e08517; transform: scale(1.02); }
 
-/* =========================================
-   NOVI LEBDEĆI FUTER I GOOGLE KARTICA
-   ========================================= */
+/* === NOVI LEBDEĆI FUTER I GOOGLE KARTICA === */
 
 /* FUTER - ČISTA SIVA KOCKA SA SENKOM */
 .footer {
@@ -107,8 +151,9 @@ a { text-decoration: none; color: inherit; }
 .footer-col h4 { color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 1px; }
 .footer-col a, .footer-col p { display: block; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
 .footer-col a:hover { color: var(--text-main); }
+.footer-col.brand h2 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 20px; color: var(--text-main); }
 
-/* DRUŠTVENE MREŽE - SAVRŠENO IDENITIČNE */
+/* DRUŠTVENE MREŽE - SAVRŠENO IDENITIČNE I CENTRIRANE */
 .social-buttons {
     display: flex;
     flex-direction: column;
@@ -147,7 +192,7 @@ a { text-decoration: none; color: inherit; }
     flex-shrink: 0;
 }
 
-/* === GOOGLE RECENZIJE - IDENTIČAN LEBDEĆI LOOK === */
+/* GOOGLE RECENZIJE - IDENTIČAN LEBDEĆI LOOK */
 .reviews-section {
     padding: 80px 10%;
 }
@@ -198,19 +243,7 @@ a { text-decoration: none; color: inherit; }
     fill: currentColor;
 }
 
-/* === DODACI ZA KLIJENTA: KLIJENTSKE IZMENE === */
-
-/* Baneri u navigaciji */
-.nav-banner {
-    height: 35px;
-    width: auto;
-    border-radius: 4px;
-    margin: 0 20px;
-}
-/* Sakrivanje banera na telefonima da ne lome navigaciju */
-@media (max-width: 1050px) {
-    .nav-banner { display: none !important; }
-}
+/* === DODACI ZA KLIJENTA === */
 
 /* Cenovnik Tabela */
 .cenovnik-container {
@@ -238,28 +271,6 @@ a { text-decoration: none; color: inherit; }
 }
 .cena-tabela tr:last-child td { border-bottom: none; }
 
-/* Struktura za Reklame u Repertoaru */
-.layout-sa-reklamom {
-    display: grid;
-    grid-template-columns: 1fr 300px; /* Glavni sadrzaj levo, 300px sidebar desno */
-    gap: 40px;
-}
-.sidebar-reklama {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.poster-reklama {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-@media (max-width: 1100px) {
-    .layout-sa-reklamom { grid-template-columns: 1fr; }
-    .sidebar-reklama { display: none; } /* Gasimo sidebar na malim ekranima */
-}
-
 /* Spotlight Najava Premijere */
 .spotlight-box {
     background: var(--bg-card);
@@ -284,11 +295,13 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 10px;
 }
 
-/* === JEDNA ZAJEDNIČKA MOBILNA OPTIMIZACIJA === */
+/* === ZAJEDNIČKA MOBILNA OPTIMIZACIJA === */
 @media (max-width: 800px) {
+    /* Uključen Hamburger Meni */
     .hamburger { display: flex; }
     .navbar { padding: 15px 5%; }
     
+    /* Sakrivamo meni sa leve strane */
     .nav-links {
         position: fixed; top: 0; left: -100%; width: 250px; height: 100vh;
         background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
@@ -298,15 +311,18 @@ a { text-decoration: none; color: inherit; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
     
+    /* Hero Sekcija centrirana */
     .hero { padding: 80px 5%; text-align: center; align-items: center; background-position: center; }
     .hero h1 { font-size: 2.8rem; }
     .hero-buttons { flex-direction: column; width: 100%; gap: 10px; }
     .hero-buttons a { width: 100%; margin: 0; }
     
+    /* Centrirana mapa bez iskakanja */
     .map-section { padding: 50px 5% !important; }
     .map-container { width: 100%; overflow: hidden; }
     iframe { width: 100% !important; height: 300px !important; }
 
+    /* Mreže idu u jednu kolonu */
     .movie-grid { grid-template-columns: 1fr; gap: 20px; }
     .movie-card img { height: 300px; }
     .filters-container { flex-direction: column; }
@@ -336,49 +352,10 @@ a { text-decoration: none; color: inherit; }
     }
 
     /* GOOGLE KARTICA NA TELEFONU */
-    .reviews-section {
-        padding: 50px 5%;
-    }
-    .reviews-container {
-        padding: 40px 20px;
-    }
+    .reviews-section { padding: 50px 5%; }
+    .reviews-container { padding: 40px 20px; }
     .reviews-container h2 { font-size: 1.8rem; }
 
     /* Spotlight na telefonu */
-    .spotlight-box {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-/* === PRADA BANER (Desktop vs Mobile) === */
-.desktop-prada-banner {
-    display: block;
-    width: 100%;
-    margin-top: 40px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
-}
-.desktop-prada-banner:hover {
-    transform: scale(1.02);
-}
-.desktop-prada-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-@media (min-width: 801px) {
-    .spotlight-box { display: none !important; } /* Na kompu gasi mali boks */
-}
-@media (max-width: 800px) {
-    .desktop-prada-banner { display: none !important; } /* Na telefonu gasi veliki baner */
-    .spotlight-box { display: flex !important; flex-direction: column; text-align: center; }
-}
-
-/* Fix za slomljene slike u navigaciji */
-img.nav-banner {
-    display: none; /* Sakriveno dok ne ubaciš prave slike sa tačnim imenom */
+    .spotlight-box { flex-direction: column; text-align: center; }
 }
