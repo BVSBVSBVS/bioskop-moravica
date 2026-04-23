@@ -1,6 +1,6 @@
 :root {
     --bg-dark: #101214;
-    --bg-card: #171A1D;
+    --bg-card: #171A1D; /* Glavna siva pozadina */
     --accent: #F7931A;
     --text-main: #FFFFFF;
     --text-muted: #8A939B;
@@ -23,33 +23,36 @@ a { text-decoration: none; color: inherit; }
     position: sticky; 
     top: 0; 
     z-index: 1000;
+    min-height: 100px; /* Dajemo mu prostora po visini da logo može da diše */
 }
 
 /* LEVA STRANA */
 .nav-left { 
     display: flex; 
     align-items: center; 
-    gap: 30px; 
+    gap: 50px; /* Veći razmak da se logo ne lepi za Mortal Kombat */
     flex: 1; 
 }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2000; }
 .hamburger span { width: 25px; height: 3px; background-color: var(--text-main); border-radius: 2px; transition: 0.3s; }
 
-/* === LOGO - MASIVAN I ZAKUCAN === */
+/* === LOGO - MASIVAN I ZAKUCAN NA SILU === */
 .logo { display: block; cursor: pointer; z-index: 2000; text-decoration: none; flex-shrink: 0; }
 .logo-text { display: none !important; }
 .logo img { 
-    height: 100px !important; /* Ogroman logo */
+    height: 80px !important; /* Osnovna visina */
+    transform: scale(1.6); /* UVEĆAVA GA ZA 60% NA SILU */
     width: auto !important; 
     display: block; 
     object-fit: contain;
+    margin: 0 20px; /* Da ne gazi po baneru pored zbog uveličavanja */
 }
 
-/* === BANERI - MASIVNI I ZAKUCANI === */
+/* === BANERI - ISTA VISINA, OGRANIČENA ŠIRINA === */
 .nav-banner {
-    height: 80px !important; /* Drastično povećani baneri */
+    height: 75px !important; /* OBA banera su sada masivna i visoka isto */
     width: auto;
-    max-width: none !important; /* Nema više skupljanja */
+    max-width: 22vw !important; /* Prada više ne može da zauzme pola ekrana */
     object-fit: contain;
     border-radius: 6px;
     margin: 0; 
@@ -66,7 +69,7 @@ a { text-decoration: none; color: inherit; }
     list-style: none; 
     gap: 2.5vw; 
     justify-content: center; 
-    flex: 1.5; /* Dajemo im malo više prostora */
+    flex: 1.5; /* Dajemo im malo više prostora da se rašire */
     margin: 0;
     padding: 0;
 }
@@ -109,8 +112,7 @@ a { text-decoration: none; color: inherit; }
 .hero p { color: var(--text-muted); max-width: 550px; margin-bottom: 30px; font-size: 1.1rem; }
 .hero-buttons { display: flex; gap: 15px; margin-top: 10px; }
 
-/* === KARTICE I OSTALO (FIX ZA ŠIRINU) === */
-/* Min-width povećan na 350px tako da kartice na 'Ostalo' ne budu sabijene */
+/* === KARTICE I OSTALO === */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
 
 .movie-card { 
@@ -157,7 +159,7 @@ a { text-decoration: none; color: inherit; }
 .card-content .times { margin-top: auto !important; }
 .times span { background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); margin-right: 5px;}
 
-/* === USLUGE NA STRANICI OSTALO (SADA DIŠU) === */
+/* === USLUGE NA STRANICI OSTALO === */
 .service-card { 
     background-color: var(--bg-card); 
     border-radius: 12px; 
@@ -174,10 +176,10 @@ a { text-decoration: none; color: inherit; }
 
 .service-card img { 
     width: 100% !important; 
-    height: 200px !important; /* Dugačke a tanke slike umesto kockastih */
+    height: 200px !important; 
     object-fit: cover !important; 
     border-radius: 8px; 
-    margin-top: auto !important; /* Gura sliku na dno kartice */
+    margin-top: auto !important; 
     border: 1px solid rgba(255,255,255,0.1); 
 }
 
@@ -188,7 +190,7 @@ a { text-decoration: none; color: inherit; }
 .filter-group select { appearance: none; -webkit-appearance: none; background-color: #1A1D21; color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 6px; font-family: var(--font-text); font-size: 0.95rem; outline: none; cursor: pointer; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F7931A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
 .filter-group select option { background-color: #1A1D21; color: #fff; }
 
-/* === PARTNERI (PROFI BELE KARTICE) === */
+/* === PARTNERI (UKLONJENE BELE KOCKE, GIGANTSKI LOGOJI) === */
 .partners-section { 
     padding: 60px 10%; 
     background-color: var(--bg-dark); 
@@ -206,26 +208,25 @@ a { text-decoration: none; color: inherit; }
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    gap: 40px; 
+    gap: 60px; /* Dobar razmak između njih */
     flex-wrap: wrap; 
 }
 .partner-link { 
     display: flex; 
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF !important; /* Čista bela da Opština i TO Sokobanja izgledaju normalno */
-    padding: 20px;
-    border-radius: 12px;
-    width: 280px; /* Sve kartice iste širine */
-    height: 120px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: transparent !important; /* UBIO SAM BELU POZADINU */
+    padding: 10px;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease; 
 }
 .partner-link:hover { 
-    transform: scale(1.05); 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: scale(1.1); 
 }
 .partner-logo-img { 
-    max-height: 80px !important; 
+    height: 130px !important; /* OGROOOMNI LOGOJI */
     max-width: 100%; 
     object-fit: contain; 
 }
@@ -275,7 +276,6 @@ a { text-decoration: none; color: inherit; }
 
 /* === MOBILNA OPTIMIZACIJA === */
 @media (max-width: 1200px) {
-    /* Gasimo levi baner na manjim laptopovima da ne gura navigaciju */
     .nav-banner-levi { display: none !important; } 
     .nav-left { gap: 15px; }
 }
@@ -285,7 +285,8 @@ a { text-decoration: none; color: inherit; }
     .navbar { padding: 15px 5%; justify-content: space-between; }
     
     .nav-left { flex: 1; gap: 15px; }
-    .logo img { height: 70px !important; margin: 0; } 
+    /* Smanjen scale za mobilni */
+    .logo img { height: 60px !important; transform: scale(1.3); margin: 0 10px; } 
 
     .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
     .nav-links.active { left: 0; }
@@ -293,15 +294,15 @@ a { text-decoration: none; color: inherit; }
     .hamburger-only { display: block; }
     
     .nav-right-group { flex: 1; gap: 10px; justify-content: flex-end; }
-    .nav-banner-desni { max-width: 35vw; height: 50px !important; }
+    .nav-banner-desni { max-width: 35vw !important; height: 50px !important; }
     
     .hero { padding: 80px 5%; text-align: center; align-items: center; background-position: center; }
     .hero h1 { font-size: 2.8rem; }
     .hero-buttons { flex-direction: column; width: 100%; gap: 10px; }
     .hero-buttons a { width: 100%; margin: 0; }
     
-    .partner-logos { gap: 20px; }
-    .partner-link { width: 100%; height: 100px; }
+    .partner-logos { gap: 40px; flex-direction: column; }
+    .partner-logo-img { height: 80px !important; }
 
     .map-section { padding: 50px 5% !important; }
     .map-container { width: 100%; overflow: hidden; }
