@@ -12,11 +12,14 @@
     </style>
 </head>
 <body>
-  <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-left">
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </div>
+            <a href="uskoro.html#mortal" style="display: flex; align-items: center;">
+                <img src="assets/baner-levi.jpg" class="nav-banner nav-banner-levi" alt="Mortal Kombat 2">
+            </a>
             <a href="index.html" class="logo">
                 <img src="assets/logo.png" alt="Bioskop Moravica">
             </a>
@@ -31,10 +34,10 @@
         </ul>
 
         <div class="nav-right-group">
-            <a href="uskoro.html#prada" style="display: flex; align-items: center;">
-                <img src="assets/baner.jpg" class="nav-banner" alt="Đavo nosi Pradu 2">
+            <a href="repertoar.html#prada" style="display: flex; align-items: center;">
+                <img src="assets/baner-desni.jpg" class="nav-banner nav-banner-desni" alt="Đavo nosi Pradu 2">
             </a>
-            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
+            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide" style="color: var(--text-main); border-color: var(--text-main);">OSTALO</a>
         </div>
     </nav>
 
@@ -47,17 +50,6 @@
 
         <div class="movie-grid">
             
-            <div class="movie-card" id="prada" style="position: relative;">
-                <div style="position: absolute; top: 15px; left: 15px; background: var(--accent); color: var(--bg-dark); padding: 5px 12px; border-radius: 4px; font-weight: 800; font-size: 0.75rem;">30. APR</div>
-                <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
-                <div class="card-content">
-                    <h3>Đavo nosi Pradu 2</h3>
-                    <span class="genre">KOMEDIJA • NAJAVA</span>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli dok pokušava da se snađe u svetu u kojem štampano novinarstvo izumire.</p>
-                    <a href="https://www.youtube.com/watch?v=jfXjCKlcwNU" target="_blank" class="trailer-link">▶ POGLEDAJ TREJLER</a>
-                </div>
-            </div>
-
             <div class="movie-card" style="position: relative;">
                 <div style="position: absolute; top: 15px; left: 15px; background: var(--accent); color: var(--bg-dark); padding: 5px 12px; border-radius: 4px; font-weight: 800; font-size: 0.75rem;">30. APR</div>
                 <img src="assets/vrba.jpg" alt="Devojčica po imenu Vrba">
@@ -69,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="movie-card" style="position: relative;">
+            <div class="movie-card" id="mortal" style="position: relative;">
                 <div style="position: absolute; top: 15px; left: 15px; background: var(--accent); color: var(--bg-dark); padding: 5px 12px; border-radius: 4px; font-weight: 800; font-size: 0.75rem;">07. MAJ</div>
                 <img src="assets/mortal.jpg" alt="Mortal Kombat II">
                 <div class="card-content">

@@ -13,11 +13,14 @@
     </style>
 </head>
 <body>
-  <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-left">
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </div>
+            <a href="uskoro.html#mortal" style="display: flex; align-items: center;">
+                <img src="assets/baner-levi.jpg" class="nav-banner nav-banner-levi" alt="Mortal Kombat 2">
+            </a>
             <a href="index.html" class="logo">
                 <img src="assets/logo.png" alt="Bioskop Moravica">
             </a>
@@ -32,16 +35,17 @@
         </ul>
 
         <div class="nav-right-group">
-            <a href="uskoro.html#prada" style="display: flex; align-items: center;">
-                <img src="assets/baner.jpg" class="nav-banner" alt="Đavo nosi Pradu 2">
+            <a href="repertoar.html#prada" style="display: flex; align-items: center;">
+                <img src="assets/baner-desni.jpg" class="nav-banner nav-banner-desni" alt="Đavo nosi Pradu 2">
             </a>
-            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
+            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide" style="color: var(--text-main); border-color: var(--text-main);">OSTALO</a>
         </div>
     </nav>
+
     <section style="padding: 80px 10%;">
         <div class="section-header">
             <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 23.04. do Srede 29.04.2026. Kliknite na '▶ Trejler' da pogledate najavu filma.</p>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 23.04. do Petka 01.05.2026. Kliknite na '▶ Trejler' da pogledate najavu filma.</p>
             <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
         </div>
 
@@ -50,19 +54,19 @@
                 <label>Izaberi Dan</label>
                 <select id="filter-dan" onchange="primeniFiltere()">
                     <option value="sve">Svi dani</option>
-                    <option value="cetvrtak">Četvrtak</option>
-                    <option value="petak">Petak</option>
-                    <option value="subota">Subota</option>
-                    <option value="nedelja">Nedelja</option>
-                    <option value="ponedeljak">Ponedeljak</option>
-                    <option value="utorak">Utorak</option>
-                    <option value="sreda">Sreda</option>
+                    <option value="cetvrtak">Četvrtak (23.04)</option>
+                    <option value="subota">Subota (25.04)</option>
+                    <option value="nedelja">Nedelja (26.04)</option>
+                    <option value="utorak">Utorak (28.04)</option>
+                    <option value="sreda">Sreda (29.04)</option>
+                    <option value="prvimaj">Petak (1. Maj)</option>
                 </select>
             </div>
             <div class="filter-group">
                 <label>Izaberi Film</label>
                 <select id="filter-film" onchange="primeniFiltere()">
                     <option value="sve">Svi filmovi</option>
+                    <option value="prada">Đavo nosi Pradu 2</option>
                     <option value="mario">Super Mario Galaktički film</option>
                     <option value="drvo">Magično daleko drvo</option>
                     <option value="mumija">Mumija - Film Lija Kronina</option>
@@ -335,6 +339,26 @@
                 </div>
             </div>
 
+            <div class="day-group" id="grupa-prvimaj">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 01.05.2026 (Praznik)</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" id="prada" data-dan="prvimaj" data-film="prada" data-vreme="20:30">
+                        <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
+                        <div class="card-content">
+                            <span class="genre">KOMEDIJA • PREMIJERA</span>
+                            <h3>Đavo nosi Pradu 2</h3>
+                            <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli dok pokušava da se snađe u svetu u kojem štampano novinarstvo izumire.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>20:30</span></div>
+                                <a href="https://www.youtube.com/watch?v=jfXjCKlcwNU" target="_blank" class="trailer-link">▶ Trejler</a>
+                                <div class="cena">490 RSD</div>
+                            </div>
+                            <a href="#" class="btn-rezervisi">REZERVIŠI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -370,7 +394,6 @@
             } 
         }
 
-        // NOVI, POPRAVLJENI FILTER (PALI I GASI KARTICE NA SILU)
         function primeniFiltere() { 
             const izabranDan = document.getElementById('filter-dan').value; 
             const izabranFilm = document.getElementById('filter-film').value; 
@@ -394,7 +417,6 @@
                 }
             }); 
 
-            // Skrivanje celih dana ako nemaju filmova u sebi
             document.querySelectorAll('.day-group').forEach(grupa => { 
                 const vidljiveKartice = grupa.querySelectorAll('.movie-card[style*="display: flex"]'); 
                 if (vidljiveKartice.length > 0) {
