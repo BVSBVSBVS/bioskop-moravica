@@ -1,6 +1,6 @@
 :root {
     --bg-dark: #101214;
-    --bg-card: #171A1D; /* Glavna siva pozadina */
+    --bg-card: #171A1D;
     --accent: #F7931A;
     --text-main: #FFFFFF;
     --text-muted: #8A939B;
@@ -17,59 +17,53 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 3%; /* Smanjen padding da bi sve stalo na ekran */
+    padding: 10px 3%; 
     background-color: var(--bg-card);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
     position: sticky; 
     top: 0; 
     z-index: 1000;
-    min-height: 100px; /* Dajemo mu prostora po visini da logo može da diše */
 }
 
-/* LEVA STRANA */
+/* LEVA STRANA (Logo pa MK Baner) */
 .nav-left { 
     display: flex; 
     align-items: center; 
-    gap: 50px; /* Veći razmak da se logo ne lepi za Mortal Kombat */
+    gap: 40px; 
     flex: 1; 
 }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2000; }
 .hamburger span { width: 25px; height: 3px; background-color: var(--text-main); border-radius: 2px; transition: 0.3s; }
 
-/* === LOGO - MASIVAN I ZAKUCAN NA SILU === */
+/* === LOGO - MASIVAN === */
 .logo { display: block; cursor: pointer; z-index: 2000; text-decoration: none; flex-shrink: 0; }
 .logo-text { display: none !important; }
 .logo img { 
-    height: 80px !important; /* Osnovna visina */
-    transform: scale(1.6); /* UVEĆAVA GA ZA 60% NA SILU */
+    height: 100px !important; /* Povećano na maksimum */
     width: auto !important; 
     display: block; 
     object-fit: contain;
-    margin: 0 20px; /* Da ne gazi po baneru pored zbog uveličavanja */
 }
 
-/* === BANERI - ISTA VISINA, OGRANIČENA ŠIRINA === */
+/* BANERI U NAVIGACIJI */
 .nav-banner {
-    height: 75px !important; /* OBA banera su sada masivna i visoka isto */
+    height: 70px !important; 
     width: auto;
-    max-width: 22vw !important; /* Prada više ne može da zauzme pola ekrana */
     object-fit: contain;
     border-radius: 6px;
     margin: 0; 
     transition: transform 0.2s ease;
-    flex-shrink: 0; /* Ne sme brauzer da ih smanji */
+    flex-shrink: 0; 
 }
-.nav-banner:hover {
-    transform: scale(1.05);
-}
+.nav-banner:hover { transform: scale(1.05); }
 
-/* SREDINA (Linkovi) */
+/* === SREDINA (Linkovi) === */
 .nav-links { 
     display: flex; 
     list-style: none; 
-    gap: 2.5vw; 
+    gap: 3vw; 
     justify-content: center; 
-    flex: 1.5; /* Dajemo im malo više prostora da se rašire */
+    flex: 1.5; 
     margin: 0;
     padding: 0;
 }
@@ -83,13 +77,17 @@ a { text-decoration: none; color: inherit; }
 .nav-links a:hover { color: var(--text-main); }
 .hamburger-only { display: none; }
 
-/* DESNA STRANA */
+/* === DESNA STRANA (Prada i Ostalo) === */
 .nav-right-group {
     display: flex;
     align-items: center;
     justify-content: flex-end; 
-    gap: 30px; 
     flex: 1; 
+}
+/* PRADA DOBILA FIKSNE MARGINE - O NAMA i OSTALO se ne pomeraju */
+.nav-banner-desni {
+    margin-left: 40px !important;
+    margin-right: 40px !important;
 }
 
 /* === DUGMAD === */
@@ -112,8 +110,8 @@ a { text-decoration: none; color: inherit; }
 .hero p { color: var(--text-muted); max-width: 550px; margin-bottom: 30px; font-size: 1.1rem; }
 .hero-buttons { display: flex; gap: 15px; margin-top: 10px; }
 
-/* === KARTICE I OSTALO === */
-.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+/* === GRID ZA FILMOVE I USLUGE (Uspravne kartice) === */
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
 
 .movie-card { 
     background-color: rgba(255,255,255,0.03); 
@@ -126,18 +124,6 @@ a { text-decoration: none; color: inherit; }
     height: 100% !important; 
 }
 .movie-card:hover { transform: scale(1.02); }
-
-.movie-card:target {
-    border: 2px solid var(--accent) !important;
-    transform: scale(1.03);
-    animation: pulse-glow 2s infinite;
-}
-
-@keyframes pulse-glow {
-    0% { box-shadow: 0 0 15px rgba(247, 147, 26, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(247, 147, 26, 0.7); }
-    100% { box-shadow: 0 0 15px rgba(247, 147, 26, 0.3); }
-}
 
 .movie-card img { 
     width: 100% !important; 
@@ -156,10 +142,9 @@ a { text-decoration: none; color: inherit; }
 .card-content h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 5px; }
 .card-content p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.4; }
 .genre { font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;}
-.card-content .times { margin-top: auto !important; }
 .times span { background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); margin-right: 5px;}
 
-/* === USLUGE NA STRANICI OSTALO === */
+/* === USLUGE (OSTALO) === */
 .service-card { 
     background-color: var(--bg-card); 
     border-radius: 12px; 
@@ -170,16 +155,15 @@ a { text-decoration: none; color: inherit; }
     flex-direction: column;
 }
 .service-card div[style*="size: 2rem"] { margin-bottom: 10px !important; }
-.service-card h3 { margin-bottom: 5px !important; }
-.service-card .genre { margin-bottom: 15px !important; }
-.service-card p { margin-bottom: 20px !important; line-height: 1.6; }
-
+.service-card h3 { margin-bottom: 5px !important; font-family: var(--font-heading); font-size: 1.3rem; }
+.service-card .genre { margin-bottom: 15px !important; font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase;}
+.service-card p { margin-bottom: 20px !important; line-height: 1.5; font-size: 0.95rem; color: var(--text-muted); }
 .service-card img { 
     width: 100% !important; 
-    height: 200px !important; 
+    height: auto !important; 
     object-fit: cover !important; 
     border-radius: 8px; 
-    margin-top: auto !important; 
+    margin-top: auto !important; /* Gura sliku na dno */
     border: 1px solid rgba(255,255,255,0.1); 
 }
 
@@ -190,9 +174,9 @@ a { text-decoration: none; color: inherit; }
 .filter-group select { appearance: none; -webkit-appearance: none; background-color: #1A1D21; color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); padding: 12px 15px; border-radius: 6px; font-family: var(--font-text); font-size: 0.95rem; outline: none; cursor: pointer; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F7931A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
 .filter-group select option { background-color: #1A1D21; color: #fff; }
 
-/* === PARTNERI (UKLONJENE BELE KOCKE, GIGANTSKI LOGOJI) === */
+/* === PARTNERI (2X VEĆA RAZDALJINA, BEZ POZADINE) === */
 .partners-section { 
-    padding: 60px 10%; 
+    padding: 80px 10%; 
     background-color: var(--bg-dark); 
     border-top: 1px solid rgba(255, 255, 255, 0.05); 
 }
@@ -202,32 +186,24 @@ a { text-decoration: none; color: inherit; }
     color: var(--text-main); 
     margin-bottom: 50px; 
     text-align: center; 
-    width: 100%;
 }
 .partner-logos { 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    gap: 60px; /* Dobar razmak između njih */
+    gap: 150px; /* Brate, OVO JE DUPLO VEĆA RAZDALJINA */
     flex-wrap: wrap; 
 }
 .partner-link { 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    background-color: transparent !important; /* UBIO SAM BELU POZADINU */
-    padding: 10px;
-    border-radius: 0;
-    width: auto;
-    height: auto;
+    display: block; 
     transition: transform 0.3s ease; 
+    opacity: 0.9; 
+    background: transparent !important; 
 }
-.partner-link:hover { 
-    transform: scale(1.1); 
-}
+.partner-link:hover { transform: scale(1.1); opacity: 1; }
 .partner-logo-img { 
-    height: 130px !important; /* OGROOOMNI LOGOJI */
-    max-width: 100%; 
+    height: 90px !important; 
+    width: auto; 
     object-fit: contain; 
 }
 
@@ -235,15 +211,15 @@ a { text-decoration: none; color: inherit; }
 .map-container { width: 100%; height: 400px !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.1) !important; display: flex !important; }
 .map-container iframe { width: 100% !important; height: 100% !important; border: none !important; display: block !important; }
 
-/* === REZERVACIJA DUGME === */
+/* === REZERVACIJA === */
 .rezervacija-info { display: flex; justify-content: space-between; align-items: center; margin-top: auto !important; margin-bottom: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
 .cena { font-weight: 800; color: var(--accent); font-size: 1.1rem; }
 .btn-rezervisi { background-color: var(--accent); color: var(--bg-dark); padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 800; display: block; width: 100%; transition: transform 0.2s ease, background-color 0.3s ease; }
 .btn-rezervisi:hover { background-color: #e08517; transform: scale(1.02); }
 
 /* === FUTER === */
-.footer { background-color: var(--bg-card); margin: 40px 5% 40px 5%; padding: 50px 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
-.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+.footer { background-color: var(--bg-card); margin: 40px 5% 40px 5%; padding: 50px 40px 40px 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; }
+.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; width: 100%; }
 .footer-col h4 { color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 1px; }
 .footer-col a, .footer-col p { display: block; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
 .footer-col a:hover { color: var(--text-main); }
@@ -255,38 +231,32 @@ a { text-decoration: none; color: inherit; }
 .social-btn:hover { background-color: var(--accent); color: var(--bg-dark); border-color: var(--accent); transform: translateY(-3px); }
 .social-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
+/* KOPIRAJT TEKST */
+.copyright-tekst {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
 .reviews-section { padding: 80px 10%; }
 .reviews-container { background-color: var(--bg-card); padding: 50px 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); text-align: center; }
 .reviews-container h2 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main); }
 .stars { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
-.reviews-container p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto; font-size: 1rem; }
-.btn-google { display: flex; align-items: center; justify-content: center; gap: 12px; background: rgba(255, 255, 255, 0.03); color: var(--accent); padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); cursor: pointer; transition: 0.3s; width: fit-content; margin: 0 auto; }
-.btn-google:hover { background-color: var(--accent); color: var(--bg-dark); border-color: var(--accent); transform: scale(1.02); }
-.btn-google svg { width: 18px; height: 18px; fill: currentColor; }
-
-/* Cenovnik Tabela */
-.cenovnik-container { width: 100%; margin-top: 30px; overflow-x: auto; }
-.cena-tabela { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; }
-.cena-tabela th, .cena-tabela td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.cena-tabela th { background: rgba(247, 147, 26, 0.1); color: var(--accent); text-transform: uppercase; font-size: 0.8rem; }
-.cena-tabela tr:last-child td { border-bottom: none; }
-
-/* KLJUČNO ZA POPRAVKU JS FILTERA */
-.skriveno { display: none !important; }
 
 /* === MOBILNA OPTIMIZACIJA === */
 @media (max-width: 1200px) {
     .nav-banner-levi { display: none !important; } 
-    .nav-left { gap: 15px; }
 }
 
 @media (max-width: 800px) {
     .hamburger { display: flex; }
     .navbar { padding: 15px 5%; justify-content: space-between; }
-    
     .nav-left { flex: 1; gap: 15px; }
-    /* Smanjen scale za mobilni */
-    .logo img { height: 60px !important; transform: scale(1.3); margin: 0 10px; } 
+    .logo img { height: 70px !important; margin: 0; } 
 
     .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
     .nav-links.active { left: 0; }
@@ -294,33 +264,13 @@ a { text-decoration: none; color: inherit; }
     .hamburger-only { display: block; }
     
     .nav-right-group { flex: 1; gap: 10px; justify-content: flex-end; }
-    .nav-banner-desni { max-width: 35vw !important; height: 50px !important; }
+    .nav-banner-desni { margin-left: 10px !important; margin-right: 10px !important; max-width: 35vw !important; height: 45px !important; }
     
-    .hero { padding: 80px 5%; text-align: center; align-items: center; background-position: center; }
+    .hero { padding: 80px 5%; text-align: center; }
     .hero h1 { font-size: 2.8rem; }
-    .hero-buttons { flex-direction: column; width: 100%; gap: 10px; }
-    .hero-buttons a { width: 100%; margin: 0; }
-    
-    .partner-logos { gap: 40px; flex-direction: column; }
-    .partner-logo-img { height: 80px !important; }
-
-    .map-section { padding: 50px 5% !important; }
-    .map-container { width: 100%; overflow: hidden; }
-    iframe { width: 100% !important; height: 300px !important; }
-
+    .partner-logos { gap: 60px; flex-direction: column; }
+    .partner-logo-img { height: 70px !important; }
     .movie-grid { grid-template-columns: 1fr; gap: 20px; }
-    .movie-card img { height: 300px !important; }
-    
-    .filters-container { flex-direction: column; }
-    .filter-group { width: 100%; min-width: 100%; }
-
-    .footer { margin: 0 5% 20px 5%; padding: 40px 20px; }
     .footer-grid { flex-direction: column; align-items: center; text-align: center; gap: 40px; }
     .footer-col { display: flex; flex-direction: column; align-items: center; }
-    .social-buttons { align-items: center; }
-    .social-btn { justify-content: center; }
-    
-    .reviews-section { padding: 50px 5%; }
-    .reviews-container { padding: 40px 20px; }
-    .reviews-container h2 { font-size: 1.8rem; }
 }
