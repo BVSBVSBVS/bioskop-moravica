@@ -31,7 +31,7 @@
             <a href="repertoar.html#prada" class="banner-link-right">
                 <img src="assets/baner-desni.jpg" class="nav-banner nav-banner-desni" alt="Đavo nosi Pradu 2">
             </a>
-            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide" style="color: var(--text-main); border-color: var(--text-main);">OSTALO</a>
+            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
         </div>
     </nav>
 
@@ -43,11 +43,14 @@
 
         <div class="services-grid">
             
-            <div class="service-card" style="justify-content: flex-start;">
+         <div class="service-card" style="justify-content: flex-start;">
                 <div style="font-size: 2.5rem; margin-bottom: 5px;">🎂</div>
                 <h3>Proslava rođendana</h3>
+                
                 <img src="assets/rodjendan.jpg" alt="Proslava rođendana u bioskopu" class="slika-rodjendan-full">
-                <button onclick="toggleRodjendan()" class="btn-outline" style="width: 100%; margin-top: 10px; font-size: 1rem; border-color: rgba(255,255,255,0.2); color: var(--text-main);">VIDI VIŠE 👇</button>
+                
+                <button onclick="toggleRodjendan()" class="btn-outline" style="width: 100%; font-size: 1rem; border-color: rgba(255,255,255,0.2); color: var(--text-main);">VIDI VIŠE 👇</button>
+                
                 <div id="rodjendan-tekst" style="display: none; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
                     <span class="genre" style="color: var(--accent); font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 5px;">PAKETI</span>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Proslavi rođendan na jedinstven način uz najbolje filmove, kokice i piće. Cena rođendanskog paketa već od 790 dinara! Provedi se kao na filmu! Kontaktirajte nas za više informacija!</p>
@@ -98,7 +101,7 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col brand">
-                <img src="assets/logo.png" alt="Moravica Logo" style="height: 60px;">
+                <img src="assets/logo.png" alt="Moravica Logo">
                 <div class="social-buttons">
                     <a href="https://www.instagram.com/bioskop_moravica/" target="_blank" class="social-btn">
                         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -115,17 +118,12 @@
         </div>
         <div class="copyright-tekst">© 2026 Sva prava zadržana. Sajt izradio S-Code Solutions.</div>
     </footer>
-    
+
     <script>
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
-        function toggleRodjendan() {
-            var tekst = document.getElementById("rodjendan-tekst");
-            if (tekst.style.display === "none") {
-                tekst.style.display = "block";
-            } else {
-                tekst.style.display = "none";
-            }
-        }
+        /* Ako si na index.html, ovde dodaješ JS za slideRight i slideLeft */
+        /* Ako si na ostalo.html, ovde dodaješ JS za toggleRodjendan */
+        /* Ako si na repertoar.html, ovde dodaješ JS za primeniFiltere */
     </script>
 </body>
 </html>
