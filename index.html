@@ -49,10 +49,8 @@
 
     <section class="partners-section">
         <h3>Naši Partneri</h3>
-        
         <div class="slider-container">
             <button class="slider-arrow" onclick="slideLeft()">❮</button>
-            
             <div class="slider-track-window">
                 <div class="partner-logos" id="partnerTrack">
                     <a href="https://kcsokobanja.rs/" target="_blank" class="partner-link">
@@ -66,10 +64,8 @@
                     </a>
                 </div>
             </div>
-            
             <button class="slider-arrow" onclick="slideRight()">❯</button>
         </div>
-
     </section>
 
     <section class="map-section" style="padding: 80px 10%; background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05);">
@@ -86,6 +82,10 @@
         <div class="footer-grid">
             <div class="footer-col brand">
                 <img src="assets/logo.png" alt="Moravica Logo" style="height: 60px;">
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/bioskop_moravica/" target="_blank" class="social-btn">Instagram</a>
+                    <a href="https://www.tiktok.com/@bioskop_moravica" target="_blank" class="social-btn">TikTok</a>
+                </div>
             </div>
             <div class="footer-col links"><h4>NAVIGACIJA</h4><a href="index.html">Naslovna</a><a href="repertoar.html">Repertoar</a><a href="uskoro.html">Uskoro</a></div>
             <div class="footer-col contact"><h4>KONTAKT</h4><p>📍 Alekse Markišića 40</p><p>📞 064 8279 721</p></div>
@@ -96,8 +96,6 @@
     <script>
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
 
-        // === INFINITE LOOP SKRIPTA ZA PARTNERE ===
-        // Uzima prvi logo i prebacuje ga na kraj, ili obrnuto. Radi u beskonačnost!
         function slideRight() {
             const track = document.getElementById('partnerTrack');
             const itemWidth = track.firstElementChild.offsetWidth;
@@ -110,7 +108,6 @@
             setTimeout(() => {
                 track.style.transition = "none";
                 track.style.transform = "translateX(0)";
-                // Prebaci prvi element na kraj (Infinite loop)
                 track.appendChild(track.firstElementChild);
             }, 300);
         }
@@ -121,9 +118,7 @@
             const gap = parseInt(window.getComputedStyle(track).gap) || 0;
             const moveDistance = itemWidth + gap;
 
-            // Prebaci poslednji element na početak
             track.prepend(track.lastElementChild);
-            
             track.style.transition = "none";
             track.style.transform = `translateX(-${moveDistance}px)`;
 
