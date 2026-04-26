@@ -72,7 +72,7 @@ a { text-decoration: none; color: inherit; }
 .banner-link-right { 
     display: flex; 
     align-items: center; 
-    margin-left: -60px; /* OVO JE KLJUČ: Minus je gura kroz zid ulevo! */
+    margin-left: -65px; /* OVO JE KLJUČ: Minus je gura kroz zid ulevo! */
     margin-right: auto; 
 }
 .nav-banner-desni {
