@@ -73,7 +73,7 @@ a { text-decoration: none; color: inherit; }
     display: flex; 
     align-items: center; 
     margin-left: 50px; 
-    margin-right: auto; 
+    margin-right: 50px; 
 }
 .nav-banner-desni {
     height: 65px !important; 
