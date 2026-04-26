@@ -197,15 +197,18 @@ a { text-decoration: none; color: inherit; }
 
 .skriveno { display: none !important; }
 
-/* === 11. MOBILNA OPTIMIZACIJA === */
+/* === 11. MOBILNA OPTIMIZACIJA (SAMO ZA TELEFONE, PC SE NE DIRA) === */
 @media (max-width: 1000px) {
     .hamburger { display: flex; }
     .navbar { padding: 15px 5%; justify-content: space-between; min-height: 80px;}
     
+    /* LOGO MORAVICA NA TELEFONU */
     .nav-left { flex: unset; }
-    .logo img { transform: scale(1.6); margin-left: 20px; height: 60px !important; } 
+    .logo img { transform: scale(1.4); margin-left: 15px; height: 50px !important; } 
     
-    .nav-banner-desni { max-width: 40vw !important; height: 50px !important; }
+    /* POPRAVLJENA PRADA NA TELEFONU (Uklonjen minus da ne gazi Moravicu) */
+    .banner-link-right { margin-left: auto !important; margin-right: 0 !important; }
+    .nav-banner-desni { max-width: 35vw !important; height: 45px !important; }
 
     .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); margin: 0 !important; }
     .nav-links.active { left: 0; }
@@ -217,11 +220,11 @@ a { text-decoration: none; color: inherit; }
     .hero { padding: 80px 5%; text-align: center; }
     .hero h1 { font-size: 2.8rem; }
     
+    /* POPRAVLJENI PARTNERI NA TELEFONU (Smanjeni da stanu na ekran) */
     .slider-arrow { font-size: 2.5rem; padding: 0 5px; }
-    
-    .slider-track-window { max-width: 100%; width: 100%; }
-    .partner-link { width: 100vw; }
-    .partner-logo-img { height: 90px !important; }
+    .slider-track-window { max-width: 230px !important; } /* Uklopljeno za ekran telefona */
+    .partner-link { width: 230px !important; } /* Ista širina kao prozor da se ne seče */
+    .partner-logo-img { height: 70px !important; width: 100% !important; object-fit: contain; } /* Skaliranje unutar 230px */
 
     .map-section { padding: 50px 5% !important; }
     .map-container { width: 100%; overflow: hidden; }
