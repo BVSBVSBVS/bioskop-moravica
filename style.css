@@ -171,22 +171,12 @@ a { text-decoration: none; color: inherit; }
 .map-container { width: 100%; height: 400px !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.1) !important; display: flex !important; }
 .map-container iframe { width: 100% !important; height: 100% !important; border: none !important; display: block !important; }
 
-/* === 10. FUTER (SREĐENE DRUŠTVENE MREŽE I VELIKI LOGO) === */
+/* === 10. FUTER === */
 .footer { background-color: var(--bg-card); margin: 40px 5% 0 5%; padding: 50px 40px 20px 40px; border-radius: 16px 16px 0 0; border: 1px solid rgba(255, 255, 255, 0.05); }
 .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; width: 100%; }
 .footer-col h4 { color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; letter-spacing: 1px; }
 .footer-col a, .footer-col p { display: block; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
 .footer-col a:hover { color: var(--text-main); }
-
-/* Futer Logo Uvećanje */
-.footer-col.brand img { 
-    height: 70px !important; 
-    width: auto; 
-    margin-bottom: 20px; 
-    transform: scale(2.2); 
-    transform-origin: left center; 
-    margin-left: 15px;
-}
 
 .social-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
 .social-btn { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.03); padding: 8px 16px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 0.85rem; font-weight: 500; width: fit-content; }
