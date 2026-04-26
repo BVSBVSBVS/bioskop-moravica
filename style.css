@@ -23,7 +23,7 @@ a { text-decoration: none; color: inherit; }
     position: sticky; 
     top: 0; 
     z-index: 1000;
-    min-height: 130px; /* POVEĆANO! Logo više ne udara u ivicu */
+    min-height: 130px;
 }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2000; }
@@ -62,18 +62,17 @@ a { text-decoration: none; color: inherit; }
 .nav-links a:hover { color: var(--text-main); }
 .hamburger-only { display: none; }
 
-/* DESNA STRANA (PRADA BLIŽE O NAMA, OSTALO SKROZ DESNO) */
+/* DESNA STRANA (PRADA BLIŽE SREDINI, OSTALO DESNO) === POPRAVLJENO === */
 .nav-right-group {
     display: flex;
     align-items: center;
     flex: 1; 
+    justify-content: flex-end; /* Početno poravnanje udesno */
 }
 .banner-link-right { 
     display: flex; 
     align-items: center; 
-    /* OVO REŠAVA PROBLEM: Gura Pradu levo ka "O nama" */
-    margin-left: 30px; 
-    margin-right: auto; 
+    /* Margine uklonjene da bi se Prada pomerila levo ka centru */
 }
 .nav-banner-desni {
     height: 65px !important; 
@@ -85,6 +84,11 @@ a { text-decoration: none; color: inherit; }
     transition: transform 0.2s ease;
 }
 .nav-banner-desni:hover { transform: scale(1.05); }
+
+/* Gura dugme OSTALO na desnu ivicu, ostavljajući Pradu blizu centralnih linkova */
+.nav-right-group .btn-outline {
+    margin-left: auto;
+}
 
 /* === 2. DUGMAD === */
 .btn-outline { border: 1px solid var(--accent); padding: 10px 24px; border-radius: 6px; color: var(--accent); font-weight: 700; font-size: 0.85rem; transition: 0.3s; cursor: pointer; display: inline-block; white-space: nowrap; flex-shrink: 0; background: transparent;}
@@ -126,17 +130,18 @@ a { text-decoration: none; color: inherit; }
 .btn-rezervisi { background-color: var(--accent); color: var(--bg-dark); padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 800; display: block; width: 100%; transition: transform 0.2s ease; }
 .btn-rezervisi:hover { background-color: #e08517; transform: scale(1.02); }
 
-/* === 5. KARTICE USLUGA (OSTALO) & ROĐENDAN === */
+/* === 5. KARTICE USLUGA (OSTALO) & ROĐENDAN === === POPRAVLJENO === */
 .service-card { background-color: var(--bg-card); border-radius: 12px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; }
 .service-card h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px; }
 .service-card img { width: 100% !important; height: 250px; object-fit: cover; border-radius: 8px; margin-top: auto; border: 1px solid rgba(255,255,255,0.1); }
 
+/* OVO REŠAVA ROĐENDAN - BEZ SABIJANJA, PRAVE DIMENZIJE, OŠTRE IVICE */
 .slika-rodjendan-full { 
     width: 100% !important; 
-    height: 250px !important; 
-    object-fit: cover !important; 
-    object-position: center !important;
-    border-radius: 8px !important; 
+    height: auto !important; /* Rešava gnječenje, prikazuje celu sliku po visini */
+    /* object-fit: cover uklonjen, nije potreban uz height: auto */
+    /* object-position uklonjen, nije potreban uz height: auto */
+    border-radius: 0 !important; /* Uklonjene zaobljene ivice po zahtevu */
     margin: 15px 0 !important; 
     display: block !important;
 }
