@@ -112,11 +112,44 @@
         <div class="copyright-tekst">© 2026 Sva prava zadržana. Sajt izradio S-Code Solutions.</div>
     </footer>
 
-    <script>
-        function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
-        /* Ako si na index.html, ovde dodaješ JS za slideRight i slideLeft */
-        /* Ako si na ostalo.html, ovde dodaješ JS za toggleRodjendan */
-        /* Ako si na repertoar.html, ovde dodaješ JS za primeniFiltere */
-    </script>
+  <script>
+    function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
+
+    /* FUNKCIJE ZA SLAJDER PARTNERA */
+    function slideRight() {
+        const track = document.getElementById('partnerTrack');
+        // Širina linka (350px) + gap razmak u CSS-u (50px) = 400px pomeraja
+        const moveDistance = 400; 
+
+        track.style.transition = "transform 0.3s ease-in-out";
+        track.style.transform = `translateX(-${moveDistance}px)`;
+
+        setTimeout(() => {
+            track.style.transition = "none";
+            track.style.transform = "translateX(0)";
+            // Prebaci prvi logo na kraj reda
+            track.appendChild(track.firstElementChild);
+        }, 300);
+    }
+
+    function slideLeft() {
+        const track = document.getElementById('partnerTrack');
+        const moveDistance = 400;
+
+        // Prebaci poslednji logo na početak
+        track.prepend(track.lastElementChild);
+        
+        // Namesti traku ulevo bez animacije (da izgleda kao da se nije pomerilo)
+        track.style.transition = "none";
+        track.style.transform = `translateX(-${moveDistance}px)`;
+
+        // Force reflow (okidanje za brauzer da primeni promene trenutno)
+        track.offsetHeight; 
+
+        // Uključi animaciju i gurni nazad na nulu (pravi efekat pomeranja ulevo)
+        track.style.transition = "transform 0.3s ease-in-out";
+        track.style.transform = "translateX(0)";
+    }
+</script>
 </body>
 </html>
