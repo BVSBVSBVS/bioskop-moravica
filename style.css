@@ -12,7 +12,7 @@
 body { background-color: var(--bg-card); color: var(--text-main); font-family: var(--font-text); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
-/* === 1. NAVIGACIJA (SAVRŠENA SIMETRIJA) === */
+/* === 1. NAVIGACIJA (SAVRŠENA SIMETRIJA I VISINA) === */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -23,29 +23,29 @@ a { text-decoration: none; color: inherit; }
     position: sticky; 
     top: 0; 
     z-index: 1000;
-    min-height: 100px;
+    min-height: 130px; /* POVEĆANO! Logo više ne udara u ivicu */
 }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2000; }
 .hamburger span { width: 25px; height: 3px; background-color: var(--text-main); border-radius: 2px; transition: 0.3s; }
 
-/* LEVA STRANA (GIGANTSKI LOGO) */
+/* LEVA STRANA (LOGO) */
 .nav-left { 
     display: flex; 
     align-items: center; 
-    flex: 1; /* Leva trećina ekrana */
+    flex: 1; 
     justify-content: flex-start;
 }
 .logo { display: block; cursor: pointer; z-index: 2000; text-decoration: none; }
 .logo-text { display: none !important; }
 .logo img { 
-    height: 80px !important; /* Povećana osnova */
+    height: 80px !important; 
     width: auto !important; 
     display: block; 
     object-fit: contain;
-    transform: scale(3); /* BRUTALNO UVEĆANJE */
+    transform: scale(2.2); 
     transform-origin: left center; 
-    margin-left: 30px; /* Sprečava da iseče ivicu zbog uvećanja */
+    margin-left: 20px; 
 }
 
 /* SREDINA (LINKOVI U MRTVOM CENTRU) */
@@ -54,7 +54,7 @@ a { text-decoration: none; color: inherit; }
     list-style: none; 
     gap: 30px; 
     justify-content: center; 
-    flex: 1; /* Srednja trećina ekrana */
+    flex: 1; 
     margin: 0;
     padding: 0;
 }
@@ -62,20 +62,21 @@ a { text-decoration: none; color: inherit; }
 .nav-links a:hover { color: var(--text-main); }
 .hamburger-only { display: none; }
 
-/* DESNA STRANA (PRADA JE SADA U MRTVOM CENTRU OVE SEKCIJE) */
+/* DESNA STRANA (PRADA BLIŽE O NAMA, OSTALO SKROZ DESNO) */
 .nav-right-group {
     display: flex;
     align-items: center;
-    flex: 1; /* Desna trećina ekrana */
+    flex: 1; 
 }
 .banner-link-right { 
     display: flex; 
     align-items: center; 
-    margin-left: auto; /* Gura Pradu na sredinu */
-    margin-right: auto; /* Gura Pradu na sredinu */
+    /* OVO REŠAVA PROBLEM: Gura Pradu levo ka "O nama" */
+    margin-left: 30px; 
+    margin-right: auto; 
 }
 .nav-banner-desni {
-    height: 65px !important; /* Malo povećano */
+    height: 65px !important; 
     width: auto;
     max-width: 30vw !important; 
     object-fit: contain;
@@ -154,21 +155,24 @@ a { text-decoration: none; color: inherit; }
 .cena-tabela th { background: rgba(247, 147, 26, 0.1); color: var(--accent); text-transform: uppercase; font-size: 0.9rem; }
 .cena-tabela tr:last-child td { border-bottom: none; }
 
-/* === 8. PARTNERI SLAJDER (STRELICE BACA NA IVICE) === */
+/* === 8. PARTNERI SLAJDER (UVEĆANI LOGOTIPI, STRELICE NA IVICAMA) === */
 .partners-section { padding: 80px 10%; background-color: var(--bg-dark); border-top: 1px solid rgba(255, 255, 255, 0.05); }
 .partners-section h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 40px; text-align: center; }
 
-/* OVO GURA STRELICE NA SKROZ LEVU I DESNU STRANU EKRANA */
-.slider-container { display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 0 auto; width: 100%; }
+/* BACA STRELICE NA IVICE */
+.slider-container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; width: 100%; }
 
-.slider-arrow { background: none !important; border: none !important; color: var(--text-main); font-size: 3.5rem; cursor: pointer; transition: transform 0.2s ease, color 0.2s ease; padding: 0 10px; }
+.slider-arrow { background: none !important; border: none !important; color: var(--text-main); font-size: 3.5rem; cursor: pointer; transition: transform 0.2s ease, color 0.2s ease; padding: 0 20px; }
 .slider-arrow:hover { transform: scale(1.3); color: var(--accent); }
 
-.slider-track-window { overflow: hidden; max-width: 350px; width: 100%; }
-.partner-logos { display: flex; align-items: center; justify-content: flex-start; width: max-content; padding: 10px 0; gap: 0; }
-.partner-link { display: flex; justify-content: center; width: 350px; flex-shrink: 0; transition: transform 0.3s ease; opacity: 0.9; }
+/* PROZOR ZA 1 LOGO */
+.slider-track-window { overflow: hidden; max-width: 400px; width: 100%; margin: 0 auto; }
+.partner-logos { display: flex; align-items: center; justify-content: flex-start; width: max-content; padding: 20px 0; gap: 0; }
+.partner-link { display: flex; justify-content: center; width: 400px; flex-shrink: 0; transition: transform 0.3s ease; opacity: 0.9; }
 .partner-link:hover { transform: scale(1.1); opacity: 1; }
-.partner-logo-img { height: 90px !important; width: auto; object-fit: contain; }
+
+/* ZNATNO UVEĆAN LOGO PARTNERA */
+.partner-logo-img { height: 130px !important; width: auto; object-fit: contain; }
 
 /* === 9. MAPE === */
 .map-container { width: 100%; height: 400px !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.1) !important; display: flex !important; }
@@ -200,7 +204,7 @@ a { text-decoration: none; color: inherit; }
     
     .nav-banner-desni { max-width: 40vw !important; height: 50px !important; }
 
-    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); margin: 0 !important; }
+    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
     .nav-links.active { left: 0; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
@@ -211,8 +215,7 @@ a { text-decoration: none; color: inherit; }
     .hero h1 { font-size: 2.8rem; }
     
     .slider-arrow { font-size: 2.5rem; padding: 0 5px; }
-    .partner-logos { gap: 40px; }
-    .partner-logo-img { height: 70px !important; }
+    .partner-logo-img { height: 90px !important; }
 
     .map-section { padding: 50px 5% !important; }
     .map-container { width: 100%; overflow: hidden; }
