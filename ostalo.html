@@ -127,7 +127,10 @@
     </footer>
 
     <script>
-        function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
+        function toggleMenu() { 
+    document.getElementById("navLinks").classList.toggle("active"); 
+    document.querySelector(".logo").classList.toggle("logo-sakriven");
+}
         
         function toggleRodjendan() {
             var tekst = document.getElementById("rodjendan-tekst");
