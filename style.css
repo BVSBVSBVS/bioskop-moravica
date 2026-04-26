@@ -12,7 +12,7 @@
 body { background-color: var(--bg-card); color: var(--text-main); font-family: var(--font-text); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
-/* === 1. NAVIGACIJA (SAVRŠENA SIMETRIJA I VISINA) === */
+/* === 1. NAVIGACIJA === */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -48,7 +48,7 @@ a { text-decoration: none; color: inherit; }
     margin-left: 20px; 
 }
 
-/* SREDINA (LINKOVI U MRTVOM CENTRU) */
+/* SREDINA (LINKOVI) */
 .nav-links { 
     display: flex; 
     list-style: none; 
@@ -62,18 +62,23 @@ a { text-decoration: none; color: inherit; }
 .nav-links a:hover { color: var(--text-main); }
 .hamburger-only { display: none; }
 
-/* DESNA STRANA (PRADA BLIŽE SREDINI, OSTALO DESNO) === POPRAVLJENO === */
+/* DESNA STRANA (PRADA I DUGME) */
 .nav-right-group {
     display: flex;
     align-items: center;
     flex: 1; 
-    justify-content: flex-end; /* Početno poravnanje udesno */
+    justify-content: flex-end; 
 }
+
+/* === OVDE POMERAŠ PRADU! === */
 .banner-link-right { 
     display: flex; 
     align-items: center; 
-    /* Margine uklonjene da bi se Prada pomerila levo ka centru */
+    margin-left: auto; 
+    /* MENJAJ OVAJ BROJ AKO HOĆEŠ DA GURAŠ PRADU JOŠ ULEVO: */
+    margin-right: 35px; 
 }
+
 .nav-banner-desni {
     height: 65px !important; 
     width: auto;
@@ -84,11 +89,6 @@ a { text-decoration: none; color: inherit; }
     transition: transform 0.2s ease;
 }
 .nav-banner-desni:hover { transform: scale(1.05); }
-
-/* Gura dugme OSTALO na desnu ivicu, ostavljajući Pradu blizu centralnih linkova */
-.nav-right-group .btn-outline {
-    margin-left: auto;
-}
 
 /* === 2. DUGMAD === */
 .btn-outline { border: 1px solid var(--accent); padding: 10px 24px; border-radius: 6px; color: var(--accent); font-weight: 700; font-size: 0.85rem; transition: 0.3s; cursor: pointer; display: inline-block; white-space: nowrap; flex-shrink: 0; background: transparent;}
@@ -106,17 +106,12 @@ a { text-decoration: none; color: inherit; }
 
 /* === 4. GRIDOVI KARTICA === */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+
+/* OVO REŠAVA PRAZNINE U KARTICAMA (align-items: start) */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; align-items: start; }
 
 .movie-card { background-color: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex !important; flex-direction: column !important; height: 100% !important; }
 .movie-card:hover { transform: scale(1.02); }
-.movie-card:target { border: 2px solid var(--accent) !important; transform: scale(1.03); animation: pulse-glow 2s infinite; }
-
-@keyframes pulse-glow {
-    0% { box-shadow: 0 0 15px rgba(247, 147, 26, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(247, 147, 26, 0.7); }
-    100% { box-shadow: 0 0 15px rgba(247, 147, 26, 0.3); }
-}
 
 .movie-card img { width: 100% !important; aspect-ratio: 2 / 3 !important; object-fit: cover !important; display: block !important; height: auto !important; }
 .card-content { padding: 15px 20px 20px 20px; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
@@ -130,18 +125,17 @@ a { text-decoration: none; color: inherit; }
 .btn-rezervisi { background-color: var(--accent); color: var(--bg-dark); padding: 10px 0; text-align: center; border-radius: 6px; font-weight: 800; display: block; width: 100%; transition: transform 0.2s ease; }
 .btn-rezervisi:hover { background-color: #e08517; transform: scale(1.02); }
 
-/* === 5. KARTICE USLUGA (OSTALO) & ROĐENDAN === === POPRAVLJENO === */
+/* === 5. KARTICE USLUGA (OSTALO) & ROĐENDAN === */
 .service-card { background-color: var(--bg-card); border-radius: 12px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; }
 .service-card h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px; }
 .service-card img { width: 100% !important; height: 250px; object-fit: cover; border-radius: 8px; margin-top: auto; border: 1px solid rgba(255,255,255,0.1); }
 
-/* OVO REŠAVA ROĐENDAN - BEZ SABIJANJA, PRAVE DIMENZIJE, OŠTRE IVICE */
+/* OVO REŠAVA ROĐENDAN - VRAĆENE OBLINE (border-radius: 12px) */
 .slika-rodjendan-full { 
     width: 100% !important; 
-    height: auto !important; /* Rešava gnječenje, prikazuje celu sliku po visini */
-    /* object-fit: cover uklonjen, nije potreban uz height: auto */
-    /* object-position uklonjen, nije potreban uz height: auto */
-    border-radius: 0 !important; /* Uklonjene zaobljene ivice po zahtevu */
+    height: auto !important; 
+    object-fit: contain !important; 
+    border-radius: 12px !important; 
     margin: 15px 0 !important; 
     display: block !important;
 }
@@ -160,24 +154,20 @@ a { text-decoration: none; color: inherit; }
 .cena-tabela th { background: rgba(247, 147, 26, 0.1); color: var(--accent); text-transform: uppercase; font-size: 0.9rem; }
 .cena-tabela tr:last-child td { border-bottom: none; }
 
-/* === 8. PARTNERI SLAJDER (UVEĆANI LOGOTIPI, STRELICE NA IVICAMA) === */
+/* === 8. PARTNERI SLAJDER === */
 .partners-section { padding: 80px 10%; background-color: var(--bg-dark); border-top: 1px solid rgba(255, 255, 255, 0.05); }
 .partners-section h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 40px; text-align: center; }
 
-/* BACA STRELICE NA IVICE */
-.slider-container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; width: 100%; }
+.slider-container { display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 0 auto; width: 100%; }
 
-.slider-arrow { background: none !important; border: none !important; color: var(--text-main); font-size: 3.5rem; cursor: pointer; transition: transform 0.2s ease, color 0.2s ease; padding: 0 20px; }
+.slider-arrow { background: none !important; border: none !important; color: var(--text-main); font-size: 3.5rem; cursor: pointer; transition: transform 0.2s ease, color 0.2s ease; padding: 0 10px; }
 .slider-arrow:hover { transform: scale(1.3); color: var(--accent); }
 
-/* PROZOR ZA 1 LOGO */
-.slider-track-window { overflow: hidden; max-width: 400px; width: 100%; margin: 0 auto; }
-.partner-logos { display: flex; align-items: center; justify-content: flex-start; width: max-content; padding: 20px 0; gap: 0; }
-.partner-link { display: flex; justify-content: center; width: 400px; flex-shrink: 0; transition: transform 0.3s ease; opacity: 0.9; }
+.slider-track-window { overflow: hidden; max-width: 350px; width: 100%; margin: 0 auto; }
+.partner-logos { display: flex; align-items: center; justify-content: flex-start; width: max-content; padding: 10px 0; gap: 0; }
+.partner-link { display: flex; justify-content: center; width: 350px; flex-shrink: 0; transition: transform 0.3s ease; opacity: 0.9; }
 .partner-link:hover { transform: scale(1.1); opacity: 1; }
-
-/* ZNATNO UVEĆAN LOGO PARTNERA */
-.partner-logo-img { height: 130px !important; width: auto; object-fit: contain; }
+.partner-logo-img { height: 90px !important; width: auto; object-fit: contain; }
 
 /* === 9. MAPE === */
 .map-container { width: 100%; height: 400px !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.1) !important; display: flex !important; }
@@ -209,7 +199,7 @@ a { text-decoration: none; color: inherit; }
     
     .nav-banner-desni { max-width: 40vw !important; height: 50px !important; }
 
-    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
+    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); margin: 0 !important; }
     .nav-links.active { left: 0; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
