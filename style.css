@@ -127,12 +127,11 @@ a { text-decoration: none; color: inherit; }
 .service-card h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px; }
 .service-card img { width: 100% !important; height: 250px; object-fit: cover; border-radius: 8px; margin-top: auto; border: 1px solid rgba(255,255,255,0.1); }
 
-/* OVO REŠAVA ROĐENDAN - BEZ SABIJANJA, PUNI ŠIRINU */
+/* OVO REŠAVA ROĐENDAN - BEZ SABIJANJA, PUNI ŠIRINU, PRAVA REZOLUCIJA */
 .slika-rodjendan-full { 
     width: 100% !important; 
-    height: 250px !important; 
-    object-fit: cover !important; /* Ovo sprečava gnječenje slike */
-    object-position: center !important;
+    height: auto !important; /* OVO DOZVOLJAVA SLICI DA BUDE PUNE VISINE */
+    object-fit: contain !important; /* Prikazuje celu sliku bez sečenja */
     border-radius: 8px !important; 
     margin: 15px 0 !important; 
     display: block !important;

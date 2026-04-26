@@ -31,7 +31,7 @@
             <a href="repertoar.html#prada" class="banner-link-right">
                 <img src="assets/baner-desni.jpg" class="nav-banner nav-banner-desni" alt="Đavo nosi Pradu 2">
             </a>
-            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
+            <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide" style="color: var(--text-main); border-color: var(--text-main);">OSTALO</a>
         </div>
     </nav>
 
@@ -43,14 +43,11 @@
 
         <div class="services-grid">
             
-         <div class="service-card" style="justify-content: flex-start;">
+            <div class="service-card" style="justify-content: flex-start;">
                 <div style="font-size: 2.5rem; margin-bottom: 5px;">🎂</div>
                 <h3>Proslava rođendana</h3>
-                
                 <img src="assets/rodjendan.jpg" alt="Proslava rođendana u bioskopu" class="slika-rodjendan-full">
-                
-                <button onclick="toggleRodjendan()" class="btn-outline" style="width: 100%; font-size: 1rem; border-color: rgba(255,255,255,0.2); color: var(--text-main);">VIDI VIŠE 👇</button>
-                
+                <button onclick="toggleRodjendan()" class="btn-outline" style="width: 100%; margin-top: 10px; font-size: 1rem; border-color: rgba(255,255,255,0.2); color: var(--text-main);">VIDI VIŠE 👇</button>
                 <div id="rodjendan-tekst" style="display: none; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
                     <span class="genre" style="color: var(--accent); font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 5px;">PAKETI</span>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Proslavi rođendan na jedinstven način uz najbolje filmove, kokice i piće. Cena rođendanskog paketa već od 790 dinara! Provedi se kao na filmu! Kontaktirajte nas za više informacija!</p>
@@ -131,9 +128,16 @@
 
     <script>
         function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
-        /* Ako si na index.html, ovde dodaješ JS za slideRight i slideLeft */
-        /* Ako si na ostalo.html, ovde dodaješ JS za toggleRodjendan */
-        /* Ako si na repertoar.html, ovde dodaješ JS za primeniFiltere */
+        
+        /* Skripta za Rođendane - Otvaranje teksta bez skakanja na vrh */
+        function toggleRodjendan() {
+            var tekst = document.getElementById("rodjendan-tekst");
+            if (tekst.style.display === "none") {
+                tekst.style.display = "block";
+            } else {
+                tekst.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
