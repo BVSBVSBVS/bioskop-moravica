@@ -29,7 +29,7 @@ a { text-decoration: none; color: inherit; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2000; }
 .hamburger span { width: 25px; height: 3px; background-color: var(--text-main); border-radius: 2px; transition: 0.3s; }
 
-/* LEVA STRANA (UVEĆAN LOGO ZBOG PROVIDNIH IVICA) */
+/* LEVA STRANA (GIGANTSKI LOGO) */
 .nav-left { 
     display: flex; 
     align-items: center; 
@@ -39,13 +39,13 @@ a { text-decoration: none; color: inherit; }
 .logo { display: block; cursor: pointer; z-index: 2000; text-decoration: none; }
 .logo-text { display: none !important; }
 .logo img { 
-    height: 70px !important; 
+    height: 80px !important; /* Povećana osnova */
     width: auto !important; 
     display: block; 
     object-fit: contain;
-    transform: scale(2.2); /* NA SILU UVEĆAVA SLIKU */
+    transform: scale(3); /* BRUTALNO UVEĆANJE */
     transform-origin: left center; 
-    margin-left: 20px; /* Sprečava da iseče ivicu zbog uvećanja */
+    margin-left: 30px; /* Sprečava da iseče ivicu zbog uvećanja */
 }
 
 /* SREDINA (LINKOVI U MRTVOM CENTRU) */
@@ -62,19 +62,22 @@ a { text-decoration: none; color: inherit; }
 .nav-links a:hover { color: var(--text-main); }
 .hamburger-only { display: none; }
 
-/* DESNA STRANA (PRADA I OSTALO) */
+/* DESNA STRANA (PRADA JE SADA U MRTVOM CENTRU OVE SEKCIJE) */
 .nav-right-group {
     display: flex;
     align-items: center;
-    justify-content: flex-end; 
-    gap: 20px; 
     flex: 1; /* Desna trećina ekrana */
 }
-.banner-link-right { display: flex; align-items: center; }
+.banner-link-right { 
+    display: flex; 
+    align-items: center; 
+    margin-left: auto; /* Gura Pradu na sredinu */
+    margin-right: auto; /* Gura Pradu na sredinu */
+}
 .nav-banner-desni {
-    height: 60px !important; 
+    height: 65px !important; /* Malo povećano */
     width: auto;
-    max-width: 30vw !important; /* Skalira se na manjem ekranu */
+    max-width: 30vw !important; 
     object-fit: contain;
     border-radius: 6px;
     margin: 0;
@@ -83,7 +86,7 @@ a { text-decoration: none; color: inherit; }
 .nav-banner-desni:hover { transform: scale(1.05); }
 
 /* === 2. DUGMAD === */
-.btn-outline { border: 1px solid var(--accent); padding: 10px 24px; border-radius: 6px; color: var(--accent); font-weight: 700; font-size: 0.85rem; transition: 0.3s; cursor: pointer; display: inline-block; white-space: nowrap; flex-shrink: 0; background: transparent; margin-left: 10px;}
+.btn-outline { border: 1px solid var(--accent); padding: 10px 24px; border-radius: 6px; color: var(--accent); font-weight: 700; font-size: 0.85rem; transition: 0.3s; cursor: pointer; display: inline-block; white-space: nowrap; flex-shrink: 0; background: transparent;}
 .btn-outline:hover { background: var(--accent); color: var(--bg-dark); }
 .btn-primary { background: var(--accent); color: var(--bg-dark); padding: 12px 25px; border-radius: 6px; font-weight: 700; display: inline-block; text-align: center; border: none; cursor: pointer;}
 .btn-secondary { background: transparent; border: 1px solid rgba(255,255,255,0.4); color: var(--text-main); padding: 12px 25px; border-radius: 6px; font-weight: 700; display: inline-block; text-align: center;}
@@ -127,11 +130,11 @@ a { text-decoration: none; color: inherit; }
 .service-card h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px; }
 .service-card img { width: 100% !important; height: 250px; object-fit: cover; border-radius: 8px; margin-top: auto; border: 1px solid rgba(255,255,255,0.1); }
 
-/* OVO REŠAVA ROĐENDAN - BEZ SABIJANJA, PUNI ŠIRINU, PRAVA REZOLUCIJA */
 .slika-rodjendan-full { 
     width: 100% !important; 
-    height: auto !important; /* OVO DOZVOLJAVA SLICI DA BUDE PUNE VISINE */
-    object-fit: contain !important; /* Prikazuje celu sliku bez sečenja */
+    height: 250px !important; 
+    object-fit: cover !important; 
+    object-position: center !important;
     border-radius: 8px !important; 
     margin: 15px 0 !important; 
     display: block !important;
@@ -151,21 +154,19 @@ a { text-decoration: none; color: inherit; }
 .cena-tabela th { background: rgba(247, 147, 26, 0.1); color: var(--accent); text-transform: uppercase; font-size: 0.9rem; }
 .cena-tabela tr:last-child td { border-bottom: none; }
 
-/* === 8. PARTNERI SLAJDER === */
+/* === 8. PARTNERI SLAJDER (STRELICE BACA NA IVICE) === */
 .partners-section { padding: 80px 10%; background-color: var(--bg-dark); border-top: 1px solid rgba(255, 255, 255, 0.05); }
 .partners-section h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 40px; text-align: center; }
 
-/* OVO BACA STRELICE KA IVICAMA EKRANA */
+/* OVO GURA STRELICE NA SKROZ LEVU I DESNU STRANU EKRANA */
 .slider-container { display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 0 auto; width: 100%; }
 
 .slider-arrow { background: none !important; border: none !important; color: var(--text-main); font-size: 3.5rem; cursor: pointer; transition: transform 0.2s ease, color 0.2s ease; padding: 0 10px; }
 .slider-arrow:hover { transform: scale(1.3); color: var(--accent); }
 
-/* PROZOR U KOJEM SE VIDI SAMO 1 LOGO */
-.slider-track-window { overflow: hidden; max-width: 350px; width: 100%; margin: 0 auto; }
-
-.partner-logos { display: flex; align-items: center; justify-content: flex-start; gap: 50px; width: max-content; padding: 10px 0; }
-.partner-link { display: flex; justify-content: center; width: 350px; transition: transform 0.3s ease; opacity: 0.9; }
+.slider-track-window { overflow: hidden; max-width: 350px; width: 100%; }
+.partner-logos { display: flex; align-items: center; justify-content: flex-start; width: max-content; padding: 10px 0; gap: 0; }
+.partner-link { display: flex; justify-content: center; width: 350px; flex-shrink: 0; transition: transform 0.3s ease; opacity: 0.9; }
 .partner-link:hover { transform: scale(1.1); opacity: 1; }
 .partner-logo-img { height: 90px !important; width: auto; object-fit: contain; }
 
@@ -199,7 +200,7 @@ a { text-decoration: none; color: inherit; }
     
     .nav-banner-desni { max-width: 40vw !important; height: 50px !important; }
 
-    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); }
+    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); margin: 0 !important; }
     .nav-links.active { left: 0; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
