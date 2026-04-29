@@ -9,6 +9,7 @@
 </head>
 <body>
     
+    <!-- === POPRAVLJENA NAVIGACIJA (Ista kao na Index) === -->
     <nav class="navbar">
         <div class="nav-left">
             <div class="hamburger" onclick="toggleMenu()">
@@ -35,305 +36,299 @@
         </div>
     </nav>
 
-    <section style="padding: 80px 10%;">
-        <div class="section-header">
-            <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 23.04. do Petka 01.05.2026. Kliknite na '▶ Trejler' da pogledate najavu filma.</p>
-            <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
+    <!-- === HERO/INTRO SEKCIJA === -->
+    <header class="hero" style="padding: 100px 10%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <h1 style="font-family: 'Poppins'; font-size: 3rem; margin-bottom: 10px;">Nedeljni Repertoar</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">Pregledajte filmove na repertoaru od Četvrtka 30.04.2026. do Srede 06.05.2026.</p>
+        <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
+    </header>
+
+    <!-- === FILTERI === -->
+    <div class="filters-container" id="filterBox" style="display: none; padding: 20px 10%; background: rgba(255,255,255,0.02);">
+        <div class="filter-group" style="flex: 1; min-width: 150px;">
+            <label>Izaberi Dan</label>
+            <select id="filter-dan" onchange="primeniFiltere()">
+                <option value="sve">Svi dani</option>
+                <option value="cetvrtak">Četvrtak (30.04)</option>
+                <option value="petak">Petak (01.05)</option>
+                <option value="subota">Subota (02.05)</option>
+                <option value="nedelja">Nedelja (03.05)</option>
+                <option value="ponedeljak">Ponedeljak (04.05)</option>
+                <option value="utorak">Utorak (05.05)</option>
+                <option value="sreda">Sreda (06.05)</option>
+            </select>
+        </div>
+        <div class="filter-group" style="flex: 2; min-width: 250px;">
+            <label>Izaberi Film</label>
+            <select id="filter-film" onchange="primeniFiltere()">
+                <option value="sve">Svi filmovi</option>
+                <option value="mario">Super Mario Galaktički film</option>
+                <option value="david">David</option>
+                <option value="prada">Đavo nosi Pradu 2</option>
+                <option value="vrba">Devojčica po imenu Vrba</option>
+                <option value="majkl">Majkl</option>
+                <option value="mumija">Mumija - Film Lija Kronina</option>
+            </select>
+        </div>
+        <div class="filter-group" style="flex: 1; min-width: 150px;">
+            <label>Izaberi Vreme</label>
+            <select id="filter-vreme" onchange="primeniFiltere()">
+                <option value="sve">Sva vremena</option>
+                <option value="16:30">16:30</option>
+                <option value="18:30">18:30</option>
+                <option value="20:30">20:30</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- === LISTA FILMOVA PO DANIMA (Prema Flajeru) === -->
+    <section id="repertoire-list" style="padding: 60px 10%;">
+        
+        <!-- ČETVRTAK -->
+        <div class="day-group" id="grupa-cetvrtak">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Četvrtak 30.04.2026</h3>
+            <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; padding: 40px 0;">NERADNI DAN</p>
         </div>
 
-        <div class="filters-container" id="filterBox">
-            <div class="filter-group">
-                <label>Izaberi Dan</label>
-                <select id="filter-dan" onchange="primeniFiltere()">
-                    <option value="sve">Svi dani</option>
-                    <option value="cetvrtak">Četvrtak (23.04)</option>
-                    <option value="subota">Subota (25.04)</option>
-                    <option value="nedelja">Nedelja (26.04)</option>
-                    <option value="utorak">Utorak (28.04)</option>
-                    <option value="sreda">Sreda (29.04)</option>
-                    <option value="prvimaj">Petak (1. Maj)</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Izaberi Film</label>
-                <select id="filter-film" onchange="primeniFiltere()">
-                    <option value="sve">Svi filmovi</option>
-                    <option value="prada">Đavo nosi Pradu 2</option>
-                    <option value="mario">Super Mario Galaktički film</option>
-                    <option value="drvo">Magično daleko drvo</option>
-                    <option value="mumija">Mumija - Film Lija Kronina</option>
-                    <option value="david">David</option>
-                    <option value="majkl">Majkl</option>
-                    <option value="finik">Finikove avanture 2</option>
-                    <option value="svadba">Svadba</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Izaberi Vreme</label>
-                <select id="filter-vreme" onchange="primeniFiltere()">
-                    <option value="sve">Sva vremena</option>
-                    <option value="16:30">16:30</option>
-                    <option value="18:30">18:30</option>
-                    <option value="20:30">20:30</option>
-                </select>
+        <!-- PETAK -->
+        <div class="day-group" id="grupa-petak" style="margin-top: 50px;">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Petak 01.05.2026</h3>
+            <div class="movie-grid">
+                <div class="movie-card" data-dan="petak" data-film="mario" data-vreme="16:30">
+                    <img src="assets/mario.jpg" alt="Super Mario">
+                    <div class="card-content">
+                        <span class="genre">2D • SINH</span>
+                        <h3>Super Mario Galaktički film</h3>
+                        <p>Nakon što su se razdvojili u Pečurkastom kraljevstvu, Mario i Luiđi kreću na epsku avanturu spašavanja galaksije.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>16:30</span></div>
+                            <div class="cena">370 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="petak" data-film="david" data-vreme="18:30">
+                    <img src="assets/david.jpg" alt="David">
+                    <div class="card-content">
+                        <span class="genre">SINHRONIZOVANO</span>
+                        <h3>David</h3>
+                        <p>Dramatična sinhronizovana priča o usponu biblijskog pastira Davida od skromnih početaka do kraljevskog trona.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>18:30</span></div>
+                            <div class="cena">370 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" id="prada" data-dan="petak" data-film="prada" data-vreme="20:30">
+                    <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
+                    <div class="card-content">
+                        <span class="genre">KOMEDIJA • PREMIJERA</span>
+                        <h3>Đavo nosi Pradu 2</h3>
+                        <p>Nastavak kultne komedije prati Mirandu Pristli koja se bori sa promenama u svetu mode i tehnologije.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>20:30</span></div>
+                            <div class="cena">490 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="repertoire-list" style="margin-top: 40px;">
-            
-            <div class="day-group" id="grupa-cetvrtak">
-                <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 23.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="cetvrtak" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">2D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+        <!-- SUBOTA -->
+        <div class="day-group" id="grupa-subota" style="margin-top: 50px;">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Subota 02.05.2026</h3>
+            <div class="movie-grid">
+                <div class="movie-card" data-dan="subota" data-film="mario" data-vreme="16:30">
+                    <img src="assets/mario.jpg" alt="Super Mario">
+                    <div class="card-content">
+                        <span class="genre">3D • SINH</span>
+                        <h3>Super Mario Galaktički film</h3>
+                        <p>Uživajte u neverovatnoj 3D verziji avanture u kojoj vodoinstalateri Mario i Luiđi spašavaju galaksiju.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>16:30 <img src="assets/3d.png" style="height: 14px; width: auto; display: inline; margin-left: 5px;"></span></div>
+                            <div class="cena">490 RSD</div>
                         </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
                     </div>
-                    <div class="movie-card" data-dan="cetvrtak" data-film="drvo" data-vreme="18:30">
-                        <img src="assets/drvo.jpg" alt="Magično drvo">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>Magično daleko drvo</h3>
-                            <p>Prati modernu porodicu koja se seli u englesko selo gde deca otkrivaju magično drvo.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                </div>
+                <div class="movie-card" data-dan="subota" data-film="vrba" data-vreme="18:30">
+                    <img src="assets/vrba.jpg" alt="Devojčica po imenu Vrba">
+                    <div class="card-content">
+                        <span class="genre">AVANTURA • SINH • NOVO</span>
+                        <h3>Devojčica po imenu Vrba</h3>
+                        <p>Čarobna sinhronizovana avantura devojčice po imenu Vrba koja otkriva skriveni svet u šumi i uči važnu lekciju.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>18:30</span></div>
+                            <div class="cena">370 RSD</div>
                         </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
                     </div>
-                    <div class="movie-card" data-dan="cetvrtak" data-film="mumija" data-vreme="20:30">
-                        <img src="assets/mumija.jpg" alt="Mumija">
-                        <div class="card-content">
-                            <span class="genre">HOROR</span>
-                            <h3>Mumija - Lija Kronina</h3>
-                            <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                </div>
+                <div class="movie-card" data-dan="subota" data-film="majkl" data-vreme="20:30">
+                    <img src="assets/majkl.jpg" alt="Majkl">
+                    <div class="card-content">
+                        <span class="genre">BIOGRAFSKI</span>
+                        <h3>Majkl</h3>
+                        <p>Biografska drama o burnom životu, genijalnosti i kontroverzama "Kralja popa" Majkla Džeksona.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>20:30</span></div>
+                            <div class="cena">390 RSD</div>
                         </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
                     </div>
                 </div>
             </div>
-
-            <div class="day-group" id="grupa-petak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 24.04.2026</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
-            </div>
-
-            <div class="day-group" id="grupa-subota">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 25.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="subota" data-film="david" data-vreme="16:30">
-                        <img src="assets/david.jpg" alt="David">
-                        <div class="card-content">
-                            <span class="genre">SINH • PREMIJERA</span>
-                            <h3>David</h3>
-                            <p>Kada se div Golijat uzdigne, mladi pastir naoružan samo praćkom staje u obranu svog naroda.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="subota" data-film="mario" data-vreme="18:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">3D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">490 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="subota" data-film="majkl" data-vreme="20:30">
-                        <img src="assets/majkl.jpg" alt="Majkl">
-                        <div class="card-content">
-                            <span class="genre">PREMIJERA</span>
-                            <h3>Majkl</h3>
-                            <p>Film prikazuje život Majkla Džeksona izvan muzike.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-nedelja">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 26.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="nedelja" data-film="finik" data-vreme="16:30">
-                        <img src="assets/finik.jpg" alt="Finikove avanture 2">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>Finikove avanture 2</h3>
-                            <p>Kada Finik postane vidljiv zbog drevne magije, lovac na čudovišta kreće da ga uhvati.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="mario" data-vreme="18:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">2D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="svadba" data-vreme="20:30">
-                        <img src="assets/svadba.jpg" alt="Svadba">
-                        <div class="card-content">
-                            <span class="genre">KOMEDIJA</span>
-                            <h3>Svadba</h3>
-                            <p>Hrvatski privrednik pred bankrotom saznaje da mu je ćerka trudna.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-utorak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 28.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">3D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">470 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="utorak" data-film="drvo" data-vreme="18:30">
-                        <img src="assets/drvo.jpg" alt="Magično drvo">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>Magično daleko drvo</h3>
-                            <p>Zasnovan na omiljenom serijalu za decu. Prati modernu porodicu.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="utorak" data-film="majkl" data-vreme="20:30">
-                        <img src="assets/majkl.jpg" alt="Majkl">
-                        <div class="card-content">
-                            <span class="genre">BIOGRAFSKI</span>
-                            <h3>Majkl</h3>
-                            <p>Film prikazuje život Majkla Džeksona izvan muzike.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-sreda">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 29.04.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="sreda" data-film="finik" data-vreme="16:30">
-                        <img src="assets/finik.jpg" alt="Finikove avanture 2">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>Finikove avanture 2</h3>
-                            <p>Kada Finik postane vidljiv zbog drevne magije, lovac na čudovišta kreće da ga uhvati.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda" data-film="david" data-vreme="18:30">
-                        <img src="assets/david.jpg" alt="David">
-                        <div class="card-content">
-                            <span class="genre">SINH</span>
-                            <h3>David</h3>
-                            <p>Od pesama majčinog srca do Božje milosti, Davidova priča počinje u skromnosti.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda" data-film="mumija" data-vreme="20:30">
-                        <img src="assets/mumija.jpg" alt="Mumija">
-                        <div class="card-content">
-                            <span class="genre">HOROR</span>
-                            <h3>Mumija - Lija Kronina</h3>
-                            <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-prvimaj">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 01.05.2026 (Praznik)</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" id="prada" data-dan="prvimaj" data-film="prada" data-vreme="20:30">
-                        <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
-                        <div class="card-content">
-                            <span class="genre">KOMEDIJA • PREMIJERA</span>
-                            <h3>Đavo nosi Pradu 2</h3>
-                            <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli dok pokušava da se snađe u svetu u kojem štampano novinarstvo izumire.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">490 RSD</div>
-                            </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <!-- NEDELJA -->
+        <div class="day-group" id="grupa-nedelja" style="margin-top: 50px;">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Nedelja 03.05.2026</h3>
+            <div class="movie-grid">
+                <div class="movie-card" data-dan="nedelja" data-film="david" data-vreme="16:30">
+                    <img src="assets/david.jpg" alt="David">
+                    <div class="card-content">
+                        <span class="genre">SINHRONIZOVANO</span>
+                        <h3>David</h3>
+                        <p>Mladi pastir David, naoružan samo praćkom i verom, staje u odbranu svog naroda protiv diva Golijata.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>16:30</span></div>
+                            <div class="cena">390 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="nedelja" data-film="prada" data-vreme="18:30">
+                    <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
+                    <div class="card-content">
+                        <span class="genre">KOMEDIJA</span>
+                        <h3>Đavo nosi Pradu 2</h3>
+                        <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>18:30</span></div>
+                            <div class="cena">490 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="nedelja" data-film="mumija" data-vreme="20:30">
+                    <img src="assets/mumija.jpg" alt="Mumija">
+                    <div class="card-content">
+                        <span class="genre">HOROR</span>
+                        <h3>Mumija - Lija Kronina</h3>
+                        <p>Nakon nestanka u pustinji, mlada devojka se vraća nakon osam godina, donoseći sa sobom užasno drevno zlo.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>20:30</span></div>
+                            <div class="cena">390 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PONEDELJAK -->
+        <div class="day-group" id="grupa-ponedeljak" style="margin-top: 50px;">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Ponedeljak 04.05.2026</h3>
+            <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; padding: 40px 0;">NERADNI DAN</p>
+        </div>
+
+        <!-- UTORAK -->
+        <div class="day-group" id="grupa-utorak" style="margin-top: 50px;">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Utorak 05.05.2026</h3>
+            <div class="movie-grid">
+                <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="16:30">
+                    <img src="assets/mario.jpg" alt="Super Mario">
+                    <div class="card-content">
+                        <span class="genre">2D • SINH</span>
+                        <h3>Super Mario Galaktički film</h3>
+                        <p>Nakon što su se razdvojili Mario i Luiđi kreću na epsku avanturu spašavanja.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>16:30</span></div>
+                            <div class="cena">370 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="utorak" data-film="vrba" data-vreme="18:30">
+                    <img src="assets/vrba.jpg" alt="Devojčica po imenu Vrba">
+                    <div class="card-content">
+                        <span class="genre">AVANTURA • SINH</span>
+                        <h3>Devojčica po imenu Vrba</h3>
+                        <p>Čarobna sinhronizovana avantura devojčice po imenu Vrba koja otkriva skriveni svet u šumi.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>18:30</span></div>
+                            <div class="cena">370 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="utorak" data-film="majkl" data-vreme="20:30">
+                    <img src="assets/majkl.jpg" alt="Majkl">
+                    <div class="card-content">
+                        <span class="genre">BIOGRAFSKI</span>
+                        <h3>Majkl</h3>
+                        <p>Film prikazuje život Majkla Džeksona izvan muzike.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>20:30</span></div>
+                            <div class="cena">370 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SREDA -->
+        <div class="day-group" id="grupa-sreda" style="margin-top: 50px;">
+            <h3 style="font-family: 'Poppins'; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Sreda 06.05.2026</h3>
+            <div class="movie-grid">
+                <div class="movie-card" data-dan="sreda" data-film="mario" data-vreme="16:30">
+                    <img src="assets/mario.jpg" alt="Super Mario">
+                    <div class="card-content">
+                        <span class="genre">3D • SINH</span>
+                        <h3>Super Mario Galaktički film</h3>
+                        <p>Uživajte u neverovatnoj 3D verziji avanture u kojoj vodoinstalateri Mario i Luiđi spašavaju.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>16:30 <img src="assets/3d.png" style="height: 14px; width: auto; display: inline; margin-left: 5px;"></span></div>
+                            <div class="cena">470 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="sreda" data-film="prada" data-vreme="18:30">
+                    <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
+                    <div class="card-content">
+                        <span class="genre">KOMEDIJA</span>
+                        <h3>Đavo nosi Pradu 2</h3>
+                        <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>18:30</span></div>
+                            <div class="cena">490 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+                <div class="movie-card" data-dan="sreda" data-film="mumija" data-vreme="20:30">
+                    <img src="assets/mumija.jpg" alt="Mumija">
+                    <div class="card-content">
+                        <span class="genre">HOROR</span>
+                        <h3>Mumija - Lija Kronina</h3>
+                        <p>Nakon nestanka u pustinji devojka se vraća nakon osam godina donoseći užasno.</p>
+                        <div class="rezervacija-info">
+                            <div class="times"><span>20:30</span></div>
+                            <div class="cena">370 RSD</div>
+                        </div>
+                        <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
+    <!-- === KONAČAN FUTER (Isti kao Index) === -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col brand">
@@ -365,20 +360,19 @@
         <div class="copyright-tekst">© 2026 Sva prava zadržana. Sajt izradio S-Code Solutions.</div>
     </footer>
 
+    <!-- SKRIPTE ZA NAVIGACIJU I FILTERE -->
     <script>
-        function toggleMenu() { 
-    document.getElementById("navLinks").classList.toggle("active"); 
-    document.querySelector(".logo").classList.toggle("logo-sakriven");
-}
-        
+        function toggleMenu() { document.getElementById("navLinks").classList.toggle("active"); }
+
         function toggleFilteri() { 
             var box = document.getElementById("filterBox"); 
+            var btn = document.getElementById("filterBtn");
             if (box.style.display === "none" || box.style.display === "") { 
                 box.style.display = "flex"; 
-                document.getElementById("filterBtn").innerHTML = "❌ Zatvori Filtere"; 
+                btn.innerHTML = "❌ Zatvori Filtere"; 
             } else { 
                 box.style.display = "none"; 
-                document.getElementById("filterBtn").innerHTML = "⚙️ Prikaži Filtere"; 
+                btn.innerHTML = "⚙️ Prikaži Filtere"; 
             } 
         }
 
@@ -398,19 +392,21 @@
                 if (izabranFilm !== 'sve' && filmKartice !== izabranFilm) prikazi = false; 
                 if (izabranoVreme !== 'sve' && vremeKartice !== izabranoVreme) prikazi = false; 
                 
-                if (prikazi) {
-                    kartica.style.setProperty('display', 'flex', 'important');
-                } else {
-                    kartica.style.setProperty('display', 'none', 'important');
-                }
+                kartica.style.display = prikazi ? 'flex' : 'none'; 
             }); 
 
+            // Sakrij prazne dane
             document.querySelectorAll('.day-group').forEach(grupa => { 
-                const vidljiveKartice = grupa.querySelectorAll('.movie-card[style*="display: flex"]'); 
-                if (vidljiveKartice.length > 0) {
-                    grupa.style.setProperty('display', 'block', 'important');
+                const vidljiveKartice = grupa.querySelectorAll('.movie-card:not([style*="display: none"])'); 
+                const neradniTekst = grupa.querySelector('p');
+                
+                // Ako je grupa neradni dan (samo ima p tag, nema movie-card) ostavi je ako je taj dan izabran ili je sve
+                if(vidljiveKartice.length === 0 && neradniTekst && (izabranDan === 'sve' || grupa.id === 'grupa-' + izabranDan)) {
+                    grupa.style.display = 'block';
+                } else if (vidljiveKartice.length > 0) {
+                    grupa.style.display = 'block';
                 } else {
-                    grupa.style.setProperty('display', 'none', 'important');
+                    grupa.style.display = 'none';
                 }
             }); 
         }
