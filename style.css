@@ -197,42 +197,69 @@ a { text-decoration: none; color: inherit; }
 
 .skriveno { display: none !important; }
 
-/* === 11. MOBILNA OPTIMIZACIJA (Samo za telefone!) === */
+/* === 11. MOBILNA OPTIMIZACIJA (SAMO TELEFON) === */
 @media (max-width: 1000px) {
-    .hamburger { display: flex; }
-    .navbar { padding: 15px 5%; justify-content: space-between; min-height: 80px;}
+    .navbar { 
+        padding: 10px 5%; 
+        justify-content: space-between; 
+        min-height: 90px; 
+        display: flex;
+        align-items: center;
+    }
     
-    .nav-left { flex: unset; }
-    
-    /* GIGANTSKI LOGO NA TELEFONU */
-    .logo img { transform: scale(2); margin-left: 25px; height: 60px !important; } 
-    
-    /* GIGANTSKA PRADA NA TELEFONU */
-    .banner-link-right { margin-left: auto !important; margin-right: 0 !important; }
-    .nav-banner-desni { max-width: 45vw !important; height: 60px !important; }
+    /* HAMBURGER (Tri crte) ostaje levo */
+    .hamburger { display: flex; order: 1; margin: 0; }
 
-    /* KADA SE MENI OTVORI, LOGO SE SAKRIJE */
-    .logo-sakriven { display: none !important; }
+    /* PRADA BANER - Veći, ZAOBLJEN i istaknut */
+    .nav-right-group { 
+        order: 2; 
+        flex: 1; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        gap: 0;
+    }
+    .banner-link-right { margin: 0 !important; display: flex; }
+    .nav-banner-desni { 
+        height: 70px !important; /* Povećano da ne bude sitno */
+        max-width: 50vw !important; 
+        width: auto;
+        border-radius: 12px !important; /* OVO ZAOBLJUJE IVICE NA FONU */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* Daje dubinu da ne izgleda "izgubljeno" */
+        object-fit: cover;
+    }
 
-    .nav-links { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background-color: #0c0d0f; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.4s ease-in-out; z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); margin: 0 !important; }
+    /* LOGO MORAVICA - Ostaje desno, fiksiran, NEMA BEŽANJA */
+    .nav-left { order: 3; flex: 0; display: flex; align-items: center; }
+    .logo { margin: 0; }
+    .logo img { 
+        transform: scale(1.6); /* Malo prilagođeno da stane uz veliku Pradu */
+        transform-origin: right center; 
+        height: 50px !important; 
+        margin-top: -5px; 
+    }
+
+    /* MENI KADA SE OTVORI */
+    .nav-links { 
+        position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; 
+        background-color: #0c0d0f; flex-direction: column; justify-content: center; 
+        align-items: center; gap: 30px; transition: 0.4s ease-in-out; 
+        z-index: 1500; box-shadow: 10px 0 20px rgba(0,0,0,0.5); margin: 0 !important; 
+    }
     .nav-links.active { left: 0; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
     
-    .nav-right-group { gap: 10px; justify-content: flex-end; flex: 1; }
-    
-    .hero { padding: 80px 5%; text-align: center; }
-    .hero h1 { font-size: 2.8rem; }
-    
-    .slider-arrow { font-size: 2.5rem; padding: 0 5px; }
-    .slider-track-window { max-width: 230px !important; } 
-    .partner-link { width: 230px !important; } 
-    .partner-logo-img { height: 70px !important; width: 100% !important; object-fit: contain; } 
-
+    /* Ostale mobilne ispravke */
+    .hero { padding: 60px 5%; text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+    .slider-arrow { font-size: 2.2rem; padding: 0 5px; }
+    .slider-track-window { max-width: 260px !important; } 
+    .partner-link { width: 260px !important; } 
+    .partner-logo-img { height: 80px !important; }
     .map-section { padding: 50px 5% !important; }
     .map-container { width: 100%; overflow: hidden; }
     iframe { width: 100% !important; height: 300px !important; }
-    
     .movie-grid { grid-template-columns: 1fr; gap: 20px; }
     .services-grid { grid-template-columns: 1fr; gap: 20px; }
 }
