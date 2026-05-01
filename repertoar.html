@@ -9,7 +9,6 @@
 </head>
 <body>
     
-    <!-- === NAVIGACIJA === -->
     <nav class="navbar">
         <div class="nav-left">
             <div class="hamburger" onclick="toggleMenu()">
@@ -36,7 +35,6 @@
         </div>
     </nav>
 
-    <!-- === REPERTOAR SEKCIJA === -->
     <section style="padding: 80px 10%;">
         <div class="section-header">
             <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
@@ -44,7 +42,6 @@
             <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
         </div>
 
-        <!-- FILTERI -->
         <div class="filters-container" id="filterBox">
             <div class="filter-group">
                 <label>Izaberi Dan</label>
@@ -82,16 +79,13 @@
             </div>
         </div>
 
-        <!-- LISTA FILMOVA PO DANIMA -->
         <div id="repertoire-list" style="margin-top: 40px;">
             
-            <!-- ČETVRTAK -->
             <div class="day-group" id="grupa-cetvrtak">
                 <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 30.04.2026</h3>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
             </div>
 
-            <!-- PETAK (1. MAJ - PRAZNIČNE CENE 390 RSD) -->
             <div class="day-group" id="grupa-petak">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 01.05.2026</h3>
                 <div class="movie-grid">
@@ -105,7 +99,10 @@
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="petak" data-film="david" data-vreme="18:30">
@@ -118,7 +115,10 @@
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=1icvCOUnlQA" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" id="prada" data-dan="petak" data-film="prada" data-vreme="20:30">
@@ -131,13 +131,15 @@
                                 <div class="times"><span>20:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=kEZwJoeBf8Y" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SUBOTA -->
             <div class="day-group" id="grupa-subota">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 02.05.2026</h3>
                 <div class="movie-grid">
@@ -151,7 +153,10 @@
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">490 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="subota" data-film="vrba" data-vreme="18:30">
@@ -164,7 +169,10 @@
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=jW7AibE4N1s" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="subota" data-film="majkl" data-vreme="20:30">
@@ -177,13 +185,15 @@
                                 <div class="times"><span>20:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=gTj1Y9I-hFE" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- NEDELJA -->
             <div class="day-group" id="grupa-nedelja">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 03.05.2026</h3>
                 <div class="movie-grid">
@@ -197,7 +207,10 @@
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=1icvCOUnlQA" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="nedelja" data-film="prada" data-vreme="18:30">
@@ -210,7 +223,10 @@
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">490 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=kEZwJoeBf8Y" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="nedelja" data-film="mumija" data-vreme="20:30">
@@ -223,19 +239,20 @@
                                 <div class="times"><span>20:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=IJHgZBnEAcs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PONEDELJAK -->
             <div class="day-group" id="grupa-ponedeljak">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 04.05.2026</h3>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
             </div>
 
-            <!-- UTORAK -->
             <div class="day-group" id="grupa-utorak">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 05.05.2026</h3>
                 <div class="movie-grid">
@@ -249,7 +266,10 @@
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="utorak" data-film="vrba" data-vreme="18:30">
@@ -262,7 +282,10 @@
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=jW7AibE4N1s" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="utorak" data-film="majkl" data-vreme="20:30">
@@ -275,13 +298,15 @@
                                 <div class="times"><span>20:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=gTj1Y9I-hFE" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SREDA -->
             <div class="day-group" id="grupa-sreda">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 06.05.2026</h3>
                 <div class="movie-grid">
@@ -295,7 +320,10 @@
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">470 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="sreda" data-film="prada" data-vreme="18:30">
@@ -308,7 +336,10 @@
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">490 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=kEZwJoeBf8Y" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                     <div class="movie-card" data-dan="sreda" data-film="mumija" data-vreme="20:30">
@@ -321,7 +352,10 @@
                                 <div class="times"><span>20:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
-                            <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi">REZERVIŠI</a>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=IJHgZBnEAcs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -330,7 +364,6 @@
         </div>
     </section>
 
-    <!-- === FUTER === -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col brand">
@@ -362,11 +395,10 @@
         <div class="copyright-tekst">© 2026 Sva prava zadržana. Sajt izradio S-Code Solutions.</div>
     </footer>
 
-    <!-- SKRIPTE ZA FILTERE I NAVIGACIJU -->
     <script>
         function toggleMenu() { 
-    document.getElementById("navLinks").classList.toggle("active"); 
-}
+            document.getElementById("navLinks").classList.toggle("active"); 
+        }
         
         function toggleFilteri() { 
             var box = document.getElementById("filterBox"); 
