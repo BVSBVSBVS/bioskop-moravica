@@ -201,40 +201,38 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 1000px) {
     .navbar { 
         padding: 10px 5%; 
-        justify-content: space-between; 
+        justify-content: flex-start; /* Gura sve na levu stranu */
         min-height: 80px; 
         display: flex;
         align-items: center;
     }
     
-    /* HAMBURGER (Tri crte) levo */
-    .hamburger { display: flex; order: 1; margin: 0; }
-
-    /* PRADA BANER - Centriran, prirodna veličina, BEZ izobličenja */
-    .nav-right-group { 
-        order: 2; 
-        flex: 1; 
+    /* Kontejner koji drži tri crte i logo zajedno na levoj strani */
+    .nav-left { 
         display: flex; 
-        justify-content: center; 
-        align-items: center;
-    }
-    .banner-link-right { margin: 0 !important; display: flex; }
-    .nav-banner-desni { 
-        width: 150px !important; /* Širina banera, menjaš ako hoćeš veće/manje */
-        height: auto !important; /* Zadržava prirodnu visinu, nema strečovanja! */
-        border-radius: 0 !important; /* Ukinuto zaobljenje */
-        box-shadow: none !important; /* Ukinuta senka */
-        object-fit: contain; /* Sprečava zumiranje i isecanje */
+        align-items: center; 
+        gap: 20px; /* Razmak između tri crte i logotipa */
+        width: 100%;
     }
 
-    /* LOGO MORAVICA - Desno, povećan i čist */
-    .nav-left { order: 3; flex: 0; display: flex; align-items: center; }
+    /* HAMBURGER (Tri crte) */
+    .hamburger { 
+        display: flex; 
+        margin: 0; 
+    }
+
+    /* LOGO MORAVICA - Povećan */
     .logo { margin: 0; }
     .logo img { 
-        transform: scale(1.3); /* Vraćena normalna veličina */
-        transform-origin: right center; 
+        transform: scale(1.6); /* Povećali smo logo */
+        transform-origin: left center; /* Da se širi iz leve strane, ne da beži */
         height: 45px !important; 
         margin-top: 0; 
+    }
+
+    /* SAKRIVAMO PRADU NA TELEFONU SKROZ */
+    .nav-right-group { 
+        display: none !important; 
     }
 
     /* MENI KADA SE OTVORI */
