@@ -201,41 +201,35 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 1000px) {
     .navbar { 
         padding: 10px 5%; 
-        justify-content: flex-start; /* Gura sve na levu stranu */
+        justify-content: flex-start; 
         min-height: 80px; 
         display: flex;
         align-items: center;
     }
     
-    /* Kontejner koji drži tri crte i logo zajedno na levoj strani */
     .nav-left { 
         display: flex; 
         align-items: center; 
-        gap: 20px; /* Razmak između tri crte i logotipa */
+        gap: 20px; 
         width: 100%;
     }
 
-    /* HAMBURGER (Tri crte) */
-    .hamburger { 
-        display: flex; 
-        margin: 0; 
-    }
+    .hamburger { display: flex; margin: 0; }
 
-    /* LOGO MORAVICA - Povećan */
+    /* LOGO MORAVICA - Dodatno povećan */
     .logo { margin: 0; }
     .logo img { 
-        transform: scale(1.6); /* Povećali smo logo */
-        transform-origin: left center; /* Da se širi iz leve strane, ne da beži */
+        transform: scale(1.9); /* OVO GA JE POVEĆALO */
+        transform-origin: left center; 
         height: 45px !important; 
         margin-top: 0; 
     }
 
-    /* SAKRIVAMO PRADU NA TELEFONU SKROZ */
+    /* SAKRIVAMO PRADU NA TELEFONU SVUDA */
     .nav-right-group { 
         display: none !important; 
     }
 
-    /* MENI KADA SE OTVORI */
     .nav-links { 
         position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; 
         background-color: #0c0d0f; flex-direction: column; justify-content: center; 
@@ -246,7 +240,6 @@ a { text-decoration: none; color: inherit; }
     .nav-btn-mobile-hide { display: none; }
     .hamburger-only { display: block; }
     
-    /* Ostale mobilne ispravke */
     .hero { padding: 60px 5%; text-align: center; }
     .hero h1 { font-size: 2.5rem; }
     .slider-arrow { font-size: 2.2rem; padding: 0 5px; }
