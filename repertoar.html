@@ -27,7 +27,6 @@
             <li class="hamburger-only" style="margin-top: 20px;"><a href="ostalo.html" style="color: var(--accent);">OSTALO</a></li>
         </ul>
 
-        <!-- PRADA BANER JE SKROZ OBRISAN OVDAVDE -->
         <div class="nav-right-group">
             <a href="ostalo.html" class="btn-outline nav-btn-mobile-hide">OSTALO</a>
         </div>
@@ -36,7 +35,7 @@
     <section style="padding: 80px 10%;">
         <div class="section-header">
             <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 30.04. do Srede 06.05.2026. Kliknite na 'REZERVIŠI' za kupovinu karata.</p>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 07.05. do Srede 13.05.2026. Kliknite na 'REZERVIŠI' za kupovinu karata.</p>
             <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
         </div>
 
@@ -45,25 +44,26 @@
                 <label>Izaberi Dan</label>
                 <select id="filter-dan" onchange="primeniFiltere()">
                     <option value="sve">Svi dani</option>
-                    <option value="cetvrtak">Četvrtak (30.04)</option>
-                    <option value="petak">Petak (01.05)</option>
-                    <option value="subota">Subota (02.05)</option>
-                    <option value="nedelja">Nedelja (03.05)</option>
-                    <option value="ponedeljak">Ponedeljak (04.05)</option>
-                    <option value="utorak">Utorak (05.05)</option>
-                    <option value="sreda">Sreda (06.05)</option>
+                    <option value="cetvrtak">Četvrtak (07.05)</option>
+                    <option value="petak">Petak (08.05)</option>
+                    <option value="subota">Subota (09.05)</option>
+                    <option value="nedelja">Nedelja (10.05)</option>
+                    <option value="ponedeljak">Ponedeljak (11.05)</option>
+                    <option value="utorak">Utorak (12.05)</option>
+                    <option value="sreda">Sreda (13.05)</option>
                 </select>
             </div>
             <div class="filter-group">
                 <label>Izaberi Film</label>
                 <select id="filter-film" onchange="primeniFiltere()">
                     <option value="sve">Svi filmovi</option>
-                    <option value="mario">Super Mario Galaktički film</option>
-                    <option value="david">David</option>
+                    <option value="mortal">Mortal Kombat 2</option>
+                    <option value="izlet">Izlet</option>
                     <option value="prada">Đavo nosi Pradu 2</option>
-                    <option value="vrba">Devojčica po imenu Vrba</option>
                     <option value="majkl">Majkl</option>
-                    <option value="mumija">Mumija - Film Lija Kronina</option>
+                    <option value="ovce">Ovce detektivi</option>
+                    <option value="david">David</option>
+                    <option value="mario">Super Mario Galaktički film</option>
                 </select>
             </div>
             <div class="filter-group">
@@ -81,39 +81,33 @@
             
             <!-- ČETVRTAK -->
             <div class="day-group" id="grupa-cetvrtak">
-                <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 30.04.2026</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
-            </div>
-
-            <!-- PETAK -->
-            <div class="day-group" id="grupa-petak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 01.05.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 07.05.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="petak" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="ovce" data-vreme="16:30">
+                        <img src="assets/ovce-detektivi.jpg" alt="Ovce detektivi">
                         <div class="card-content">
                             <span class="genre">2D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros. svetom.</p>
+                            <h3>Ovce detektivi</h3>
+                            <p>Sjajna animirana avantura za najmlađe.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>16:30</span></div>
-                                <div class="cena">390 RSD</div>
+                                <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="#" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="petak" data-film="david" data-vreme="18:30">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="david" data-vreme="18:30">
                         <img src="assets/david.jpg" alt="David">
                         <div class="card-content">
-                            <span class="genre">SINHRONIZOVANO</span>
+                            <span class="genre">2D • SINHRONIZOVANO</span>
                             <h3>David</h3>
                             <p>Od pesama majčinog srca do Božje milosti, Davidova priča počinje u skromnosti.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>18:30</span></div>
-                                <div class="cena">390 RSD</div>
+                                <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
@@ -121,35 +115,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" id="prada" data-dan="petak" data-film="prada" data-vreme="20:30">
-                        <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="mortal" data-vreme="20:30">
+                        <img src="assets/mortal-kombat.jpg" alt="Mortal Kombat 2">
                         <div class="card-content">
-                            <span class="genre">KOMEDIJA • PREMIJERA</span>
-                            <h3>Đavo nosi Pradu 2</h3>
-                            <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli dok pokušava da se snađe u novom svetu.</p>
+                            <span class="genre">2D • AKCIJA</span>
+                            <h3>Mortal Kombat 2</h3>
+                            <p>Nastavak epske borbe šampiona Zemlje koji se spremaju za konačni turnir.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>20:30</span></div>
-                                <div class="cena">390 RSD</div>
+                                <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=kEZwJoeBf8Y" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="#" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- PETAK -->
+            <div class="day-group" id="grupa-petak">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 08.05.2026</h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
+            </div>
+
             <!-- SUBOTA -->
             <div class="day-group" id="grupa-subota">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 02.05.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 09.05.2026</h3>
                 <div class="movie-grid">
                     <div class="movie-card" data-dan="subota" data-film="mario" data-vreme="16:30">
                         <img src="assets/mario.jpg" alt="Super Mario">
                         <div class="card-content">
                             <span class="genre">3D • SINH</span>
                             <h3>Super Mario Galaktički film</h3>
-                            <p>Uživajte u neverovatnoj 3D verziji avanture u kojoj vodoinstalateri Mario i Luiđi spašavaju.</p>
+                            <p>Uživajte u neverovatnoj 3D verziji avanture.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">490 RSD</div>
@@ -160,26 +160,81 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="subota" data-film="vrba" data-vreme="18:30">
-                        <img src="assets/vrba.jpg" alt="Devojčica po imenu Vrba">
+                    <div class="movie-card" data-dan="subota" data-film="izlet" data-vreme="18:30">
+                        <img src="assets/izlet.jpg" alt="Izlet">
                         <div class="card-content">
-                            <span class="genre">AVANTURA • SINH</span>
-                            <h3>Devojčica po imenu Vrba</h3>
-                            <p>Nezaboravna avantura i čarobno putovanje devojčice po imenu Vrba.</p>
+                            <span class="genre">2D • DRAMA</span>
+                            <h3>Izlet</h3>
+                            <p>Glavni junak Toma odmeće se iz grada, plovi niz reku do najdalje tačke.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>18:30</span></div>
-                                <div class="cena">370 RSD</div>
+                                <div class="cena">390 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=jW7AibE4N1s" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://youtu.be/sFCrhvIGt3E?si=aWESnAacCYwuhI_t" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="subota" data-film="majkl" data-vreme="20:30">
+                    <div class="movie-card" data-dan="subota" data-film="prada" data-vreme="20:30">
+                        <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
+                        <div class="card-content">
+                            <span class="genre">2D • KOMEDIJA</span>
+                            <h3>Đavo nosi Pradu 2</h3>
+                            <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>20:30</span></div>
+                                <div class="cena">390 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=kEZwJoeBf8Y" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEDELJA -->
+            <div class="day-group" id="grupa-nedelja">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 10.05.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="nedelja" data-film="ovce" data-vreme="16:30">
+                        <img src="assets/ovce-detektivi.jpg" alt="Ovce detektivi">
+                        <div class="card-content">
+                            <span class="genre">2D • SINH</span>
+                            <h3>Ovce detektivi</h3>
+                            <p>Sjajna animirana avantura za najmlađe.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>16:30</span></div>
+                                <div class="cena">390 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="#" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="nedelja" data-film="mortal" data-vreme="18:30">
+                        <img src="assets/mortal-kombat.jpg" alt="Mortal Kombat 2">
+                        <div class="card-content">
+                            <span class="genre">2D • AKCIJA</span>
+                            <h3>Mortal Kombat 2</h3>
+                            <p>Nastavak epske borbe šampiona Zemlje koji se spremaju za konačni turnir.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>18:30</span></div>
+                                <div class="cena">390 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="#" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="nedelja" data-film="majkl" data-vreme="20:30">
                         <img src="assets/majkl.jpg" alt="Majkl">
                         <div class="card-content">
-                            <span class="genre">BIOGRAFSKI</span>
+                            <span class="genre">2D • BIOGRAFSKI</span>
                             <h3>Majkl</h3>
                             <p>Film prikazuje život Majkla Džeksona izvan muzike.</p>
                             <div class="rezervacija-info">
@@ -195,19 +250,25 @@
                 </div>
             </div>
 
-            <!-- NEDELJA -->
-            <div class="day-group" id="grupa-nedelja">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 03.05.2026</h3>
+            <!-- PONEDELJAK -->
+            <div class="day-group" id="grupa-ponedeljak">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 11.05.2026</h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
+            </div>
+
+            <!-- UTORAK -->
+            <div class="day-group" id="grupa-utorak">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 12.05.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="nedelja" data-film="david" data-vreme="16:30">
+                    <div class="movie-card" data-dan="utorak" data-film="david" data-vreme="16:30">
                         <img src="assets/david.jpg" alt="David">
                         <div class="card-content">
-                            <span class="genre">SINHRONIZOVANO</span>
+                            <span class="genre">2D • SINHRONIZOVANO</span>
                             <h3>David</h3>
-                            <p>Kada se div Golijat uzdigne, mladi pastir naoružan samo praćkom staje u obranu svog naroda.</p>
+                            <p>Od pesama majčinog srca do Božje milosti, Davidova priča počinje u skromnosti.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>16:30</span></div>
-                                <div class="cena">390 RSD</div>
+                                <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
@@ -215,15 +276,31 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="prada" data-vreme="18:30">
+                    <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="18:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content">
+                            <span class="genre">3D • SINH</span>
+                            <h3>Super Mario Galaktički film</h3>
+                            <p>Uživajte u neverovatnoj 3D verziji avanture.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>18:30</span></div>
+                                <div class="cena">470 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="utorak" data-film="prada" data-vreme="20:30">
                         <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
                         <div class="card-content">
-                            <span class="genre">KOMEDIJA</span>
+                            <span class="genre">2D • KOMEDIJA</span>
                             <h3>Đavo nosi Pradu 2</h3>
                             <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli.</p>
                             <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">390 RSD</div>
+                                <div class="times"><span>20:30</span></div>
+                                <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
@@ -231,36 +308,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="mumija" data-vreme="20:30">
-                        <img src="assets/mumija.jpg" alt="Mumija">
-                        <div class="card-content">
-                            <span class="genre">HOROR</span>
-                            <h3>Mumija - Lija Kronina</h3>
-                            <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=IJHgZBnEAcs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!-- PONEDELJAK -->
-            <div class="day-group" id="grupa-ponedeljak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 04.05.2026</h3>
-                <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
-            </div>
-
-            <!-- UTORAK -->
-            <div class="day-group" id="grupa-utorak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 05.05.2026</h3>
+            <!-- SREDA -->
+            <div class="day-group" id="grupa-sreda">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 13.05.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="utorak" data-film="mario" data-vreme="16:30">
+                    <div class="movie-card" data-dan="sreda" data-film="mario" data-vreme="16:30">
                         <img src="assets/mario.jpg" alt="Super Mario">
                         <div class="card-content">
                             <span class="genre">2D • SINH</span>
@@ -276,26 +331,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="utorak" data-film="vrba" data-vreme="18:30">
-                        <img src="assets/vrba.jpg" alt="Devojčica po imenu Vrba">
+                    <div class="movie-card" data-dan="sreda" data-film="izlet" data-vreme="18:30">
+                        <img src="assets/izlet.jpg" alt="Izlet">
                         <div class="card-content">
-                            <span class="genre">AVANTURA • SINH</span>
-                            <h3>Devojčica po imenu Vrba</h3>
-                            <p>Nezaboravna avantura i čarobno putovanje devojčice po imenu Vrba.</p>
+                            <span class="genre">2D • DRAMA</span>
+                            <h3>Izlet</h3>
+                            <p>Glavni junak Toma odmeće se iz grada, plovi niz reku do najdalje tačke.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=jW7AibE4N1s" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://youtu.be/sFCrhvIGt3E?si=aWESnAacCYwuhI_t" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="utorak" data-film="majkl" data-vreme="20:30">
+                    <div class="movie-card" data-dan="sreda" data-film="majkl" data-vreme="20:30">
                         <img src="assets/majkl.jpg" alt="Majkl">
                         <div class="card-content">
-                            <span class="genre">BIOGRAFSKI</span>
+                            <span class="genre">2D • BIOGRAFSKI</span>
                             <h3>Majkl</h3>
                             <p>Film prikazuje život Majkla Džeksona izvan muzike.</p>
                             <div class="rezervacija-info">
@@ -305,61 +360,6 @@
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
                                 <a href="https://www.youtube.com/watch?v=gTj1Y9I-hFE" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SREDA -->
-            <div class="day-group" id="grupa-sreda">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 06.05.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="sreda" data-film="mario" data-vreme="16:30">
-                        <img src="assets/mario.jpg" alt="Super Mario">
-                        <div class="card-content">
-                            <span class="genre">3D • SINH</span>
-                            <h3>Super Mario Galaktički film</h3>
-                            <p>Animirana avantura inspirisana Super Mario Bros.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">470 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=TnGl01FkMMo" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda" data-film="prada" data-vreme="18:30">
-                        <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
-                        <div class="card-content">
-                            <span class="genre">KOMEDIJA</span>
-                            <h3>Đavo nosi Pradu 2</h3>
-                            <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=kEZwJoeBf8Y" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda" data-film="mumija" data-vreme="20:30">
-                        <img src="assets/mumija.jpg" alt="Mumija">
-                        <div class="card-content">
-                            <span class="genre">HOROR</span>
-                            <h3>Mumija - Lija Kronina</h3>
-                            <p>Mlada ćerka jednog novinara nestaje u pustinji. Osam godina kasnije vraća se.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=IJHgZBnEAcs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
