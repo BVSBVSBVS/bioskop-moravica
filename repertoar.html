@@ -35,7 +35,7 @@
     <section style="padding: 80px 10%;">
         <div class="section-header">
             <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 14.05. do Srede 20.05.2026. Kliknite na 'REZERVIŠI' za kupovinu karata.</p>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Srede 13.05. do Srede 20.05.2026. Kliknite na 'REZERVIŠI' za kupovinu karata.</p>
             <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
         </div>
 
@@ -44,19 +44,21 @@
                 <label>Izaberi Dan</label>
                 <select id="filter-dan" onchange="primeniFiltere()">
                     <option value="sve">Svi dani</option>
+                    <option value="sreda13">Sreda (13.05)</option>
                     <option value="cetvrtak">Četvrtak (14.05)</option>
                     <option value="petak">Petak (15.05)</option>
                     <option value="subota">Subota (16.05)</option>
                     <option value="nedelja">Nedelja (17.05)</option>
                     <option value="ponedeljak">Ponedeljak (18.05)</option>
                     <option value="utorak">Utorak (19.05)</option>
-                    <option value="sreda">Sreda (20.05)</option>
+                    <option value="sreda20">Sreda (20.05)</option>
                 </select>
             </div>
             <div class="filter-group">
                 <label>Izaberi Film</label>
                 <select id="filter-film" onchange="primeniFiltere()">
                     <option value="sve">Svi filmovi</option>
+                    <option value="izlet">Izlet</option>
                     <option value="siva-zona">Siva zona</option>
                     <option value="mortal">Mortal Kombat 2</option>
                     <option value="prada">Đavo nosi Pradu 2</option>
@@ -79,9 +81,65 @@
         </div>
 
         <div id="repertoire-list" style="margin-top: 40px;">
+
+            <!-- SREDA 13.05. -->
+            <div class="day-group" id="grupa-sreda13">
+                <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 13.05.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="sreda13" data-film="mario" data-vreme="16:30">
+                        <img src="assets/mario.jpg" alt="Super Mario">
+                        <div class="card-content">
+                            <span class="genre">2D • SINH</span>
+                            <h3>Super Mario Galaktički film</h3>
+                            <p>Animirana avantura inspirisana Super Mario Bros.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>16:30</span></div>
+                                <div class="cena">370 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=PoQSAKYohks" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="sreda13" data-film="izlet" data-vreme="18:30">
+                        <img src="assets/izlet.jpg" alt="Izlet">
+                        <div class="card-content">
+                            <span class="genre">2D • DRAMA</span>
+                            <h3>Izlet</h3>
+                            <p>Glavni junak Toma odmeće se iz grada, plovi niz reku do najdalje tačke.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>18:30</span></div>
+                                <div class="cena">370 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://youtu.be/sFCrhvIGt3E?si=aWESnAacCYwuhI_t" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="sreda13" data-film="majkl" data-vreme="20:30">
+                        <img src="assets/majkl.jpg" alt="Majkl">
+                        <div class="card-content">
+                            <span class="genre">2D • BIOGRAFSKI</span>
+                            <h3>Majkl</h3>
+                            <p>Film prikazuje život Majkla Džeksona izvan muzike.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>20:30</span></div>
+                                <div class="cena">370 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=DjWRBjDL6HA" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
+            <!-- ČETVRTAK 14.05. -->
             <div class="day-group" id="grupa-cetvrtak">
-                <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 14.05.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 14.05.2026</h3>
                 <div class="movie-grid">
                     <div class="movie-card" data-dan="cetvrtak" data-film="hajdi" data-vreme="16:30">
                         <img src="assets/hajdi.jpg" alt="Hajdi i mali ris">
@@ -134,11 +192,13 @@
                 </div>
             </div>
 
+            <!-- PETAK -->
             <div class="day-group" id="grupa-petak">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 15.05.2026</h3>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
             </div>
 
+            <!-- SUBOTA -->
             <div class="day-group" id="grupa-subota">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 16.05.2026</h3>
                 <div class="movie-grid">
@@ -193,6 +253,7 @@
                 </div>
             </div>
 
+            <!-- NEDELJA -->
             <div class="day-group" id="grupa-nedelja">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 17.05.2026</h3>
                 <div class="movie-grid">
@@ -247,11 +308,13 @@
                 </div>
             </div>
 
+            <!-- PONEDELJAK -->
             <div class="day-group" id="grupa-ponedeljak">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 18.05.2026</h3>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
             </div>
 
+            <!-- UTORAK -->
             <div class="day-group" id="grupa-utorak">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 19.05.2026</h3>
                 <div class="movie-grid">
@@ -306,10 +369,11 @@
                 </div>
             </div>
 
-            <div class="day-group" id="grupa-sreda">
+            <!-- SREDA 20.05. -->
+            <div class="day-group" id="grupa-sreda20">
                 <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 20.05.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="sreda" data-film="tike" data-vreme="16:30">
+                    <div class="movie-card" data-dan="sreda20" data-film="tike" data-vreme="16:30">
                         <img src="assets/tike.jpg" alt="Tike">
                         <div class="card-content">
                             <span class="genre">2D • SINHRONIZOVANO</span>
@@ -325,7 +389,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="sreda" data-film="mario" data-vreme="18:30">
+                    <div class="movie-card" data-dan="sreda20" data-film="mario" data-vreme="18:30">
                         <img src="assets/mario.jpg" alt="Super Mario">
                         <div class="card-content">
                             <span class="genre">3D • SINH</span>
@@ -341,7 +405,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="sreda" data-film="prada" data-vreme="20:30">
+                    <div class="movie-card" data-dan="sreda20" data-film="prada" data-vreme="20:30">
                         <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
                         <div class="card-content">
                             <span class="genre">2D • KOMEDIJA</span>
