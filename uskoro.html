@@ -41,32 +41,6 @@
         <div class="movie-grid">
 
             <div class="movie-card">
-                <img src="assets/siva-zona.jpg" alt="Siva zona">
-                <div class="card-content">
-                    <span class="genre">AKCIJA • TRILER</span>
-                    <h3>Siva zona</h3>
-                    <p>Reditelj Gaj Riči donosi akcioni spektakl o tajnom timu elitnih operativaca koji deluju u senci globalne moći.</p>
-                    <div class="rezervacija-info">
-                        <div class="times" style="margin-top: 0;"><span>13. Maj 2026.</span></div>
-                    </div>
-                    <a href="https://youtu.be/rbhShFNTkYc" target="_blank" class="btn-outline" style="text-align: center; display: block; margin-left: 0; width: 100%;">▶ POGLEDAJ TREJLER</a>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="assets/tike.jpg" alt="Tike">
-                <div class="card-content">
-                    <span class="genre">ANIMIRANI • SINH</span>
-                    <h3>Tike</h3>
-                    <p>Duhovita avantura prati par patika, Taja i Maksin, u njihovom dramatičnom bekstvu kroz Njujork.</p>
-                    <div class="rezervacija-info">
-                        <div class="times" style="margin-top: 0;"><span>14. Maj 2026.</span></div>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=FkAjseZSKO4" target="_blank" class="btn-outline" style="text-align: center; display: block; margin-left: 0; width: 100%;">▶ POGLEDAJ TREJLER</a>
-                </div>
-            </div>
-
-            <div class="movie-card">
                 <img src="assets/starwars.jpg" alt="The Mandalorian i Grogu">
                 <div class="card-content">
                     <span class="genre">SF • AVANTURA</span>
@@ -157,7 +131,6 @@
                 </div>
             </div>
 
-            <!-- NOVA LOKACIJA SLIKE VAJANE BEZ IKAKVOG RAZMAKA -->
             <div class="movie-card">
                 <img src="assets/vajanabioskop.jpg" alt="Vajana">
                 <div class="card-content">
@@ -209,45 +182,6 @@
         function toggleMenu() { 
             document.getElementById("navLinks").classList.toggle("active"); 
         }
-
-        // DRAG AND DROP ZA MENI
-        const navList = document.getElementById('navLinks');
-        let draggedItem = null;
-
-        navList.querySelectorAll('li').forEach(li => {
-            li.draggable = true;
-            li.style.cursor = 'grab';
-
-            li.addEventListener('dragstart', function(e) {
-                draggedItem = this;
-                setTimeout(() => this.style.opacity = '0.5', 0);
-            });
-
-            li.addEventListener('dragend', function() {
-                setTimeout(() => {
-                    this.style.opacity = '1';
-                    draggedItem = null;
-                }, 0);
-            });
-
-            li.addEventListener('dragover', function(e) {
-                e.preventDefault(); 
-            });
-
-            li.addEventListener('drop', function(e) {
-                if (this !== draggedItem) {
-                    let allItems = Array.from(navList.children);
-                    let draggedIndex = allItems.indexOf(draggedItem);
-                    let targetIndex = allItems.indexOf(this);
-                    
-                    if (draggedIndex < targetIndex) {
-                        this.after(draggedItem);
-                    } else {
-                        this.before(draggedItem);
-                    }
-                }
-            });
-        });
     </script>
 </body>
 </html>
