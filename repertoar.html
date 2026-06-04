@@ -35,7 +35,7 @@
     <section style="padding: 80px 10%;">
         <div class="section-header">
             <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Nedeljni Repertoar</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Srede 27.05. do Srede 03.06.2026. Kliknite na 'REZERVIŠI' za kupovinu karata.</p>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Od Četvrtka 04.06. do Srede 10.06.2026. Kliknite na 'REZERVIŠI' za kupovinu karata.</p>
             <button onclick="toggleFilteri()" class="btn-outline" id="filterBtn">⚙️ Prikaži Filtere</button>
         </div>
 
@@ -44,28 +44,27 @@
                 <label>Izaberi Dan</label>
                 <select id="filter-dan" onchange="primeniFiltere()">
                     <option value="sve">Svi dani</option>
-                    <option value="sreda27">Sreda (27.05)</option>
-                    <option value="cetvrtak">Četvrtak (28.05)</option>
-                    <option value="petak">Petak (29.05)</option>
-                    <option value="subota">Subota (30.05)</option>
-                    <option value="nedelja">Nedelja (31.05)</option>
-                    <option value="ponedeljak">Ponedeljak (01.06)</option>
-                    <option value="utorak">Utorak (02.06)</option>
-                    <option value="sreda03">Sreda (03.06)</option>
+                    <option value="cetvrtak">Četvrtak (04.06)</option>
+                    <option value="petak">Petak (05.06)</option>
+                    <option value="subota">Subota (06.06)</option>
+                    <option value="nedelja">Nedelja (07.06)</option>
+                    <option value="ponedeljak">Ponedeljak (08.06)</option>
+                    <option value="utorak">Utorak (09.06)</option>
+                    <option value="sreda">Sreda (10.06)</option>
                 </select>
             </div>
             <div class="filter-group">
                 <label>Izaberi Film</label>
                 <select id="filter-film" onchange="primeniFiltere()">
                     <option value="sve">Svi filmovi</option>
-                    <option value="billie">Billie Eilish (Live in 3D)</option>
-                    <option value="starwars">Star Wars: Mandalorac i Grogu 3D</option>
-                    <option value="saputnik">Saputnik</option>
-                    <option value="prada">Đavo nosi Pradu 2</option>
-                    <option value="majkl">Majkl</option>
                     <option value="kit">Pesma grbavog kita</option>
-                    <option value="tike">Tike</option>
+                    <option value="backrooms">Backrooms: Bez izlaza</option>
+                    <option value="gospodari">Gospodari svemira</option>
                     <option value="hajdi">Hajdi i mali ris</option>
+                    <option value="mrak">Mrak film 6</option>
+                    <option value="prada">Đavo nosi Pradu 2</option>
+                    <option value="starwars">Star Wars: Mandalorac i Grogu 3D</option>
+                    <option value="majkl">Majkl</option>
                 </select>
             </div>
             <div class="filter-group">
@@ -81,108 +80,54 @@
 
         <div id="repertoire-list" style="margin-top: 40px;">
 
-            <div class="day-group" id="grupa-sreda27">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 27.05.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="sreda27" data-film="tike" data-vreme="16:30">
-                        <img src="assets/tike.jpg" alt="Tike">
-                        <div class="card-content">
-                            <span class="genre">2D • SINHRONIZOVANO</span>
-                            <h3>Tike</h3>
-                            <p>Duhovita animirana avantura prati par patika, Taja i Maksin, u njihovom bekstvu kroz Njujork.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=FkAjseZSKO4" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda27" data-film="prada" data-vreme="18:30">
-                        <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
-                        <div class="card-content">
-                            <span class="genre">2D • KOMEDIJA</span>
-                            <h3>Đavo nosi Pradu 2</h3>
-                            <p>Nastavak voljenog filma prati glavnu urednicu Mirandu Pristli dok pokušava da se snađe.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">370 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=jfXjCKlcwNU" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="sreda27" data-film="starwars" data-vreme="20:30">
-                        <img src="assets/starwars.jpg" alt="Star Wars: Mandalorac i Grogu">
-                        <div class="card-content">
-                            <span class="genre">3D • SF</span>
-                            <h3>Star Wars: Mandalorac i Grogu 3D</h3>
-                            <p>Galaktičko carstvo je palo. Dok mlada Nova Republika radi na zaštiti svega, Mandalorac i Grogu stupaju na scenu.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">470 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=usQsvKCKqzs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="day-group" id="grupa-cetvrtak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 28.05.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 0px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Četvrtak 04.06.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="cetvrtak" data-film="hajdi" data-vreme="16:30">
-                        <img src="assets/hajdi.jpg" alt="Hajdi i mali ris">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="kit" data-vreme="16:30">
+                        <img src="assets/kit.jpg" alt="Pesma grbavog kita">
                         <div class="card-content">
                             <span class="genre">2D • SINHRONIZOVANO</span>
-                            <h3>Hajdi i mali ris</h3>
-                            <p>Prelepa porodična avantura devojčice Hajdi i njenog neobičnog prijatelja.</p>
+                            <h3>Pesma grbavog kita</h3>
+                            <p>Tinejdžerski grbavi kit mora otkriti mističnu pesmu koja može spasiti okeane od uništenja.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://youtu.be/3pMrCAxtbek?si=hyA1sGXGU2mh6ioe" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://www.youtube.com/watch?v=eKgZa5OsJUg" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="cetvrtak" data-film="saputnik" data-vreme="18:30">
-                        <img src="assets/saputnik.jpg" alt="Saputnik">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="backrooms" data-vreme="18:30">
+                        <img src="assets/backrooms.jpg" alt="Backrooms: Bez izlaza">
                         <div class="card-content">
-                            <span class="genre">2D • HOROR</span>
-                            <h3>Saputnik</h3>
-                            <p>Nakon jezive nesreće na autoputu, mladi par shvata da mesto udesa nisu napustili sami.</p>
+                            <span class="genre">2D • HOROR • TRILER</span>
+                            <h3>Backrooms: Bez izlaza</h3>
+                            <p>Zastrašujuća misterija u kojoj se prepliću realnost i beskrajni, napušteni hodnici. Da li je stvarnost uopšte stvarna?</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=Wm4Zk1USwxs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://youtu.be/EljX_9fUW-M?si=v72-Tva7ZAIn33_-" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="cetvrtak" data-film="billie" data-vreme="20:30">
-                        <img src="assets/billie.jpg" alt="Billie Eilish: Hit Me Hard and Soft">
+                    <div class="movie-card" data-dan="cetvrtak" data-film="gospodari" data-vreme="20:30">
+                        <img src="assets/gospodari.jpg" alt="Gospodari Svemira">
                         <div class="card-content">
-                            <span class="genre">3D • MUZIČKI</span>
-                            <h3>Billie Eilish (Live in 3D)</h3>
-                            <p>Snimljen tokom rasprodate svetske turneje, film predstavlja potpuno inovativno koncertno iskustvo u bioskopu.</p>
+                            <span class="genre">2D • AKCIJA</span>
+                            <h3>Gospodari svemira</h3>
+                            <p>Legende se ne rađaju, one se stvaraju. Pridružite se epskoj borbi He-Mana u odbrani celog univerzuma.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>20:30</span></div>
-                                <div class="cena">470 RSD</div>
+                                <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="javascript:void(0);" onclick="alert('Trejler uskoro dostupan!');" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://www.youtube.com/watch?v=UxglT6m2wzQ" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
@@ -190,14 +135,68 @@
             </div>
 
             <div class="day-group" id="grupa-petak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 29.05.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Petak 05.06.2026</h3>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
             </div>
 
             <div class="day-group" id="grupa-subota">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 30.05.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Subota 06.06.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="subota" data-film="kit" data-vreme="16:30">
+                    <div class="movie-card" data-dan="subota" data-film="hajdi" data-vreme="16:30">
+                        <img src="assets/hajdi.jpg" alt="Hajdi i mali ris">
+                        <div class="card-content">
+                            <span class="genre">2D • SINHRONIZOVANO</span>
+                            <h3>Hajdi i mali ris</h3>
+                            <p>Prelepa porodična avantura devojčice Hajdi i njenog neobičnog prijatelja.</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>16:30</span></div>
+                                <div class="cena">390 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://youtu.be/3pMrCAxtbek?si=hyA1sGXGU2mh6ioe" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="subota" data-film="backrooms" data-vreme="18:30">
+                        <img src="assets/backrooms.jpg" alt="Backrooms: Bez izlaza">
+                        <div class="card-content">
+                            <span class="genre">2D • HOROR • TRILER</span>
+                            <h3>Backrooms: Bez izlaza</h3>
+                            <p>Zastrašujuća misterija u kojoj se prepliću realnost i beskrajni, napušteni hodnici. Da li je stvarnost uopšte stvarna?</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>18:30</span></div>
+                                <div class="cena">390 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://youtu.be/EljX_9fUW-M?si=v72-Tva7ZAIn33_-" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card" data-dan="subota" data-film="mrak" data-vreme="20:30">
+                        <img src="assets/mrak-film.jpg" alt="Mrak Film 6">
+                        <div class="card-content">
+                            <span class="genre">2D • KOMEDIJA</span>
+                            <h3>Mrak Film 6</h3>
+                            <p>Glavna četvorka se okuplja kako bi se ponovo suočila sa ubicom pod maskom. Braća Vejans se vraćaju!</p>
+                            <div class="rezervacija-info">
+                                <div class="times"><span>20:30</span></div>
+                                <div class="cena">390 RSD</div>
+                            </div>
+                            <div style="display: flex; gap: 10px; width: 100%;">
+                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
+                                <a href="https://www.youtube.com/watch?v=DlBYE7SqoiM&t=6s" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-group" id="grupa-nedelja">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 07.06.2026</h3>
+                <div class="movie-grid">
+                    <div class="movie-card" data-dan="nedelja" data-film="kit" data-vreme="16:30">
                         <img src="assets/kit.jpg" alt="Pesma grbavog kita">
                         <div class="card-content">
                             <span class="genre">2D • SINHRONIZOVANO</span>
@@ -213,7 +212,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="subota" data-film="prada" data-vreme="18:30">
+                    <div class="movie-card" data-dan="nedelja" data-film="prada" data-vreme="18:30">
                         <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
                         <div class="card-content">
                             <span class="genre">2D • KOMEDIJA</span>
@@ -229,73 +228,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="subota" data-film="starwars" data-vreme="20:30">
-                        <img src="assets/starwars.jpg" alt="Star Wars: Mandalorac i Grogu">
+                    <div class="movie-card" data-dan="nedelja" data-film="gospodari" data-vreme="20:30">
+                        <img src="assets/gospodari.jpg" alt="Gospodari Svemira">
                         <div class="card-content">
-                            <span class="genre">3D • SF</span>
-                            <h3>Star Wars: Mandalorac i Grogu 3D</h3>
-                            <p>Galaktičko carstvo je palo. Dok mlada Nova Republika radi na zaštiti svega, Mandalorac i Grogu stupaju na scenu.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>20:30</span></div>
-                                <div class="cena">490 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=usQsvKCKqzs" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-group" id="grupa-nedelja">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Nedelja 31.05.2026</h3>
-                <div class="movie-grid">
-                    <div class="movie-card" data-dan="nedelja" data-film="tike" data-vreme="16:30">
-                        <img src="assets/tike.jpg" alt="Tike">
-                        <div class="card-content">
-                            <span class="genre">2D • SINHRONIZOVANO</span>
-                            <h3>Tike</h3>
-                            <p>Duhovita animirana avantura prati par patika, Taja i Maksin, u njihovom bekstvu kroz Njujork.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>16:30</span></div>
-                                <div class="cena">390 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=FkAjseZSKO4" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="billie" data-vreme="18:30">
-                        <img src="assets/billie.jpg" alt="Billie Eilish: Hit Me Hard and Soft">
-                        <div class="card-content">
-                            <span class="genre">3D • MUZIČKI</span>
-                            <h3>Billie Eilish (Live in 3D)</h3>
-                            <p>Snimljen tokom rasprodate svetske turneje, film predstavlja potpuno inovativno koncertno iskustvo u bioskopu.</p>
-                            <div class="rezervacija-info">
-                                <div class="times"><span>18:30</span></div>
-                                <div class="cena">490 RSD</div>
-                            </div>
-                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="javascript:void(0);" onclick="alert('Trejler uskoro dostupan!');" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-dan="nedelja" data-film="majkl" data-vreme="20:30">
-                        <img src="assets/majkl.jpg" alt="Majkl">
-                        <div class="card-content">
-                            <span class="genre">2D • BIOGRAFSKI</span>
-                            <h3>Majkl</h3>
-                            <p>Film prikazuje život Majkla Džeksona izvan muzike, prateći njegov put od početaka.</p>
+                            <span class="genre">2D • AKCIJA</span>
+                            <h3>Gospodari svemira</h3>
+                            <p>Legende se ne rađaju, one se stvaraju. Pridružite se epskoj borbi He-Mana u odbrani celog univerzuma.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>20:30</span></div>
                                 <div class="cena">390 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=DjWRBjDL6HA" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://www.youtube.com/watch?v=UxglT6m2wzQ" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
@@ -303,42 +248,42 @@
             </div>
 
             <div class="day-group" id="grupa-ponedeljak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 01.06.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Ponedeljak 08.06.2026</h3>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">NERADNI DAN</p>
             </div>
 
             <div class="day-group" id="grupa-utorak">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 02.06.2026</h3>
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Utorak 09.06.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="utorak" data-film="hajdi" data-vreme="16:30">
-                        <img src="assets/hajdi.jpg" alt="Hajdi i mali ris">
+                    <div class="movie-card" data-dan="utorak" data-film="backrooms" data-vreme="16:30">
+                        <img src="assets/backrooms.jpg" alt="Backrooms: Bez izlaza">
                         <div class="card-content">
-                            <span class="genre">2D • SINHRONIZOVANO</span>
-                            <h3>Hajdi i mali ris</h3>
-                            <p>Prelepa porodična avantura devojčice Hajdi i njenog neobičnog prijatelja.</p>
+                            <span class="genre">2D • HOROR • TRILER</span>
+                            <h3>Backrooms: Bez izlaza</h3>
+                            <p>Zastrašujuća misterija u kojoj se prepliću realnost i beskrajni, napušteni hodnici. Da li je stvarnost uopšte stvarna?</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://youtu.be/3pMrCAxtbek?si=hyA1sGXGU2mh6ioe" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://youtu.be/EljX_9fUW-M?si=v72-Tva7ZAIn33_-" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="utorak" data-film="kit" data-vreme="18:30">
-                        <img src="assets/kit.jpg" alt="Pesma grbavog kita">
+                    <div class="movie-card" data-dan="utorak" data-film="mrak" data-vreme="18:30">
+                        <img src="assets/mrak-film.jpg" alt="Mrak Film 6">
                         <div class="card-content">
-                            <span class="genre">2D • SINHRONIZOVANO</span>
-                            <h3>Pesma grbavog kita</h3>
-                            <p>Tinejdžerski grbavi kit mora otkriti mističnu pesmu koja može spasiti okeane od uništenja.</p>
+                            <span class="genre">2D • KOMEDIJA</span>
+                            <h3>Mrak Film 6</h3>
+                            <p>Glavna četvorka se okuplja kako bi se ponovo suočila sa ubicom pod maskom. Braća Vejans se vraćaju!</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>18:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=eKgZa5OsJUg" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://www.youtube.com/watch?v=DlBYE7SqoiM&t=6s" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
@@ -361,26 +306,26 @@
                 </div>
             </div>
 
-            <div class="day-group" id="grupa-sreda03">
-                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 03.06.2026</h3>
+            <div class="day-group" id="grupa-sreda">
+                <h3 style="font-family: 'Poppins'; margin: 40px 0 20px; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Sreda 10.06.2026</h3>
                 <div class="movie-grid">
-                    <div class="movie-card" data-dan="sreda03" data-film="tike" data-vreme="16:30">
-                        <img src="assets/tike.jpg" alt="Tike">
+                    <div class="movie-card" data-dan="sreda" data-film="hajdi" data-vreme="16:30">
+                        <img src="assets/hajdi.jpg" alt="Hajdi i mali ris">
                         <div class="card-content">
                             <span class="genre">2D • SINHRONIZOVANO</span>
-                            <h3>Tike</h3>
-                            <p>Duhovita animirana avantura prati par patika, Taja i Maksin, u njihovom bekstvu kroz Njujork.</p>
+                            <h3>Hajdi i mali ris</h3>
+                            <p>Prelepa porodična avantura devojčice Hajdi i njenog neobičnog prijatelja.</p>
                             <div class="rezervacija-info">
                                 <div class="times"><span>16:30</span></div>
                                 <div class="cena">370 RSD</div>
                             </div>
                             <div style="display: flex; gap: 10px; width: 100%;">
                                 <a href="javascript:void(0);" onclick="alert('Sistem za online rezervacije je trenutno u izradi.\nMožete rezervisati karte pozivom na broj: 064 8279 721');" class="btn-rezervisi" style="flex: 1; text-align: center; padding: 10px 0;">REZERVIŠI</a>
-                                <a href="https://www.youtube.com/watch?v=FkAjseZSKO4" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
+                                <a href="https://youtu.be/3pMrCAxtbek?si=hyA1sGXGU2mh6ioe" target="_blank" class="btn-outline" style="flex: 1; text-align: center; margin: 0; padding: 10px 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">▶ TREJLER</a>
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="sreda03" data-film="prada" data-vreme="18:30">
+                    <div class="movie-card" data-dan="sreda" data-film="prada" data-vreme="18:30">
                         <img src="assets/djavo.jpg" alt="Đavo nosi Pradu 2">
                         <div class="card-content">
                             <span class="genre">2D • KOMEDIJA</span>
@@ -396,7 +341,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="movie-card" data-dan="sreda03" data-film="majkl" data-vreme="20:30">
+                    <div class="movie-card" data-dan="sreda" data-film="majkl" data-vreme="20:30">
                         <img src="assets/majkl.jpg" alt="Majkl">
                         <div class="card-content">
                             <span class="genre">2D • BIOGRAFSKI</span>
